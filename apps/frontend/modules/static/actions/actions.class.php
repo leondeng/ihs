@@ -17,7 +17,7 @@ class staticActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->content = $this->getRequestParameter("content");
+    $this->content = $this->getRequestParameter("content", "index");
 
     $context = $this->getContext();
 

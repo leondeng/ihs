@@ -1,0 +1,59 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    /* background: url("../images/bg-page.png") repeat-x scroll center bottom #FFFFFF; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header {
+    background: url("../images/bg-header.png") no-repeat scroll center top transparent;
+    height: 228px;
+}
+
+#content {
+	  /* height: 382px; */
+	  margin-top: -50px;
+}
+
+#content .content {
+    margin: 0 auto;
+    width: 998px;
+    /* text-align: center; */
+}
+
+#footer {
+    background: url("../images/bg-footer.png") repeat-x scroll center bottom transparent;
+    bottom: -1px;
+    width: 100%;
+    font-size: 60%;
+    color: #77766F;
+    height: 25px;
+    margin-bottom: 0;
+    margin-top: 60px;
+    padding-top: 10px;
+    position: fixed;
+    text-align: center;
+}
+
+#footer ul {
+    display: inline;
+}
+
+#footer li {
+    display: inline;
+    list-style: none outside none;
+    margin-right: 15px;
+    padding-top: 10px;
+}
+
+#footer li a {
+    text-decoration: none;
+}
+
+#footer a {
+    color: #77766F;
+}
