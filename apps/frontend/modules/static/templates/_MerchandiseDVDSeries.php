@@ -24,7 +24,7 @@
 				Degree Black. Including Dan Bong and Cane techniques, plus Bonus
 				material.</p>
 			<p>
-				<span class="abig">Cost: 235 AUD$</span> (Includes Postage &
+				<span class="abig">Cost: 235 AUD$</span> (Includes Postage &amp;
 				Handling)
 			</p>
 			<p></p>
@@ -34,12 +34,11 @@
 						name="ctl00$ContentPlaceHolder1$ImageButton1"
 						id="ContentPlaceHolder1_ImageButton1"
 						src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif" />
-					
+					</td>
 					<td rowspan="2"><a id="linkMoviePopup" class="menustyle"> <img
 							src="Images/watchtrailer.png" alt="Trailer" width="259"
-							height="107" />
+							height="107" /></a>
 					
-					</td>
 					</td>
 				</tr>
 				<tr>

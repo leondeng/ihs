@@ -9,10 +9,10 @@
 		</p>
 
 		<p class="speciallink">
-			<span class="abig16">phone: (+612) 9824 2999<br />fax: (+612) 9824
-				1767<br />mobile: (+61) 414 247 220</br>website: <a
-				href="http://www.hapkido.com.au" target="_blank">www.hapkido.com.au</a></br>email:
-				<a href="mailto:info@hapkido.com.au">info@hapkido.com.au</a>
+			<span class="abig16"> phone: (+612) 9824 2999 <br> fax: (+612) 9824
+				1767 <br> mobile: (+61) 414 247 220 <br> website: <a
+				href="http://www.hapkido.com.au" target="_blank">www.hapkido.com.au</a>
+				<br> email: <a href="mailto:info@hapkido.com.au">info@hapkido.com.au</a>
 			</span>
 		</p>
 

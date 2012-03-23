@@ -58,3 +58,16 @@
   margin-top: -20px;
   text-align: left !important;
 }
+
+#PageContent #ContentLeft .content_danbong {
+  width: 380px;
+  padding-left: 60px;
+  margin-top: -40px;
+  text-align: left !important;
+}
+
+#PageContent #ContentLeft .img_danbong {
+  padding: 0 3px 0 0;
+  position: relative;
+  margin-left: 450px;
+}
