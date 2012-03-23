@@ -25,9 +25,14 @@ div#Wrapper {
   height: 96px;
   overflow: hidden;
   float: left;
-  padding: 6px 0 0;
-  margin: 124px 0 0;
+  /* padding: 6px 0 0; */
+  margin: 120px 0 0;
+  font-size: 65%;
 }
+
+/* #PageContent .Navigation ul {
+    display: inline;
+} */
 
 #Header .Navigation li {
   -webkit-border-radius: 3px 3px 0 0;

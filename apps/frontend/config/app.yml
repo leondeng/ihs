@@ -28,7 +28,7 @@ all:
               route: /MerchandiseTShirts.html
               requires_no_auth: true
         instructors:
-          label: INSTRUCTOR/BLACK BELTS
+          label: INSTRUCTORS
           route: /instructorsearch.html
           requires_no_auth: true
         forum:
