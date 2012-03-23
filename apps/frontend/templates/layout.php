@@ -9,33 +9,31 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <div id="container">
-      <div id="header">
+    <div id="Wrapper">
+      <div id="Header">
         <div class="content">
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="PageContent">
+        <?php echo $sf_content ?>
+        <div id="Footer" class="tl">
+          <div class="content">
+            <ul>
+              <li><a href="">ABOUT INTERNATIONAL HAPKIDO ALLIANCE</a></li>
+              <li><span>|</span></li>
+              <li><a href="">PRIVACY POLICY</a></li>
+              <li><span>|</span></li>
+              <li><a href="">TERM OF USE</a></li>
+              <li><span>|</span></li>
+              <li><a href="">CONTACT US</a></li>
+              <li><span>|</span></li>
+              <li><span>&copy; 2012</span></li>
+            </ul>
+          </div>
         </div>
       </div>
       
-      <div id="content">
-        <div class="content">
-          <?php echo $sf_content ?>
-        </div>
-      </div>
-      
-      <div id="footer">
-        <div class="content">
-          <ul>
-            <li><a href="">ABOUT INTERNATIONAL HAPKIDO ALLIANCE</a></li>
-            <li><span>|</span></li>
-            <li><a href="">PRIVACY POLICY</a></li>
-            <li><span>|</span></li>
-            <li><a href="">TERM OF USE</a></li>
-            <li><span>|</span></li>
-            <li><a href="">CONTACT US</a></li>
-            <li><span>|</span></li>
-            <li><span>&copy; 2012</span></li>
-          </ul>
-        </div>
-      </div>
     </div>
   </body>
 </html>
