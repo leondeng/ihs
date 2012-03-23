@@ -32,8 +32,3 @@
 		<?php echo content_tag('img', '', array('width'=>'150', 'height'=>'453', 'src' => 'images/GM_Booth_01_small.jpg')); ?>
 	</div>
 </div>
-<!-- <div id="ContentRight">
-  <div class="image">
-    <?php echo content_tag('img', '', array('src' => 'images/KoreanWord.png')); ?>
-  </div>
-</div> -->

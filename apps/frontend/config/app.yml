@@ -3,3 +3,69 @@
 
 # default values
 #all:
+all:
+  menus:
+    admin_menu:
+      name: Navigation
+      children:
+        home:
+          label: HOME
+          route: /
+          requires_no_auth: true
+        merchandise:
+          name: MACHANDISE
+          children:
+            dvdseries:
+              label: DVD SERIES
+              route: /MerchandiseDVDSeries.html
+              requires_no_auth: true
+            danbong:
+              label: IHA Dan Bong
+              route: /MerchandiseIHADanBong.html
+              requires_no_auth: true
+            tshirt:
+              label: T-Shirts
+              route: /MerchandiseTShirts.html
+              requires_no_auth: true
+        instructors:
+          label: INSTRUCTOR/BLACK BELTS
+          route: /instructorsearch.html
+          requires_no_auth: true
+        forum:
+          label: FORUM
+          route: /forum.html
+          requires_no_auth: true
+        knowledgebase:
+          label: KNOWLEDGE BASE
+          route: /knowlesgebase.html
+          requires_no_auth: true
+        dojang:
+          label: DOJANG
+          route: /dojangsearch.html
+          requires_no_auth: true
+          
+#    admin_menu:
+#      name:     Admin menu
+#      children:
+#        signin:
+#          label:   Sign in
+#          route:   @sf_guard_signin
+#          requires_no_auth: true
+#          attributes: {class: signin }
+#        signout:
+#          label:   Sign out
+#          route:   @sf_guard_signout
+#          requires_auth: true
+#        user_admin:
+#          label:          User Admin
+#          requires_auth: true
+#          children:
+#            manage_users:
+#              label:   Manage Users
+#              route:   @sf_guard_user
+#              credentials: [ManageUsers]
+#            manage_permissions:
+#              label:   Manage Permissions
+#              route:   @sf_guard_permission
+#              credentials: [ManagePermissions]
+              

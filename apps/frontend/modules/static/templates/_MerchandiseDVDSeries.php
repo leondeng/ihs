@@ -3,7 +3,7 @@
 
 		<h1>2010 IHA - HOW TO - DVD SERIES</h1>
 		<div class="img_left">
-			<img src="Images/Hapkido_Series_01.png" />
+			<img src="/images/Hapkido_Series_01.png" />
 		</div>
 		<div class="content_right">
 			<p>Released on December 6th, 2009 the 2010 IHA "How To" DVD Series
@@ -36,21 +36,17 @@
 						src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif" />
 					</td>
 					<td rowspan="2"><a id="linkMoviePopup" class="menustyle"> <img
-							src="Images/watchtrailer.png" alt="Trailer" width="259"
+							src="/images/watchtrailer.png" alt="Trailer" width="259"
 							height="107" /></a>
 					
 					</td>
 				</tr>
 				<tr>
-					<td><img src="Images/paypalCC.png" />
+					<td><img src="/images/paypalCC.png" />
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
 </div>
-<div id="ContentRight">
-	<div class="image">
-		<?php echo content_tag('img', '', array('src' => 'images/KoreanWord.png')); ?>
-	</div>
-</div>
+<?php include_partial('KoreanWord'); ?>
