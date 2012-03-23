@@ -1,5 +1,5 @@
 #PageContent #ContentLeft {
-  min-height: 640px;
+  min-height: 520px;
   width: 820px;
   padding: 0 21px 0 0;
   float: left;
@@ -15,10 +15,46 @@
   /* border-left: 1px solid #e5e5e5; */
   position: relative;
   margin-left: 840px;
-  min-height: 640px;
+  min-height: 520px;
   text-align: right;
 }
 
 #PageContent #ContentRight .image{
   padding: 50px 0 0;
+}
+
+#PageContent #ContentLeft .content_left {
+  width: 400px;
+  padding-left: 120px;
+  text-align: left !important;
+}
+
+#PageContent #ContentLeft .img_right {
+  padding: 0 3px 0 12px;
+  position: relative;
+  margin-left: 540px;
+}
+
+#PageContent #ContentLeft .img_left {
+  width: 400px;
+  padding: 0 3px 0 12px;
+}
+
+#PageContent #ContentLeft .content_right {
+  padding-left: 2px;
+  position: relative;
+  text-align: left !important;
+  margin-left: 500px;
+}
+
+#PageContent #ContentLeft .content_all {
+  padding-left: 120px;
+  margin-top: -40px;
+  text-align: left !important;
+}
+
+#PageContent #ContentLeft .img_all {
+  padding-left: 20px;
+  margin-top: -20px;
+  text-align: left !important;
 }

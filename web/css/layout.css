@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-	background: url("../images/bg-header.png") no-repeat scroll center top transparent;
+	//background: url("../images/bg-body.png") repeat-x scroll center top transparent;
 }
 
 div#Wrapper {
@@ -16,7 +16,9 @@ div#Wrapper {
 }
 
 #Header {
+  background: url("../images/bg-header.png") no-repeat scroll center top transparent;
   height: 228px;
+  margin-top: -8px;
 }
 
 #Header .Navigation {
@@ -92,6 +94,8 @@ div#Wrapper {
   margin: 10px 0 0;
   padding: 5px 0 0;
   width: 100%;
+  bottom: -1px;
+  position: fixed;
 }
 
 #PageContent #Footer .content {
@@ -135,3 +139,131 @@ div#Wrapper {
 .full { width: 100% !important; }
 .hidden { display: none; }
 .nobgimage, .nobg { background-image: none !important; }
+
+.abig {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 14px;
+    font-weight: 800;
+}
+.abig40 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 40px;
+    font-weight: 800;
+}
+.abig38 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 38px;
+    font-weight: 800;
+}
+.abig36 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 36px;
+    font-weight: 800;
+}
+.abig34 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 34px;
+    font-weight: 800;
+}
+.abig32 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 32px;
+    font-weight: 800;
+}
+.abig30 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 30px;
+    font-weight: 800;
+}
+.abig28 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 28px;
+    font-weight: 800;
+}
+.abig26 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 26px;
+    font-weight: 800;
+}
+.abig24 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 24px;
+    font-weight: 800;
+}
+.abig22 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 22px;
+    font-weight: 800;
+}
+.abig20 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 20px;
+    font-weight: normal;
+}
+a .abig20 {
+    color: #00217E;
+}
+.abig18 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 18px;
+    font-weight: normal;
+}
+.abig16 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 16px;
+    font-weight: normal;
+}
+.abig14 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 14px;
+    font-weight: normal;
+}
+.abig12 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 12px;
+    font-weight: normal;
+}
+.abig10 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 10px;
+    font-weight: normal;
+}
+.abig8 {
+    color: #00217E;
+    font-family: "HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black","sans-serif";
+    font-size: 8px;
+    font-weight: normal;
+}
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #B8704D;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:active {
+    color: #0099FF;
+}

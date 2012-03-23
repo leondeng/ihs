@@ -20,13 +20,13 @@
         <div id="Footer" class="tl">
           <div class="content">
             <ul>
-              <li><a href="">ABOUT INTERNATIONAL HAPKIDO ALLIANCE</a></li>
+              <li><a href="/about_iha.html">ABOUT INTERNATIONAL HAPKIDO ALLIANCE</a></li>
               <li><span>|</span></li>
-              <li><a href="">PRIVACY POLICY</a></li>
+              <li><a href="/privacy_policy.html">PRIVACY POLICY</a></li>
               <li><span>|</span></li>
-              <li><a href="">TERM OF USE</a></li>
+              <li><a href="/term_of_use.html">TERM OF USE</a></li>
               <li><span>|</span></li>
-              <li><a href="">CONTACT US</a></li>
+              <li><a href="/contact_us.html">CONTACT US</a></li>
               <li><span>|</span></li>
               <li><span>&copy; 2012</span></li>
             </ul>
