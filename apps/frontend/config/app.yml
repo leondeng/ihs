@@ -4,44 +4,47 @@
 # default values
 #all:
 all:
+  deploy:
+    path: <?php echo '/ihs'; ?>
+
   menus:
     admin_menu:
       name: Navigation
       children:
         home:
           label: HOME
-          route: /
+          route: /ihs/
           requires_no_auth: true
         merchandise:
           name: MACHANDISE
           children:
             dvdseries:
               label: DVD SERIES
-              route: /MerchandiseDVDSeries.html
+              route: /ihs/MerchandiseDVDSeries.html
               requires_no_auth: true
             danbong:
               label: IHA Dan Bong
-              route: /MerchandiseIHADanBong.html
+              route: /ihs/MerchandiseIHADanBong.html
               requires_no_auth: true
             tshirt:
               label: T-Shirts
-              route: /MerchandiseTShirts.html
+              route: /ihs/MerchandiseTShirts.html
               requires_no_auth: true
         instructors:
           label: INSTRUCTORS
-          route: /instructorsearch.html
+          route: /ihs/instructorsearch.html
           requires_no_auth: true
         forum:
           label: FORUM
-          route: /forum.html
+          route: /ihs/forum.html
           requires_no_auth: true
         knowledgebase:
           label: KNOWLEDGE BASE
-          route: /knowlesgebase.html
+          route: /ihs/knowlesgebase.html
           requires_no_auth: true
         dojang:
           label: DOJANG
-          route: /dojangsearch.html
+          route: /ihs/dojangsearch.html
           requires_no_auth: true
           
 #    admin_menu:
