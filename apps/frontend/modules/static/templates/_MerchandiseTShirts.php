@@ -3,7 +3,7 @@
 		<h1>T-Shirts</h1>
 		<div class="contentRoundDiv_left_tshirt">
 
-			<img src="./images/TShirts_01.png" width="800px" height="350px" />
+			<img src="images/TShirts_01.png" width="800px" height="350px" />
 			<p>Exciting New T-Shirt range coming soon.</p>
 		</div>
 	</div>
