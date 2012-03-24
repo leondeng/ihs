@@ -4,14 +4,15 @@
 prod:
   .settings:
     no_script_name:         true
-    logging_enabled:        false
+    error_reporting:        <?php echo (E_ALL)."\n" ?>
+    logging_enabled:        true
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
     web_debug:              true
     cache:                  false
-    no_script_name:         false
+    no_script_name:         true
     etag:                   false
 
 test:

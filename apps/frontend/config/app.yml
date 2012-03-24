@@ -4,47 +4,44 @@
 # default values
 #all:
 all:
-  deploy:
-    path: <?php $ihs = (sfConfig::get('sf_environment') === 'prod')?'/ihs':''; echo $ihs; ?>
-
   menus:
     admin_menu:
       name: Navigation
       children:
         home:
           label: HOME
-          route: <?php echo $ihs; ?>/
+          route: @homepage
           requires_no_auth: true
         merchandise:
-          name: MACHANDISE
+          name: MERCHANDISE
           children:
             dvdseries:
               label: DVD SERIES
-              route: <?php echo $ihs; ?>/MerchandiseDVDSeries.html
+              route: @static?content=MerchandiseDVDSeries
               requires_no_auth: true
             danbong:
               label: IHA Dan Bong
-              route: <?php echo $ihs; ?>/MerchandiseIHADanBong.html
+              route: @static?content=MerchandiseIHADanBong
               requires_no_auth: true
             tshirt:
               label: T-Shirts
-              route: <?php echo $ihs; ?>/MerchandiseTShirts.html
+              route: @static?content=MerchandiseTShirts
               requires_no_auth: true
         instructors:
           label: INSTRUCTORS
-          route: <?php echo $ihs; ?>/instructorsearch.html
+          route: @static?content=instructorsearch
           requires_no_auth: true
         forum:
           label: FORUM
-          route: <?php echo $ihs; ?>/forum.html
+          route: @static?content=forum
           requires_no_auth: true
         knowledgebase:
           label: KNOWLEDGE BASE
-          route: <?php echo $ihs; ?>/knowlesgebase.html
+          route: @static?content=knowlesgebase
           requires_no_auth: true
         dojang:
           label: DOJANG
-          route: <?php echo $ihs; ?>/dojangsearch.html
+          route: @static?content=dojangsearch
           requires_no_auth: true
           
 #    admin_menu:
