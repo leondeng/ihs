@@ -13,7 +13,8 @@ all:
           route: @homepage
           requires_no_auth: true
         merchandise:
-          name: MERCHANDISE
+          label: MERCHANDISE
+          route: '#'
           children:
             dvdseries:
               label: DVD SERIES
@@ -42,6 +43,10 @@ all:
         dojang:
           label: DOJANG
           route: @static?content=dojangsearch
+          requires_no_auth: true
+        contact:
+          label: CONTACT
+          route: @static?content=contact_us
           requires_no_auth: true
           
 #    admin_menu:

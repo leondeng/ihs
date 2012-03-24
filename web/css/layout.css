@@ -25,35 +25,48 @@ div#Wrapper {
   height: 96px;
   overflow: hidden;
   float: left;
-  /* padding: 6px 0 0; */
+  padding: 6px 0 0;
   margin: 120px 0 0;
   font-size: 65%;
+  font-family: san-serif;
 }
 
-/* #PageContent .Navigation ul {
-    display: inline;
-} */
+#Header .Navigation ul.menu {
+  float: right;
+  height: 25px;
+  line-height: 25px;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0 0 5px;
+  position: relative;
+  text-align: center;
+  /* width: 93%; */
+}
 
 #Header .Navigation li {
-  -webkit-border-radius: 3px 3px 0 0;
-  -moz-border-radius: 3px 3px 0 0;
-  border-radius: 3px 3px 0 0;
-  margin: 0 5px 0 0;
-  padding: 0 3px 0 0;
   float: left;
-  background: left top repeat-x url('/images/core/navigation/top/navigation.png');
+  margin-left: 9px;
+  position: relative;
+  /* width: 78px; */
 }
 
 #Header .Navigation li a {
   float: left;
   display: block;
   height: 33px;
-  font-weight: bold;
   line-height: 33px;
   padding: 0 5px;
   color: #666666;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 14px;
+}
+
+#Header .Navigation li a:hover {
+  color: blue;
+}
+
+#Header .Navigation li.current {
+  font-weight: bold;
 }
 
 #Header .Navigation li a span {
@@ -62,6 +75,27 @@ div#Wrapper {
   width: 100%;
   height: 33px;
 }
+
+#Header .Navigation ul.menu_level_1 {
+	visibility: hidden;
+	position: absolute;
+	height: 36px;
+	top: 35px;
+	right: -450px;
+	width: 620px;
+	z-index: 25;
+	/* background:#ddd; */
+	padding: 2px;
+	list-style: none;
+}
+
+#Header .Navigation li:hover ul.menu_level_1 {
+	visibility: visible;
+	height: 36px;
+	margin-top: 0px;
+	text-align: center;
+}
+
 
 #Header .Navigation li:hover { background-position: bottom left; }
 #Header .Navigation li.active { background-position: bottom left; }
@@ -72,21 +106,6 @@ div#Wrapper {
   margin: 8px 0 0 0;
 }
 
-/* #PageContent #ContentLeft {
-  min-height: 640px;
-  width: 220px;
-  padding: 0 21px 0 0;
-  float: left;
-}
-
-#PageContent #ContentRight {
-  padding: 0 3px 0 12px;
-  border-left: 1px solid #e5e5e5;
-  position: relative;
-  margin-left: 240px;
-  min-height: 640px;
-}
- */
 #PageContent #Footer {
   /* border-top: 1px solid #e5e5e5; */
   background: url("../images/bg-footer.png") repeat-x scroll center bottom transparent;
@@ -94,11 +113,13 @@ div#Wrapper {
   font-size: 60%;
   color: #77766F;
   text-align: center !important;
-  float: left;
+  /* float: left; */
   height: 25px;
   margin: 10px 0 0;
   padding: 5px 0 0;
-  width: 100%;
+  width: 998px;
+  bottom: -1px;
+  position: fixed;
 }
 
 #PageContent #Footer .content {
