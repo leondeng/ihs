@@ -5,4 +5,4 @@
 			height="900px" width="870px" scrolling="no"></iframe>
 	</div>
 </div>
-<?php include_partial('Koreanword');?>
+<?php include_partial('KoreanWord');?>
