@@ -5,7 +5,7 @@
 #all:
 all:
   deploy:
-    path: <?php echo '/ihs'; ?>
+    path: <?php $ihs = (sfConfig::get('sf_environment') === 'prod')?'/ihs':''; echo $ihs; ?>
 
   menus:
     admin_menu:
@@ -13,38 +13,38 @@ all:
       children:
         home:
           label: HOME
-          route: /ihs/
+          route: <?php echo $ihs; ?>/
           requires_no_auth: true
         merchandise:
           name: MACHANDISE
           children:
             dvdseries:
               label: DVD SERIES
-              route: /ihs/MerchandiseDVDSeries.html
+              route: <?php echo $ihs; ?>/MerchandiseDVDSeries.html
               requires_no_auth: true
             danbong:
               label: IHA Dan Bong
-              route: /ihs/MerchandiseIHADanBong.html
+              route: <?php echo $ihs; ?>/MerchandiseIHADanBong.html
               requires_no_auth: true
             tshirt:
               label: T-Shirts
-              route: /ihs/MerchandiseTShirts.html
+              route: <?php echo $ihs; ?>/MerchandiseTShirts.html
               requires_no_auth: true
         instructors:
           label: INSTRUCTORS
-          route: /ihs/instructorsearch.html
+          route: <?php echo $ihs; ?>/instructorsearch.html
           requires_no_auth: true
         forum:
           label: FORUM
-          route: /ihs/forum.html
+          route: <?php echo $ihs; ?>/forum.html
           requires_no_auth: true
         knowledgebase:
           label: KNOWLEDGE BASE
-          route: /ihs/knowlesgebase.html
+          route: <?php echo $ihs; ?>/knowlesgebase.html
           requires_no_auth: true
         dojang:
           label: DOJANG
-          route: /ihs/dojangsearch.html
+          route: <?php echo $ihs; ?>/dojangsearch.html
           requires_no_auth: true
           
 #    admin_menu:
