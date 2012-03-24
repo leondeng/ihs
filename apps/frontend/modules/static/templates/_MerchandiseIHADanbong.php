@@ -2,7 +2,7 @@
 	<div class="content_danbong">
 
 		<h1>IHA Dan Bong</h1>
-		<img src="/images/Dan_Bong_01.png" width="350px" height="125px" />
+		<img src="images/Dan_Bong_01.png" width="350px" height="125px" />
 		<p>
 			<span class="abig14">IHA Modified Dan Bongs are 30 centimetres of
 				Japanese White Oak sanded smooth then finished with a coat of clear
@@ -26,7 +26,7 @@
 					src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif" /></td>
 			</tr>
 			<tr>
-				<td><img src="/images/paypalCC.png" />
+				<td><img src="images/paypalCC.png" />
 				</td>
 
 			</tr>
@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="img_danbong">
-		<img src="/images/GM_Booth_Weapon_01_small.png" width="450px"
+		<img src="images/GM_Booth_Weapon_01_small.png" width="450px"
 			height="300px" />
 	</div>
 
