@@ -9,5 +9,10 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->enablePlugins('sfDoctrinePlugin');
     $this->enablePlugins('ioMenuPlugin');
+    
+    if (sfConfig::get('sf_environment') === 'prod') {
+      $this->setWebDir($this->getRootDir().'/public_html/ihs');
+    }
   }
+
 }
