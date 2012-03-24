@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-	//background: url("../images/bg-body.png") repeat-x scroll center top transparent;
+	background: url("../images/bg-body.png") repeat-x scroll center top transparent;
 }
 
 div#Wrapper {
@@ -28,7 +28,7 @@ div#Wrapper {
   padding: 6px 0 0;
   margin: 120px 0 0;
   font-size: 65%;
-  font-family: san-serif;
+  font-family: san-serif, helvetica, verdana, arial;
 }
 
 #Header .Navigation ul.menu {
@@ -61,9 +61,9 @@ div#Wrapper {
   font-size: 14px;
 }
 
-#Header .Navigation li a:hover {
+/* #Header .Navigation li a:hover {
   color: blue;
-}
+} */
 
 #Header .Navigation li.current {
   font-weight: bold;
@@ -106,7 +106,7 @@ div#Wrapper {
   margin: 8px 0 0 0;
 }
 
-#PageContent #Footer {
+#Footer {
   /* border-top: 1px solid #e5e5e5; */
   background: url("../images/bg-footer.png") repeat-x scroll center bottom transparent;
   display: block;
@@ -115,33 +115,33 @@ div#Wrapper {
   text-align: center !important;
   /* float: left; */
   height: 25px;
-  margin: 10px 0 0;
+  margin: 5px 0 0 -6px;
   padding: 5px 0 0;
-  width: 998px;
+  width: 100%;
   bottom: -1px;
   position: fixed;
 }
 
-#PageContent #Footer .content {
+#Footer .content {
   padding: 8px 0 0;
 }
 
-#PageContent #Footer ul {
+#Footer ul {
     display: inline;
 }
 
-#PageContent #Footer li {
+#Footer li {
     display: inline;
     list-style: none outside none;
     margin-right: 15px;
     padding-top: 10px;
 }
 
-#PageContent #Footer li a {
+#Footer li a {
     text-decoration: none;
 }
 
-#PageContent #Footer a {
+#Footer a {
     color: #77766F;
 }
 

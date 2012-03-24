@@ -16,9 +16,9 @@
       <div class="clear"></div>
       <div id="PageContent">
         <?php echo $sf_content ?>
-        <?php include_partial('global/footer'); ?>
       </div>
       
     </div>
+    <?php include_partial('global/footer'); ?>
   </body>
 </html>
