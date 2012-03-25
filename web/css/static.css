@@ -27,24 +27,26 @@
   width: 400px;
   padding-left: 120px;
   text-align: left !important;
+  float: left;
 }
 
 #PageContent #ContentLeft .img_right {
   padding: 0 3px 0 12px;
   position: relative;
-  margin-left: 540px;
+  padding-top: 50px;
 }
 
 #PageContent #ContentLeft .img_left {
   width: 400px;
   padding: 0 3px 0 12px;
+  float: left;
 }
 
 #PageContent #ContentLeft .content_right {
   padding-left: 2px;
   position: relative;
   text-align: left !important;
-  margin-left: 500px;
+  margin-right: -100px;
 }
 
 #PageContent #ContentLeft .content_all {
@@ -59,15 +61,22 @@
   text-align: left !important;
 }
 
+#PageContent #ContentLeft .img_all .content {
+  padding-top: 30px;
+}
+
 #PageContent #ContentLeft .content_danbong {
-  width: 380px;
+  width: 350px;
   padding-left: 60px;
   margin-top: -40px;
   text-align: left !important;
+  float: left;
 }
 
 #PageContent #ContentLeft .img_danbong {
-  padding: 0 3px 0 0;
+  padding: 80px 0 0;
   position: relative;
-  margin-left: 450px;
+  margin-right: -250px;
+  text-align: left;
+  /* margin-left: 450px; */
 }

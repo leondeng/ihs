@@ -38,8 +38,8 @@
 
 	</div>
 	<div class="img_danbong">
-		<img src="images/GM_Booth_Weapon_01_small.png" width="450px"
-			height="300px" />
+		<img src="images/GM_Booth_Weapon_01_small.png" width="600px"
+			height="400px" />
 	</div>
 
 </div>
