@@ -4,6 +4,11 @@ html, body {
 
 body {
 	background: url("../images/bg-body.png") repeat-x scroll center top transparent;
+	font-family: "sans-serif";
+}
+
+h1 {
+	color: #00217E;
 }
 
 div#Wrapper {
@@ -40,14 +45,12 @@ div#Wrapper {
   padding: 10px 0 0 5px;
   position: relative;
   text-align: center;
-  /* width: 93%; */
 }
 
 #Header .Navigation li {
   float: left;
   margin-left: 9px;
   position: relative;
-  /* width: 78px; */
 }
 
 #Header .Navigation li a {
@@ -57,15 +60,10 @@ div#Wrapper {
   line-height: 33px;
   padding: 0 5px;
   color: #666666;
-  /* font-weight: bold; */
   font-size: 14px;
 }
 
-/* #Header .Navigation li a:hover {
-  color: blue;
-} */
-
-#Header .Navigation li.current {
+#Header .Navigation li.current, #Header .Navigation li.current_ancestor {
   font-weight: bold;
 }
 
@@ -80,22 +78,27 @@ div#Wrapper {
 	visibility: hidden;
 	position: absolute;
 	height: 36px;
-	top: 35px;
-	right: -450px;
-	width: 620px;
+	margin: 0 0 0 -50px;
+	top: 40px;
+	width: 1024px;
 	z-index: 25;
-	/* background:#ddd; */
-	padding: 2px;
 	list-style: none;
 }
 
-#Header .Navigation li:hover ul.menu_level_1 {
+#Header .Navigation li.current ul.menu_level_1, #Header .Navigation li.current_ancestor ul.menu_level_1  {
 	visibility: visible;
 	height: 36px;
-	margin-top: 0px;
-	text-align: center;
+	text-align: left;
 }
 
+#Header .Navigation ul.menu_level_1 li a {
+	color: #00217E;
+	font-weight: normal;
+}
+
+#Header .Navigation ul.menu_level_1 li.current a {
+	font-weight: bold;
+}
 
 #Header .Navigation li:hover { background-position: bottom left; }
 #Header .Navigation li.active { background-position: bottom left; }
@@ -103,17 +106,16 @@ div#Wrapper {
 
 #PageContent {
   width: 998px;
-  margin: 8px 0 0 0;
+  margin: 8px 0 10px 0;
 }
 
 #Footer {
-  /* border-top: 1px solid #e5e5e5; */
   background: url("../images/bg-footer.png") repeat-x scroll center bottom transparent;
   display: block;
+  font-family: "sans-serif";
   font-size: 60%;
   color: #77766F;
   text-align: center !important;
-  /* float: left; */
   height: 25px;
   margin: 5px 0 0 -6px;
   padding: 5px 0 0;
@@ -276,7 +278,7 @@ a .abig20 {
     font-weight: normal;
 }
 a:link {
-    color: #000000;
+    color: #00217E;
     text-decoration: none;
 }
 a:visited {

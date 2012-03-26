@@ -1,9 +1,9 @@
 #PageContent #ContentLeft {
   min-height: 520px;
   width: 820px;
-  padding: 0 21px 0 0;
+  padding: 0 0 20px 80px;
   float: left;
-  text-align: center;
+  text-align: left;
 }
 
 #PageContent #ContentLeft .image {
@@ -12,7 +12,6 @@
 
 #PageContent #ContentRight {
   padding: 0 3px 0 12px;
-  /* border-left: 1px solid #e5e5e5; */
   position: relative;
   margin-left: 840px;
   min-height: 520px;
@@ -25,39 +24,37 @@
 
 #PageContent #ContentLeft .content_left {
   width: 400px;
-  padding-left: 120px;
-  text-align: left !important;
+  margin-top: -20px;
   float: left;
 }
 
 #PageContent #ContentLeft .img_right {
-  padding: 0 3px 0 12px;
+  padding: 50px 0 0;
+  margin-left: 400px;
   position: relative;
-  padding-top: 50px;
 }
 
 #PageContent #ContentLeft .img_left {
   width: 400px;
-  padding: 0 3px 0 12px;
+  padding: 0 3px 0 0;
   float: left;
 }
 
 #PageContent #ContentLeft .content_right {
-  padding-left: 2px;
+  padding: 20px 0 0;
   position: relative;
   text-align: left !important;
-  margin-right: -100px;
+  margin-right: -10px;
+  font-size: 12px;
 }
 
 #PageContent #ContentLeft .content_all {
-  padding-left: 120px;
-  margin-top: -40px;
+  margin-top: -30px;
   text-align: left !important;
 }
 
 #PageContent #ContentLeft .img_all {
-  padding-left: 20px;
-  margin-top: -20px;
+  margin-top: -10px;
   text-align: left !important;
 }
 
@@ -67,16 +64,18 @@
 
 #PageContent #ContentLeft .content_danbong {
   width: 350px;
-  padding-left: 60px;
-  margin-top: -40px;
+  margin-top: -30px;
   text-align: left !important;
   float: left;
 }
 
 #PageContent #ContentLeft .img_danbong {
-  padding: 80px 0 0;
+  padding: 80px 50px 0;
   position: relative;
   margin-right: -250px;
   text-align: left;
-  /* margin-left: 450px; */
+}
+
+.speciallink {
+	cursor: text;
 }
