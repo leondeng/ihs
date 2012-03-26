@@ -14,16 +14,22 @@ all:
 #          requires_no_auth: true
         merchandise:
           label: MERCHANDISE
-          route: '#'
+          route: @static?content=MerchandiseDVDSeries
           children:
             dvdseries:
-              label: DVD SERIES
+              label: DVD Series
               route: @static?content=MerchandiseDVDSeries
 #              requires_no_auth: true
+            seperator1:
+              label: |&nbsp;
+              route: '#'
             danbong:
               label: IHA Dan Bong
               route: @static?content=MerchandiseIHADanBong
 #              requires_no_auth: true
+            seperator2:
+              label: |&nbsp;
+              route: '#'
             tshirt:
               label: T-Shirts
               route: @static?content=MerchandiseTShirts

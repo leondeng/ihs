@@ -49,12 +49,12 @@
 }
 
 #PageContent #ContentLeft .content_all {
-  margin-top: -40px;
+  margin-top: -30px;
   text-align: left !important;
 }
 
 #PageContent #ContentLeft .img_all {
-  margin-top: -20px;
+  margin-top: -10px;
   text-align: left !important;
 }
 
@@ -64,7 +64,7 @@
 
 #PageContent #ContentLeft .content_danbong {
   width: 350px;
-  margin-top: -40px;
+  margin-top: -30px;
   text-align: left !important;
   float: left;
 }

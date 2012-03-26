@@ -63,7 +63,7 @@ div#Wrapper {
   font-size: 14px;
 }
 
-#Header .Navigation li.current {
+#Header .Navigation li.current, #Header .Navigation li.current_ancestor {
   font-weight: bold;
 }
 
@@ -78,21 +78,27 @@ div#Wrapper {
 	visibility: hidden;
 	position: absolute;
 	height: 36px;
-	top: 35px;
-	right: -450px;
-	width: 620px;
+	margin: 0 0 0 -50px;
+	top: 40px;
+	width: 1024px;
 	z-index: 25;
-	padding: 2px;
 	list-style: none;
 }
 
-#Header .Navigation li:hover ul.menu_level_1 {
+#Header .Navigation li.current ul.menu_level_1, #Header .Navigation li.current_ancestor ul.menu_level_1  {
 	visibility: visible;
 	height: 36px;
-	margin-top: 0px;
-	text-align: center;
+	text-align: left;
 }
 
+#Header .Navigation ul.menu_level_1 li a {
+	color: #00217E;
+	font-weight: normal;
+}
+
+#Header .Navigation ul.menu_level_1 li.current a {
+	font-weight: bold;
+}
 
 #Header .Navigation li:hover { background-position: bottom left; }
 #Header .Navigation li.active { background-position: bottom left; }
