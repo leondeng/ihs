@@ -1,0 +1,54 @@
+actAs:
+  Timestampable: ~
+
+Profile:
+  columns:
+    first_name: string(255)
+#    middle_name: string(255)
+    last_name: string(255)
+#    email_address: string(255)
+    title: text
+    philosophy: text
+    dob: date
+    yearStarted: date
+    beltGrade:
+      type: enum
+      values: [Kup1, Kup2, Kup3, Kup4, Kup5, Kup6, Kup7, Kup8, Kup9]
+    isInstructor:
+      type: boolean
+      default: false
+    idUser: integer
+    idSchool: integer
+    imageName: text
+    isActive:
+      type: boolean
+      default: false
+  relations:
+    User:
+      class: sfGuardUser
+      local: idUser
+      foreignType: one
+    School:
+      class: School
+      local: idSchool
+      foreign: id
+      foreignAlias: Members
+
+School:
+  columns:
+    name: text
+    country:
+      type: enum
+      values: [Australia, Finnland, USA, Sri Lanka, The Netherlands]
+    city: text
+    suburb: text
+    addr1: text
+    addr2: text
+    phone: text
+    email_address: text
+    website: text
+    leadingInstructor: text
+    classTime: text
+    isActive:
+      type: boolean
+      default: false
