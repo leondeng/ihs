@@ -54,4 +54,7 @@ all:
           label: CONTACT
           route: @static?content=contact_us
 #          requires_no_auth: true
-              
+        wikido:
+          label: WIKIKIDO
+          route: @static?content=wikikido
+        
