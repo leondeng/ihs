@@ -1,6 +1,20 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+search_instructor:
+  url: /instructors.:sf_format
+  param:
+    module: search
+    action: searchInstructor
+    sf_format: html
+
+search_dojang:
+  url: /dojang.:sf_format
+  param:
+    module: search
+    action: searchDojang
+    sf_format: html
+
 static:
   url: /:content.:sf_format
   param:

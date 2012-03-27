@@ -36,7 +36,7 @@ all:
 #              requires_no_auth: true
         instructors:
           label: INSTRUCTORS
-          route: @static?content=instructorsearch
+          route: @search_instructor
 #          requires_no_auth: true
         forum:
           label: FORUM
@@ -48,7 +48,7 @@ all:
 #          requires_no_auth: true
         dojang:
           label: DOJANG
-          route: @static?content=dojangsearch
+          route: @search_dojang
 #          requires_no_auth: true
         contact:
           label: CONTACT

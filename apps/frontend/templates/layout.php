@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div id="HeaderBand"></div>
     <div id="Wrapper">
       <div id="Header">
         <?php include_partial('global/navigation'); ?>

@@ -28,6 +28,17 @@ div#Wrapper {
 	margin-top: -8px;
 }
 
+#HeaderBand {
+	visibility: hidden;
+	height: 47px;
+	position: absolute;
+	/* z-index: -1; */
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin: 124px 0 0;
+}
+
 #Header .Navigation {
 	height: 96px;
 	overflow: hidden;
@@ -65,7 +76,7 @@ div#Wrapper {
 	font-size: 14px;
 }
 
-#Header .Navigation li.current, #Header .Navigation li.current_ancestor {
+#Header .Navigation li.current,#Header .Navigation li.current_ancestor {
 	font-weight: bold;
 }
 
@@ -91,7 +102,8 @@ div#Wrapper {
 	list-style: none;
 }
 
-#Header .Navigation li.current ul.menu_level_1, #Header .Navigation li.current_ancestor ul.menu_level_1 {
+#Header .Navigation li.current ul.menu_level_1,#Header .Navigation li.current_ancestor ul.menu_level_1
+	{
 	visibility: visible;
 	height: 36px;
 	text-align: left;
@@ -127,7 +139,8 @@ div#Wrapper {
 	background: url("../images/bg-footer.png") repeat-x scroll center bottom
 		transparent;
 	display: block;
-	font-family: "sans-serif"; font-size : 60%;
+	font-family: "sans-serif";
+	font-size: 60%;
 	color: #77766F;
 	text-align: center !important;
 	height: 25px;
