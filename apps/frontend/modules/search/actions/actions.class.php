@@ -29,7 +29,7 @@ class searchActions extends sfActions
   }
 
   public function executeSearchDojang(sfWebRequest $request) {
-    $this->form = new ProfileForm();
+    $this->form = new SearchInstructorForm();
   }
 
 }
