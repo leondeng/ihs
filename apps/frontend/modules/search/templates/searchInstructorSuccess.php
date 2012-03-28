@@ -1,9 +1,13 @@
-<?php //echo $form; ?>
+<?php echo $form->renderFormTag(url_for('search_instructor')); ?>
+<div class="box">
+	<div class="title">
+		<h2>INSTRUCTORS / BLACK BELTS</h2>
+	</div>
+	<div class="inner">
+		<?php //echo $form; ?>
+		<input type="submit" />
+	</div>
+</div>
+
 </form>
-<style type="text/css">
-#HeaderBand {
-	/* background: url("../images/bg-footer.png") repeat-x scroll center top transparent; */
-	background-color: yellow;
-	visibility: visible;
-}
-</style>
+<?php use_stylesheet('instructor'); ?>

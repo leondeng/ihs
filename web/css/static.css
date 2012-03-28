@@ -1,81 +1,81 @@
 #PageContent #ContentLeft {
-  min-height: 520px;
-  width: 820px;
-  padding: 0 0 20px 80px;
-  float: left;
-  text-align: left;
+	min-height: 520px;
+	width: 820px;
+	padding: 0 0 20px 80px;
+	float: left;
+	text-align: left;
 }
 
 #PageContent #ContentLeft .image {
-  margin: -65px 0 0;
+	margin: -65px 0 0;
 }
 
 #PageContent #ContentRight {
-  padding: 0 3px 0 12px;
-  position: relative;
-  margin-left: 840px;
-  min-height: 520px;
-  text-align: right;
+	padding: 0 3px 0 12px;
+	position: relative;
+	margin-left: 840px;
+	min-height: 520px;
+	text-align: right;
 }
 
-#PageContent #ContentRight .image{
-  padding: 50px 0 0;
+#PageContent #ContentRight .image {
+	padding: 50px 0 0;
 }
 
 #PageContent #ContentLeft .content_left {
-  width: 400px;
-  margin-top: -20px;
-  float: left;
+	width: 400px;
+	margin-top: -20px;
+	float: left;
 }
 
 #PageContent #ContentLeft .img_right {
-  padding: 50px 0 0;
-  margin-left: 400px;
-  position: relative;
+	padding: 50px 0 0;
+	margin-left: 400px;
+	position: relative;
 }
 
 #PageContent #ContentLeft .img_left {
-  width: 400px;
-  padding: 0 3px 0 0;
-  float: left;
+	width: 400px;
+	padding: 0 3px 0 0;
+	float: left;
 }
 
 #PageContent #ContentLeft .content_right {
-  padding: 20px 0 0;
-  position: relative;
-  text-align: left !important;
-  margin-right: -10px;
-  font-size: 12px;
+	padding: 20px 0 0;
+	position: relative;
+	text-align: left !important;
+	margin-right: -10px;
+	font-size: 12px;
 }
 
 #PageContent #ContentLeft .content_all {
-  margin-top: -30px;
-  text-align: left !important;
+	margin-top: -30px;
+	text-align: left !important;
 }
 
 #PageContent #ContentLeft .img_all {
-  margin-top: -10px;
-  text-align: left !important;
+	margin-top: -10px;
+	text-align: left !important;
 }
 
 #PageContent #ContentLeft .img_all .content {
-  padding-top: 30px;
+	padding-top: 30px;
 }
 
 #PageContent #ContentLeft .content_danbong {
-  width: 350px;
-  margin-top: -30px;
-  text-align: left !important;
-  float: left;
+	width: 350px;
+	margin-top: -30px; text-align : left !important;
+	float: left;
+	text-align: left !important;
 }
 
 #PageContent #ContentLeft .img_danbong {
-  padding: 80px 50px 0;
-  position: relative;
-  margin-right: -250px;
-  text-align: left;
+	padding: 80px 50px 0;
+	position: relative;
+	margin-right: -250px;
+	text-align: left;
 }
 
-.speciallink {
-	cursor: text;
+#PageContent #ContentLeft .forum {
+	margin-left: -80px;
 }

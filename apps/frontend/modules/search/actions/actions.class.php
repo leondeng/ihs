@@ -21,7 +21,11 @@ class searchActions extends sfActions
   }
 
   public function executeSearchInstructor(sfWebRequest $request) {
-    $this->form = new ProfileForm();
+    $this->form = new SearchInstructorForm();
+    
+    if($request->isMethod('post')) {
+      die(print_r($request->getParameter('search_instructor'), true));
+    }
   }
 
   public function executeSearchDojang(sfWebRequest $request) {

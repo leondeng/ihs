@@ -1,0 +1,15 @@
+Profile:
+  administrator:
+    first_name: Jemmery
+    last_name: Lin
+    title: Master
+    philosophy: Yi Tui Wei Jin
+    dob: '1995-04-01'
+    year_started: '2001-01-22'
+    belt_grade: Kup9
+    is_instructor: true
+    idUser: 1
+    idSchool: 1
+    image_name: linshuhao.png
+    is_activated: true
+    

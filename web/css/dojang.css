@@ -1,0 +1,9 @@
+#HeaderBand {
+	background: url("../images/Nav_Colour_Dojang.jpg") repeat-x scroll
+		center top transparent;
+	visibility: visible;
+}
+
+#Header .Navigation li a {
+	color: white;
+}

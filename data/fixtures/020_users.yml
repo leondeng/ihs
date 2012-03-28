@@ -1,0 +1,11 @@
+sfGuardUser:
+  administrator:
+    email_address: admin@hurstvilleiha.com.au
+    username: admin
+    algorithm: sha1
+    salt: 6ff523e29b92c07849a60cffdc6c8d58
+    password: d0539fef2cc18e4b218697e0e6eeaf350c46bbf1
+    is_active: true
+    is_super_admin: true
+    last_login: '2012-03-28 22:48:00'
+  

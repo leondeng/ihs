@@ -22,7 +22,7 @@ div#Wrapper {
 }
 
 #Header {
-	background: url("../images/bg-header.png") no-repeat scroll center top
+	background: url("../images/bg-header_fade_trans.png") no-repeat scroll center top
 		transparent;
 	height: 228px;
 	margin-top: -8px;

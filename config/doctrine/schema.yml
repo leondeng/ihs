@@ -10,17 +10,17 @@ Profile:
     title: text
     philosophy: text
     dob: date
-    yearStarted: date
-    beltGrade:
+    year_started: date
+    belt_grade:
       type: enum
       values: [Kup1, Kup2, Kup3, Kup4, Kup5, Kup6, Kup7, Kup8, Kup9]
-    isInstructor:
+    is_instructor:
       type: boolean
       default: false
     idUser: integer
     idSchool: integer
-    imageName: text
-    isActive:
+    image_name: text
+    is_activated:
       type: boolean
       default: false
   relations:
@@ -47,8 +47,8 @@ School:
     phone: text
     email_address: text
     website: text
-    leadingInstructor: text
-    classTime: text
-    isActive:
+    leading_instructor: text
+    classtime: text
+    is_activated:
       type: boolean
       default: false

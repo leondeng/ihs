@@ -14,37 +14,37 @@
  * @property text $phone
  * @property text $email_address
  * @property text $website
- * @property text $leadingInstructor
- * @property text $classTime
- * @property boolean $isActive
+ * @property text $leading_instructor
+ * @property text $classtime
+ * @property boolean $is_activated
  * @property Doctrine_Collection $Members
  * 
- * @method text                getName()              Returns the current record's "name" value
- * @method enum                getCountry()           Returns the current record's "country" value
- * @method text                getCity()              Returns the current record's "city" value
- * @method text                getSuburb()            Returns the current record's "suburb" value
- * @method text                getAddr1()             Returns the current record's "addr1" value
- * @method text                getAddr2()             Returns the current record's "addr2" value
- * @method text                getPhone()             Returns the current record's "phone" value
- * @method text                getEmailAddress()      Returns the current record's "email_address" value
- * @method text                getWebsite()           Returns the current record's "website" value
- * @method text                getLeadingInstructor() Returns the current record's "leadingInstructor" value
- * @method text                getClassTime()         Returns the current record's "classTime" value
- * @method boolean             getIsActive()          Returns the current record's "isActive" value
- * @method Doctrine_Collection getMembers()           Returns the current record's "Members" collection
- * @method School              setName()              Sets the current record's "name" value
- * @method School              setCountry()           Sets the current record's "country" value
- * @method School              setCity()              Sets the current record's "city" value
- * @method School              setSuburb()            Sets the current record's "suburb" value
- * @method School              setAddr1()             Sets the current record's "addr1" value
- * @method School              setAddr2()             Sets the current record's "addr2" value
- * @method School              setPhone()             Sets the current record's "phone" value
- * @method School              setEmailAddress()      Sets the current record's "email_address" value
- * @method School              setWebsite()           Sets the current record's "website" value
- * @method School              setLeadingInstructor() Sets the current record's "leadingInstructor" value
- * @method School              setClassTime()         Sets the current record's "classTime" value
- * @method School              setIsActive()          Sets the current record's "isActive" value
- * @method School              setMembers()           Sets the current record's "Members" collection
+ * @method text                getName()               Returns the current record's "name" value
+ * @method enum                getCountry()            Returns the current record's "country" value
+ * @method text                getCity()               Returns the current record's "city" value
+ * @method text                getSuburb()             Returns the current record's "suburb" value
+ * @method text                getAddr1()              Returns the current record's "addr1" value
+ * @method text                getAddr2()              Returns the current record's "addr2" value
+ * @method text                getPhone()              Returns the current record's "phone" value
+ * @method text                getEmailAddress()       Returns the current record's "email_address" value
+ * @method text                getWebsite()            Returns the current record's "website" value
+ * @method text                getLeadingInstructor()  Returns the current record's "leading_instructor" value
+ * @method text                getClasstime()          Returns the current record's "classtime" value
+ * @method boolean             getIsActivated()        Returns the current record's "is_activated" value
+ * @method Doctrine_Collection getMembers()            Returns the current record's "Members" collection
+ * @method School              setName()               Sets the current record's "name" value
+ * @method School              setCountry()            Sets the current record's "country" value
+ * @method School              setCity()               Sets the current record's "city" value
+ * @method School              setSuburb()             Sets the current record's "suburb" value
+ * @method School              setAddr1()              Sets the current record's "addr1" value
+ * @method School              setAddr2()              Sets the current record's "addr2" value
+ * @method School              setPhone()              Sets the current record's "phone" value
+ * @method School              setEmailAddress()       Sets the current record's "email_address" value
+ * @method School              setWebsite()            Sets the current record's "website" value
+ * @method School              setLeadingInstructor()  Sets the current record's "leading_instructor" value
+ * @method School              setClasstime()          Sets the current record's "classtime" value
+ * @method School              setIsActivated()        Sets the current record's "is_activated" value
+ * @method School              setMembers()            Sets the current record's "Members" collection
  * 
  * @package    ihs
  * @subpackage model
@@ -91,13 +91,13 @@ abstract class BaseSchool extends sfDoctrineRecord
         $this->hasColumn('website', 'text', null, array(
              'type' => 'text',
              ));
-        $this->hasColumn('leadingInstructor', 'text', null, array(
+        $this->hasColumn('leading_instructor', 'text', null, array(
              'type' => 'text',
              ));
-        $this->hasColumn('classTime', 'text', null, array(
+        $this->hasColumn('classtime', 'text', null, array(
              'type' => 'text',
              ));
-        $this->hasColumn('isActive', 'boolean', null, array(
+        $this->hasColumn('is_activated', 'boolean', null, array(
              'type' => 'boolean',
              'default' => false,
              ));
