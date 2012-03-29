@@ -12,6 +12,8 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enableAllPluginsExcept(array(
       'sfPropelPlugin'
     ));
+    
+    sfWidgetFormSchema::setDefaultFormFormatterName('ihs');
   }
 
 }

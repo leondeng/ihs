@@ -9,6 +9,7 @@ class SearchInstructorForm extends sfForm {
     $this->setWidget('byDojang', new sfWidgetFormDoctrineChoice(array(
         'label' => 'Search by Dojang',
         'model' => 'School',
+        'add_empty' => true,
     )));
     $this->setValidator('byDojang', new sfValidatorDoctrineChoice(array(
         'model' => 'School',

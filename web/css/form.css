@@ -34,7 +34,7 @@
 }
 
 #PageContent .box .inner {
-	padding-left: 150px;
+	padding: 20px 0 0 150px;
 }
 
 #PageContent .box .title_dojang {
@@ -48,14 +48,37 @@
 	padding-left: 50px;
 }
 
-#PageContent .box input[type="text"] {
+#PageContent .box input[type="text"], select {
 	border: 1px solid #142652;
 	width: 200px;
-	height: 20px;
+	height: 22px;
 }
 
-#PageContent .box label {
-	
+#PageContent .box .button_right {
+	margin: 140px 0 0 300px;
+}
+
+#PageContent .box .button {
+	background-color: #00217E;
+	border: 1px solid #FFFFFF;
+	border-radius: 10px 10px 10px 10px;
+	color: #FFFFFF;
+	height: 30px;
+	width: 90px;
+	font-family: san-serif, helvetica, verdana, arial;
+	font-size: 17px;
+	text-align : center;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.row {
+	padding-top: 20px;
+}
+
+.column {
+	width: 47%;
+	float: left;
 }
 
 #PageContent .img_left {
@@ -69,7 +92,7 @@
 }
 
 #PageContent .img_right {
-	width: 182px height:   350px;
+	width: 182px height:     350px;
 	position: absolute;
 	margin: 17px 0 0 750px;
 	display: block;
