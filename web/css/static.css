@@ -64,7 +64,8 @@
 
 #PageContent #ContentLeft .content_danbong {
 	width: 350px;
-	margin-top: -30px; text-align : left !important;
+	margin-top: -30px;
+	text-align: left !important;
 	float: left;
 	text-align: left !important;
 }

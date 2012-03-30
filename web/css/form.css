@@ -1,8 +1,9 @@
-#PageContent .box {
+form .box {
 	background-attachment: scroll;
 	background-clip: border-box;
 	background-color: transparent;
 	background-image: -moz-linear-gradient(center top, #D5E8F4, #5DA5D4);
+	background: -webkit-gradient(linear, center top, center bottom, from(#D5E8F4), to(#5DA5D4));
 	background-origin: padding-box;
 	background-position: 0 0;
 	background-repeat: repeat;
@@ -18,47 +19,47 @@
 	z-index: -100;
 }
 
-#PageContent .dojang {
+form .dojang {
 	margin-top: 80px !important;
 }
 
-#PageContent .box {
+form .box {
 	color: #00217E;
 }
 
-#PageContent .box .title {
+form .box .title {
 	padding-left: 150px;
 	margin: -10px -5px 0 -5px;
 	border-bottom: 1px solid #142652;
 	height: 40px;
 }
 
-#PageContent .box .inner {
+form .box .inner {
 	padding: 20px 0 0 150px;
 }
 
-#PageContent .box .title_dojang {
+form .box .title_dojang {
 	padding-left: 50px;
 	margin: -10px -5px 0 -5px;
 	border-bottom: 1px solid #142652;
 	height: 40px;
 }
 
-#PageContent .box .inner_dojang {
+form .box .inner_dojang {
 	padding-left: 50px;
 }
 
-#PageContent .box input[type="text"], select {
+form .box input[type="text"], select {
 	border: 1px solid #142652;
 	width: 200px;
 	height: 22px;
 }
 
-#PageContent .box .button_right {
+form .box .button_right {
 	margin: 140px 0 0 300px;
 }
 
-#PageContent .box .button {
+form .box .button {
 	background-color: #00217E;
 	border: 1px solid #FFFFFF;
 	border-radius: 10px 10px 10px 10px;
@@ -81,7 +82,7 @@
 	float: left;
 }
 
-#PageContent .img_left {
+form .img_left {
 	width: 173px;
 	height: 420px;
 	position: absolute;
@@ -91,7 +92,7 @@
 	display: block;
 }
 
-#PageContent .img_right {
+form .img_right {
 	width: 182px height:     350px;
 	position: absolute;
 	margin: 17px 0 0 750px;
