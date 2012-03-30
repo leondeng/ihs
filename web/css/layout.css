@@ -49,7 +49,11 @@ div#Wrapper {
 	font-family: san-serif, helvetica, verdana, arial;
 }
 
-#Header .Navigation ul.menu {
+#Header .NavigationRight {
+	float: right;
+}
+
+#Header ul.menu {
 	float: right;
 	height: 25px;
 	line-height: 25px;
@@ -60,13 +64,13 @@ div#Wrapper {
 	text-align: center;
 }
 
-#Header .Navigation li {
+#Header li {
 	float: left;
 	margin-left: 9px;
 	position: relative;
 }
 
-#Header .Navigation li a {
+#Header li a {
 	float: left;
 	display: block;
 	height: 33px;
@@ -76,22 +80,18 @@ div#Wrapper {
 	font-size: 14px;
 }
 
-#Header .Navigation li.current,#Header .Navigation li.current_ancestor {
+#Header li.current,#Header li.current_ancestor {
 	font-weight: bold;
 }
 
-#Header .Navigation li.last {
-	padding-left: 260px;
-}
-
-#Header .Navigation li a span {
+#Header li a span {
 	float: left;
 	display: inline;
 	width: 100%;
 	height: 33px;
 }
 
-#Header .Navigation ul.menu_level_1 {
+#Header ul.menu_level_1 {
 	visibility: hidden;
 	position: absolute;
 	height: 36px;
@@ -102,31 +102,27 @@ div#Wrapper {
 	list-style: none;
 }
 
-#Header .Navigation li.current ul.menu_level_1,#Header .Navigation li.current_ancestor ul.menu_level_1
+#Header li.current ul.menu_level_1,#Header li.current_ancestor ul.menu_level_1
 	{
 	visibility: visible;
 	height: 36px;
 	text-align: left;
 }
 
-#Header .Navigation ul.menu_level_1 li a {
+#Header ul.menu_level_1 li a {
 	color: #00217E;
 	font-weight: normal;
 }
 
-#Header .Navigation ul.menu_level_1 li.current a {
+#Header ul.menu_level_1 li.current a {
 	font-weight: bold;
 }
 
-#Header .Navigation ul.menu_level_1 li.last {
-	padding-left: 0px;
-}
-
-#Header .Navigation li:hover {
+#Header li:hover {
 	background-position: bottom left;
 }
 
-#Header .Navigation li.active {
+#Header li.active {
 	background-position: bottom left;
 }
 

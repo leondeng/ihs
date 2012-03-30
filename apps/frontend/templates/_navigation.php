@@ -5,3 +5,10 @@
 	echo $menu->render();
 	?>
 </div>
+<div class="Navigation NavigationRight">
+	<?php
+	$menu = new ioMenu();
+	$menu->addChild('WIKIKIDO', '@static?content=wikikido');
+	echo $menu->render();
+	?>
+</div>
