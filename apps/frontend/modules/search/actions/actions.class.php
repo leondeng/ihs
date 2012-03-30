@@ -24,7 +24,11 @@ class searchActions extends sfActions
     $this->form = new SearchInstructorForm();
     
     if($request->isMethod('post')) {
-      die(print_r($request->getParameter('search_instructor'), true));
+      //die(print_r($request->getParameter('search_instructor'), true));
+      $params = $request->getParameter('search_instructor');
+      $query = ProfileTable::getInstance()->createQuery('p');
+      if(!is_empty($params['byName'])) $query->andWhere('p.firstName = ? OR p.lastName = ?', array($params['byName'], $params['byName']));
+      if(!is_) 
     }
   }
 
