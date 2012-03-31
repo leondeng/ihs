@@ -10,30 +10,28 @@
  */
 class searchActions extends sfActions
 {
-  /**
-   * Executes index action
-   *
-   * @param sfRequest $request A request object
-   */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->forward('default', 'module');
+  public function executeInstructor(sfWebRequest $request) {
+    $this->form = new SearchInstructorForm();
+    
+    if($request->isMethod('post')) $this->forward('search', 'searchInstructor');
   }
 
   public function executeSearchInstructor(sfWebRequest $request) {
-    $this->form = new SearchInstructorForm();
+    $this->instructors = ProfileTable::getInstance()
+      ->createQuery('p')
+      ->execute();
+  }
+
+  public function executeDojang(sfWebRequest $request) {
+    $this->form = new SearchDojangForm();
     
-    if($request->isMethod('post')) {
-      die(print_r($request->getParameter('search_instructor'), true));
-      /* $params = $request->getParameter('search_instructor');
-      $query = ProfileTable::getInstance()->createQuery('p');
-      if(!is_empty($params['byName'])) $query->andWhere('p.firstName = ? OR p.lastName = ?', array($params['byName'], $params['byName']));
-      if(!is_)  */
-    }
+    if($request->isMethod('post')) $this->forward('search', 'searchDojang');
   }
 
   public function executeSearchDojang(sfWebRequest $request) {
-    $this->form = new SearchDojangForm();
+    $this->dojangs = SchoolTable::getInstance()
+      ->createQuery('s')
+      ->execute();
   }
 
 }

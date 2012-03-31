@@ -3,8 +3,10 @@ form .box {
 	background-clip: border-box;
 	background-color: transparent;
 	background-image: -moz-linear-gradient(center top, #D5E8F4, #5DA5D4);
-	background: -webkit-gradient(linear, center top, center bottom, from(#D5E8F4), to(#5DA5D4));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5E8F4', endColorstr='#5DA5D4');
+	background: -webkit-gradient(linear, center top, center bottom, from(#D5E8F4),
+		to(#5DA5D4) );
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5E8F4',
+		endColorstr='#5DA5D4' );
 	background-origin: padding-box;
 	background-position: 0 0;
 	background-repeat: repeat;
@@ -47,10 +49,10 @@ form .box .title_dojang {
 }
 
 form .box .inner_dojang {
-	padding-left: 50px;
+	padding: 10px 0 0 50px;
 }
 
-form .box input[type="text"], select {
+form .box input[type="text"],select {
 	border: 1px solid #142652;
 	width: 200px;
 	height: 22px;
@@ -58,6 +60,10 @@ form .box input[type="text"], select {
 
 form .box .button_right {
 	margin: 140px 0 0 300px;
+}
+
+form .box .button_left {
+	margin: 160px 0 0 50px;
 }
 
 form .box .button {
@@ -69,7 +75,7 @@ form .box .button {
 	width: 90px;
 	font-family: san-serif, helvetica, verdana, arial;
 	font-size: 17px;
-	text-align : center;
+	text-align: center;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 	text-align: center;
 }
@@ -94,7 +100,7 @@ form .img_left {
 }
 
 form .img_right {
-	width: 182px height:     350px;
+	width: 182px height:      350px;
 	position: absolute;
 	margin: 17px 0 0 750px;
 	display: block;

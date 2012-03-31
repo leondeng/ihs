@@ -1,10 +1,10 @@
-#PageContent #ContentLeft {
+/* #PageContent #ContentLeft {
 	min-height: 520px;
 	width: 820px;
 	padding: 0 0 20px 80px;
 	float: left;
 	text-align: left;
-}
+} */
 
 #PageContent #ContentLeft .image {
 	margin: -65px 0 0;

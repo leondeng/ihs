@@ -10,6 +10,23 @@ Profile:
     is_instructor: true
     idUser: 1
     idSchool: 1
-    image_name: linshuhao.png
+    image_name: linshuhao.jpg
+    is_activated: true
+  jimmytrith:
+    first_name: Jimmy
+    last_name: Trith
+    title: Sir
+    philosophy: |
+      I believe in Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolor e magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+    dob: '1977-04-12'
+    year_started: '1998-01-01'
+    belt_grade: Kup4
+    is_instructor: true
+    idUser: 2
+    idSchool: 1
+    image_name: jimmytrith.png
     is_activated: true
     

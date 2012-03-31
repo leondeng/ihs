@@ -5,10 +5,17 @@ search_instructor:
   url: /instructors.:sf_format
   param:
     module: search
-    action: searchInstructor
+    action: instructor
+    sf_format: html
+    
+search_dojang:
+  url: /dojang.:sf_format
+  param:
+    module: search
+    action: dojang
     sf_format: html
 
-search_dojang:
+dojang:
   url: /dojang.:sf_format
   param:
     module: search

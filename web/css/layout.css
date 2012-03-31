@@ -131,6 +131,14 @@ div#Wrapper {
 	margin: 8px 0 10px 0;
 }
 
+#PageContent #ContentLeft {
+	min-height: 520px;
+	width: 820px;
+	padding: 0 0 20px 80px;
+	float: left;
+	text-align: left;
+}
+
 #Footer {
 	background: url("../images/bg-footer.png") repeat-x scroll center bottom
 		transparent;
