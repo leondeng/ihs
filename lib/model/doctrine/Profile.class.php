@@ -12,4 +12,8 @@
  */
 class Profile extends BaseProfile
 {
+  public function getFullName() {
+    return sprintf('%s %s %s', $this->getTitle(), $this->getFirstName(), $this->getLastName());
+  }
+
 }

@@ -1,3 +1,69 @@
 .title {
 	border-bottom: 1px solid #00217E;
 }
+
+.message {
+	float: left;
+	padding: 20px 20px 20px 0;
+	font-family: san-serif, helvetica, verdana, arial;
+	color: #00217E;
+	font-size: 22px;
+}
+
+.searchagain {
+	float: left;
+	margin-top: 20px;
+}
+
+.button {
+	background-color: #00217E;
+	border: 1px solid #00217E;
+	border-radius: 10px 10px 10px 10px;
+	color: #FFFFFF;
+	height: 25px;
+	width: 130px;
+	font-family: san-serif, helvetica, verdana, arial;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table table {
+	border-top: 1px solid #00217E;
+	width: 100%;
+	cellpadding: 2;
+	clear: both;
+}
+
+.table img {
+	border: 1px solid #00217E;
+}
+
+.table table tbody tr {
+	border-bottom: 1px solid #00217E;
+}
+
+.table table tbody td {
+	align: left;
+	border-bottom: 1px solid #00217E;
+	padding: 3px 0 3px 0;
+}
+
+.table table tbody td .label {
+	font: 14px san-serif, helvetica, verdana, arial;
+	font-weight: bolder;
+	color: #817FAA;
+}
+
+.table table tbody td .value {
+	font: 18px san-serif, helvetica, verdana, arial;
+	color: #00217E;
+}
+
+.table table tbody td.rightborder {
+	border-right: 1px solid #00217E;
+	padding-left: 20px;
+}
