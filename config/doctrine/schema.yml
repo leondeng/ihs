@@ -2,6 +2,11 @@ actAs:
   Timestampable: ~
 
 Profile:
+  actAs:
+    Sluggable:
+      fields: [first_name, last_name]
+      unique: false
+      canUpdate: true
   columns:
     first_name: string(255)
 #    middle_name: string(255)
@@ -35,6 +40,11 @@ Profile:
       foreignAlias: Members
 
 School:
+  actAs:
+    Sluggable:
+      fields: [city, name]
+      unique: false
+      canUpdate: true
   columns:
     name: text
     country:

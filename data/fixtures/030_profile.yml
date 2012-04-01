@@ -12,6 +12,7 @@ Profile:
     idSchool: 1
     image_name: linshuhao.jpg
     is_activated: true
+    slug: jemmery-lin
   jimmytrith:
     first_name: Jimmy
     last_name: Trith
@@ -21,7 +22,7 @@ Profile:
       sed do eiusmod tempor incididunt ut labore et dolor e magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
       ut aliquip ex ea commodo consequat.
-    dob: '1977-04-12'
+    dob: '1977-04-14'
     year_started: '1998-01-01'
     belt_grade: Kup4
     is_instructor: true
@@ -29,4 +30,5 @@ Profile:
     idSchool: 1
     image_name: jimmytrith.png
     is_activated: true
+    slug: jimmy-trith
     

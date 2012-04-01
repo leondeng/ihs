@@ -7,6 +7,18 @@ search_instructor:
     module: search
     action: instructor
     sf_format: html
+
+instructor:
+#  class: sfDoctrineRoute
+#  options:
+#    model: Profile
+#    type: object
+#    method_for_query: getProfileFromRoute
+  url: /blackbelt/:slug.:sf_format
+  param:
+    module: search
+    action: viewInstructor
+    sf_format: html
     
 search_dojang:
   url: /dojang.:sf_format
@@ -16,10 +28,14 @@ search_dojang:
     sf_format: html
 
 dojang:
-  url: /dojang.:sf_format
+#  class: sfDoctrineRoute
+#  options:
+#    model: School
+#    type: object
+  url: /dojang/:slug.:sf_format
   param:
     module: search
-    action: searchDojang
+    action: viewDojang
     sf_format: html
 
 static:

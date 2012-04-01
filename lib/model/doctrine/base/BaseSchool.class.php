@@ -110,7 +110,15 @@ abstract class BaseSchool extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'idSchool'));
 
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'fields' => 
+             array(
+              0 => 'city',
+              1 => 'name',
+             ),
+             'unique' => false,
+             'canUpdate' => true,
+             ));
+        $this->actAs($sluggable0);
     }
 }

@@ -7,9 +7,9 @@
 			<?php echo sprintf('Your Search Results (%d)', count($dojangs))?>
 		</div>
 		<div class="searchagain">
-			<input type="button" name="Submit" value="SEARCH AGAIN"
-				class="button"
-				onclick="location.href='<?php echo url_for('search/dojang'); ?>'" />
+			<a href="<?php echo url_for('search/dojang'); ?>"><input
+				type="button" name="Submit" value="SEARCH AGAIN" class="button" />
+			</a>
 		</div>
 	</div>
 	<div class="table">
@@ -18,14 +18,12 @@
 				<?php foreach ($dojangs as $dojang) : ?>
 				<tr>
 					<td class="leftborder"><a href=""><span class="label">NAME</span><br>
-							<span class="value"><?php echo $dojang->getName(); ?> </span>
-					</a></td>
+							<span class="value"><?php echo $dojang->getName(); ?> </span> </a>
+					</td>
 					<td width="25%"><a href=""><span class="label">CITY</span><br> <span
-							class="value"><?php echo $dojang->getCity(); ?> </span> </a>
-					</td>
+							class="value"><?php echo $dojang->getCity(); ?> </span> </a></td>
 					<td width="25%"><span class="label">COUNTRY</span><br> <span
-						class="value"><?php echo $dojang->getCountry(); ?> </span>
-					</td>
+						class="value"><?php echo $dojang->getCountry(); ?> </span></td>
 					<td width="25%"><span class="label">LEADING INSTRUCTOR</span><br> <span
 						class="value"><?php echo $dojang->getLeadingInstructor(); ?> </span>
 					</td>

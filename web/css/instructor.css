@@ -3,3 +3,43 @@
 		center top transparent;
 	visibility: visible;
 }
+
+#Portrait {
+	margin-left: -60px;
+	float: left;
+}
+
+#Profile {
+	width: 400px;
+	float: left;
+	padding: 30px 0 0 10px;
+	color: #00217E;
+}
+
+#Profile div {
+	padding: 5px 0 5px;
+}
+#Profile .name {
+	font-size: 50px;
+	font-weight: bolder;
+	padding: 0 0 20px;
+}
+
+#Profile .philosophy {
+	font-size: 18px;
+	font-style: italic;
+	padding: 0 0 10px;
+	text-align: justify;
+}
+
+#Profile .label {
+	font-size: 14px;
+	font-weight: bolder;
+	color: #817FAA;
+}
+
+#Profile .value {
+	font-size: 26px;
+	font-weight: bolder;
+	color: #00217E;
+}

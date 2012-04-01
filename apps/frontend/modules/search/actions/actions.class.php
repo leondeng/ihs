@@ -42,6 +42,10 @@ class searchActions extends sfActions
     $this->instructors = $query->execute();
   }
 
+  public function executeViewInstructor(sfWebRequest $request) {
+    $this->instructor = ProfileTable::getInstance()->findOneBySlug($request->getParameter('slug'));
+  }
+
   public function executeDojang(sfWebRequest $request) {
     $this->form = new SearchDojangForm();
     
@@ -58,6 +62,10 @@ class searchActions extends sfActions
     if(!empty($params['byCountry'])) $query->andWhere('sh.country = ?', $params['byCountry']);
     
     $this->dojangs = $query->execute();
+  }
+
+  public function executeViewDojang(sfWebRequest $request) {
+  
   }
 
 }

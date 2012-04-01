@@ -28,8 +28,7 @@ abstract class BaseSchoolForm extends BaseFormDoctrine
       'leading_instructor' => new sfWidgetFormInputText(),
       'classtime'          => new sfWidgetFormInputText(),
       'is_activated'       => new sfWidgetFormInputCheckbox(),
-      'created_at'         => new sfWidgetFormDateTime(),
-      'updated_at'         => new sfWidgetFormDateTime(),
+      'slug'               => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -46,8 +45,7 @@ abstract class BaseSchoolForm extends BaseFormDoctrine
       'leading_instructor' => new sfValidatorPass(array('required' => false)),
       'classtime'          => new sfValidatorPass(array('required' => false)),
       'is_activated'       => new sfValidatorBoolean(array('required' => false)),
-      'created_at'         => new sfValidatorDateTime(),
-      'updated_at'         => new sfValidatorDateTime(),
+      'slug'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('school[%s]');

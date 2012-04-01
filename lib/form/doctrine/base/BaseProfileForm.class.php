@@ -28,8 +28,7 @@ abstract class BaseProfileForm extends BaseFormDoctrine
       'idSchool'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('School'), 'add_empty' => true)),
       'image_name'    => new sfWidgetFormInputText(),
       'is_activated'  => new sfWidgetFormInputCheckbox(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'slug'          => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -46,8 +45,7 @@ abstract class BaseProfileForm extends BaseFormDoctrine
       'idSchool'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('School'), 'required' => false)),
       'image_name'    => new sfValidatorPass(array('required' => false)),
       'is_activated'  => new sfValidatorBoolean(array('required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('profile[%s]');
