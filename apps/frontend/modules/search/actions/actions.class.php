@@ -17,9 +17,29 @@ class searchActions extends sfActions
   }
 
   public function executeSearchInstructor(sfWebRequest $request) {
-    $this->instructors = ProfileTable::getInstance()
-      ->createQuery('p')
-      ->execute();
+    $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
+    
+    $params = $request->getParameter('search_instructor', array());
+
+    if(!empty($params['byName'])) {
+      $names = explode(' ', $params['byName']);
+      if(isset($names[1])) {
+        $query->andWhere('p.first_name = ? AND p.last_name = ?', array($names[0], $names[1]));
+      } else {
+        $query->andWhere('p.first_name = ? OR p.last_name = ?', array($names[0], $names[0]));
+      }
+    }
+    
+    if(!empty($params['byDojang']) || !empty($params['byCountry'])) {
+      $query->innerJoin('p.School sh');
+      if(!empty($params['byDojang'])) $query->andWhere('sh.id = ?', $params['byDojang']);
+      if(!empty($params['byCountry'])) $query->andWhere('sh.country = ?', $params['byCountry']);
+    }
+    
+    if(!empty($params['byBeltGrade'])) $query->andWhere('p.belt_grade = ?', $params['byBeltGrade']);
+    if(!empty($params['instructorOnly'])) $query->andWhere('p.is_instructor = 1');
+     
+    $this->instructors = $query->execute();
   }
 
   public function executeDojang(sfWebRequest $request) {
@@ -29,9 +49,15 @@ class searchActions extends sfActions
   }
 
   public function executeSearchDojang(sfWebRequest $request) {
-    $this->dojangs = SchoolTable::getInstance()
-      ->createQuery('s')
-      ->execute();
+    $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_activated = 1');
+    $params = $request->getParameter('search_dojang', array());
+    
+    if(!empty($params['byName'])) $query->andWhere('sh.name = ?', $params['byName']);
+    if(!empty($params['byInstructor'])) $query->andWhere('sh.leading_instructor = ?', $params['byInstructor']);
+    if(!empty($params['byCity'])) $query->andWhere('sh.city = ?', $params['byCity']);
+    if(!empty($params['byCountry'])) $query->andWhere('sh.country = ?', $params['byCountry']);
+    
+    $this->dojangs = $query->execute();
   }
 
 }

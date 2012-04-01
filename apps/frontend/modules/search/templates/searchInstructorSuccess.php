@@ -17,19 +17,21 @@
 			<tbody>
 				<?php foreach ($instructors as $instructor) : ?>
 				<tr>
-					<td width="5%"><a href=""><img
+					<td class="norightborder" width="5%"><a href=""><img
 							src="uploads/<?php echo $instructor->getImageName(); ?>"
-							width="52" height="70" /> </a>
+							width="52" height="70" />
+					</a></td>
+					<td><a href=""><span class="label">NAME</span><br>
+							<span class="value"><?php echo $instructor->getFullName(); ?> </span>
+					</a>
 					</td>
-					<td class="rightborder"><a href=""><span class="label">NAME</span><br>
-							<span class="value"><?php echo $instructor->getFullName(); ?>
-						</span> </a></td>
-					<td class="rightborder" width="30%"><span class="label">COUNTRY</span><br>
+					<td width="30%"><span class="label">COUNTRY</span><br>
 						<span class="value"><?php echo $instructor->getSchool()->getCountry(); ?>
-					</span></td>
-					<td class="rightborder" width="30%"><span class="label">DOJANG</span><br>
-						<span class="value"><?php echo $instructor->getSchool(); ?>
-					</span></td>
+					</span>
+					</td>
+					<td width="30%"><span class="label">DOJANG</span><br>
+						<span class="value"><?php echo $instructor->getSchool(); ?> </span>
+					</td>
 				</tr>
 				<?php endforeach;?>
 			</tbody>

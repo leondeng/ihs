@@ -48,8 +48,9 @@
 
 .table table tbody td {
 	align: left;
+	border-right: 1px solid #00217E;
 	border-bottom: 1px solid #00217E;
-	padding: 3px 0 3px 0;
+	padding: 3px 0 3px 20px;
 }
 
 .table table tbody td .label {
@@ -63,7 +64,11 @@
 	color: #00217E;
 }
 
-.table table tbody td.rightborder {
-	border-right: 1px solid #00217E;
-	padding-left: 20px;
+.table table tbody td.norightborder {
+	border-right: 0px;
+	padding-left: 0;
+}
+
+.table table tbody td.leftborder {
+	border-left: 1px solid #00217E;
 }
