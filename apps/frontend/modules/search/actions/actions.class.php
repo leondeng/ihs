@@ -65,7 +65,7 @@ class searchActions extends sfActions
   }
 
   public function executeViewDojang(sfWebRequest $request) {
-  
+    $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
   }
 
 }

@@ -7,3 +7,55 @@
 #Header .Navigation li a {
 	color: white;
 }
+
+#Map {
+	float: left;
+}
+
+#DojangDetails {
+	float: left;
+	margin-top: -30px;
+	padding: 30px 0 0 10px;
+	color: #00217E;
+}
+
+#DojangDetails div {
+	padding: 5px 0 10px;
+}
+
+#DojangDetails .name {
+	font-size: 50px;
+	font-weight: bolder;
+	padding: 0 0 20px;
+}
+
+#DojangDetails .address {
+	padding: 10px 0 10px;
+	min-height: 60px;
+}
+
+#DojangDetails .classtime {
+	width: 300px;
+}
+
+#DojangDetails .label {
+	font-size: 14px;
+	font-weight: bolder;
+	color: #817FAA;
+}
+
+#DojangDetails .value {
+	font-size: 22px;
+	font-weight: bolder;
+	color: #00217E;
+}
+
+#DojangDetails .leading .value {
+	font-size: 26px;
+	text-decoration: underline;
+}
+
+#DojangDetails xmp {
+	font-family:  san-serif, helvetica, verdana, arial;
+	font-size: 14px;
+}
