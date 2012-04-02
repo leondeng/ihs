@@ -12,4 +12,16 @@
  */
 class School extends BaseSchool
 {
+  /* public function getLeadingInstructorObject() {
+    $instructorName = $this->getLeadingInstructor();
+    if(empty($instructorName)) return false;
+
+    $slug = Doctrine_Inflector::urlize($instructorName);
+    $instructor = ProfileTable::getInstance()->findOneBySlug($slug);
+
+    if(!empty($instructor)) return $instructor;
+
+    return false;
+  } */
+
 }
