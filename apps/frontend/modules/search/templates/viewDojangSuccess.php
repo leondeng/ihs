@@ -1,3 +1,4 @@
+<?php use_helper(/* 'Javascript', */'GMap') ?>
 <?php $instructorSlug = Doctrine_Inflector::urlize($dojang->getLeadingInstructor());?>
 <div id="ContentLeft">
 	<div id="DojangTitle">
@@ -36,10 +37,12 @@
 		</div>
 	</div>
 	<div id="Map">
-		<img
+		<!-- <img
 			src="http://maps.googleapis.com/maps/api/staticmap?center=20+Forest+Road,Hurstville&zoom=15&size=512x512&maptype=roadmap
 &sensor=false"
-			width="320" height="320" />
+			width="320" height="320" /> -->
+        <?php include_map($gMap, array('width'=>'320px','height'=>'320px')); ?>
 	</div>
 </div>
 <?php use_stylesheet('dojang'); ?>
+<?php include_map_javascript($gMap); ?>

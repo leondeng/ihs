@@ -4,6 +4,11 @@
 # default values
 #all:
 all:
+  google_maps_api:
+    keys:
+      www.dimitristangl.com: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+      ihs.localhost: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+      default: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
   menus:
     admin_menu:
       name: Navigation

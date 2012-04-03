@@ -66,6 +66,17 @@ class searchActions extends sfActions
 
   public function executeViewDojang(sfWebRequest $request) {
     $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
+    
+    $this->gMap = new GMap();
+
+    $address = sprintf('%s, %s', $this->dojang->getAddr1(), $this->dojang->getAddr2());
+    $geocoded_address = $this->gMap->geocode($address);
+
+    $gMapMarker = new GMapMarker($geocoded_address->getLat(), $geocoded_address->getLng());
+    $gMapMarker->addHtmlInfoWindow(new GMapInfoWindow(sprintf('<b>%s:</b><br />%s', $this->dojang->getName(), $address)));
+    $this->gMap->addMarker($gMapMarker);
+
+    $this->gMap->centerAndZoomOnMarkers(0.3);
   }
 
 }
