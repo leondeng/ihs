@@ -21,13 +21,15 @@
 		</div>
 		<div class="contactdetails">
 			<span class="label">Phone: </span><span class="value"><?php echo $dojang->getPhone(); ?>
-			</span><br> <span class="label">Website: </span><span class="value"><?php echo $dojang->getWebsite(); ?>
-			</span><br> <span class="label">Email: </span><span class="value"><?php echo $dojang->getEmailAddress(); ?>
-			</span>
+			</span><br> <span class="label">Website: </span><a
+				href="http://<?php echo $dojang->getWebsite(); ?>"><span
+				class="value"><?php echo $dojang->getWebsite(); ?> </span> </a><br>
+			<span class="label">Email: </span><a
+				href="mailto:<?php echo $dojang->getEmailAddress(); ?>"><span
+				class="value"><?php echo $dojang->getEmailAddress(); ?> </span> </a>
 		</div>
 		<div class="classtime">
-			<span class="value"><xmp>Class Times:
-<?php echo $dojang->getClassTime(); ?></xmp>
+			<span class="value"><xmp>Class Times: <?php echo $dojang->getClassTime(); ?></xmp>
 			</span>
 		</div>
 	</div>
