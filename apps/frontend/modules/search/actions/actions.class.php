@@ -13,10 +13,13 @@ class searchActions extends sfActions
   public function executeInstructor(sfWebRequest $request) {
     $this->form = new SearchInstructorForm();
     
-    if($request->isMethod('post')) $this->forward('search', 'searchInstructor');
+//     if($request->isMethod('post')) $this->forward('search', 'searchInstructor');
   }
 
   public function executeSearchInstructor(sfWebRequest $request) {
+    
+    $this->pager = new sfDoctrinePager('Profile', '20');
+    
     $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
     
     $params = $request->getParameter('search_instructor', array());
@@ -39,7 +42,10 @@ class searchActions extends sfActions
     if(!empty($params['byBeltGrade'])) $query->andWhere('p.belt_grade = ?', $params['byBeltGrade']);
     if(!empty($params['instructorOnly'])) $query->andWhere('p.is_instructor = 1');
      
-    $this->instructors = $query->execute();
+//     $this->instructors = $query->execute();
+    $this->pager->setQuery($query);
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeViewInstructor(sfWebRequest $request) {
@@ -49,7 +55,7 @@ class searchActions extends sfActions
   public function executeDojang(sfWebRequest $request) {
     $this->form = new SearchDojangForm();
     
-    if($request->isMethod('post')) $this->forward('search', 'searchDojang');
+//     if($request->isMethod('post')) $this->forward('search', 'searchDojang');
   }
 
   public function executeSearchDojang(sfWebRequest $request) {

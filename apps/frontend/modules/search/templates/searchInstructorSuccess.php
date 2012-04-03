@@ -4,7 +4,7 @@
 	</div>
 	<div>
 		<div class="message">
-			<?php echo sprintf('Your Search Results (%d)', count($instructors))?>
+			<?php echo sprintf('Your Search Results (%d)', count($pager->getResults()))?>
 		</div>
 		<div class="searchagain">
 			<a href="<?php echo url_for('search/instructor'); ?>"><input
@@ -14,7 +14,7 @@
 	<div class="table">
 		<table width="100%">
 			<tbody>
-				<?php foreach ($instructors as $instructor) : ?>
+				<?php foreach ($pager->getResults() as $instructor) : ?>
 				<tr>
 					<td class="norightborder" width="5%"><a
 						href="<?php echo url_for('@instructor?slug='.$instructor->getSlug()); ?>"><img
@@ -32,10 +32,33 @@
 					<td width="30%"><a
 						href="<?php echo url_for('@dojang?slug='.$instructor->getSchool()->getSlug()); ?>"><span
 							class="label">DOJANG</span><br> <span class="value"><?php echo $instructor->getSchool(); ?>
-						</span>
-					</a></td>
+						</span> </a></td>
 				</tr>
-				<?php endforeach;?>
+				<tr>
+					<td colspan="4"><?php endforeach;?>
+
+						<div
+							style="width: 20px; float: left; margin-top: 3px; margin-right: 10px">
+							<?php echo link_to('first', 'search/searchInstructor?page='.$pager->getFirstPage()) ?>
+						</div>
+
+						<div>
+							<?php if ($pager->haveToPaginate()): ?>
+							<?php $links = $pager->getLinks(); foreach ($links as $page): ?>
+							<div
+								style="padding: 5px 5px 5px 5px; border: #000000 thin solid; float: left; width: 10px; margin-left: 3px; font-size: 10px">
+								<?php echo ($page == $pager->getPage()) ? $page : link_to($page, 'search/searchInstructor?page='.$page) ?>
+							</div>
+							<?php endforeach ?>
+							<?php endif ?>
+						</div>
+
+						<div
+							style="width: 20px; float: left; margin-left: 10px; margin-top: 3px;">
+							<?php echo link_to('last', 'search/searchInstructor?page='.$pager->getLastPage()) ?>
+						</div>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

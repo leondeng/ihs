@@ -1,4 +1,4 @@
-<?php echo $form->renderFormTag(url_for('search/instructor')); ?>
+<?php echo $form->renderFormTag(url_for('@instructors_list')); ?>
 <div class="box">
 	<div class="title">
 		<h2>INSTRUCTORS / BLACK BELTS</h2>
