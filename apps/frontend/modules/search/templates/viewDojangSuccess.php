@@ -1,12 +1,14 @@
 <?php $instructorSlug = Doctrine_Inflector::urlize($dojang->getLeadingInstructor());?>
 <div id="ContentLeft">
-	<div id="DojangDetails">
+	<div id="DojangTitle">
 		<h2>
 			<?php echo $dojang->getCountry(); ?>
 		</h2>
 		<div class="name">
 			<?php echo strtoupper(sprintf('%s - %s', $dojang->getCity(), $dojang->getName())); ?>
 		</div>
+	</div>
+	<div id="DojangDetails">
 		<div class="leading">
 			<span class="label">Leading Instructor:</span><br> <span
 				class="value"><a
@@ -34,7 +36,10 @@
 		</div>
 	</div>
 	<div id="Map">
-		<img src="" width="300" height="300" />
+		<img
+			src="http://maps.googleapis.com/maps/api/staticmap?center=20+Forest+Road,Hurstville&zoom=15&size=512x512&maptype=roadmap
+&sensor=false"
+			width="320" height="320" />
 	</div>
 </div>
 <?php use_stylesheet('dojang'); ?>
