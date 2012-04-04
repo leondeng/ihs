@@ -29,6 +29,13 @@ search_dojang:
     action: dojang
     sf_format: html
 
+dojang_list:
+  url: /dojang_result.:sf_format
+  param:
+    module: search
+    action: searchDojang
+    sf_format: html
+
 dojang:
   url: /dojang/:slug.:sf_format
   param:

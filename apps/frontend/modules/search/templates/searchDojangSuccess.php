@@ -4,7 +4,7 @@
 	</div>
 	<div>
 		<div class="message">
-			<?php echo sprintf('Your Search Results (%d)', count($dojangs))?>
+			<?php echo sprintf('Your Search Results (%d)', count($pager->getResults()))?>
 		</div>
 		<div class="searchagain">
 			<a href="<?php echo url_for('search/dojang'); ?>"><input
@@ -14,7 +14,7 @@
 	<div class="table">
 		<table width="100%">
 			<tbody>
-				<?php foreach ($dojangs as $dojang) : ?>
+				<?php foreach ($pager->getResults() as $dojang) : ?>
 				<?php $instructorSlug = Doctrine_Inflector::urlize($dojang->getLeadingInstructor()); ?>
 				<tr>
 					<td class="leftborder"><a
@@ -33,6 +33,13 @@
 					</td>
 				</tr>
 				<?php endforeach;?>
+				<?php if ($pager->haveToPaginate()): ?>
+				<tr>
+					<td colspan="4" class="pagination"><?php include_partial('paginator', array('route' => 'dojang_list', 'pager' => $pager)); ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+
 			</tbody>
 		</table>
 	</div>

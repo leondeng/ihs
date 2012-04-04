@@ -1,4 +1,4 @@
-<?php echo $form->renderFormTag(url_for('search/dojang')); ?>
+<?php echo $form->renderFormTag(url_for('@dojang_list')); ?>
 <div class="box dojang">
 	<div class="title_dojang">
 		<h2>DOJANG</h2>
