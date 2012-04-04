@@ -16,9 +16,9 @@ class searchActions extends sfActions
 
   public function executeSearchInstructor(sfWebRequest $request) {
     $this->pager = new sfDoctrinePager('Profile', '20');
-    
+
     $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
-    
+
     $params = $request->getParameter('search_instructor', array());
 
     if(!empty($params['byName'])) {
@@ -29,13 +29,13 @@ class searchActions extends sfActions
         $query->andWhere('p.first_name = ? OR p.last_name = ?', array($names[0], $names[0]));
       }
     }
-    
+
     if(!empty($params['byDojang']) || !empty($params['byCountry'])) {
       $query->innerJoin('p.School sh');
       if(!empty($params['byDojang'])) $query->andWhere('sh.id = ?', $params['byDojang']);
       if(!empty($params['byCountry'])) $query->andWhere('sh.country = ?', $params['byCountry']);
     }
-    
+
     if(!empty($params['byBeltGrade'])) $query->andWhere('p.belt_grade = ?', $params['byBeltGrade']);
     if(!empty($params['instructorOnly'])) $query->andWhere('p.is_instructor = 1');
      
@@ -46,6 +46,7 @@ class searchActions extends sfActions
 
   public function executeViewInstructor(sfWebRequest $request) {
     $this->instructor = ProfileTable::getInstance()->findOneBySlug($request->getParameter('slug'));
+    $this->forward404Unless($this->instructor instanceof Profile, 'No blackbelt/instructor with this name.');
   }
 
   public function executeDojang(sfWebRequest $request) {
@@ -57,12 +58,12 @@ class searchActions extends sfActions
 
     $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_activated = 1');
     $params = $request->getParameter('search_dojang', array());
-    
+
     if(!empty($params['byName'])) $query->andWhere('sh.name = ?', $params['byName']);
     if(!empty($params['byInstructor'])) $query->andWhere('sh.leading_instructor = ?', $params['byInstructor']);
     if(!empty($params['byCity'])) $query->andWhere('sh.city = ?', $params['byCity']);
     if(!empty($params['byCountry'])) $query->andWhere('sh.country = ?', $params['byCountry']);
-    
+
     $this->pager->setQuery($query);
     $this->pager->setPage($request->getParameter('page', 1));
     $this->pager->init();
@@ -70,7 +71,8 @@ class searchActions extends sfActions
 
   public function executeViewDojang(sfWebRequest $request) {
     $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
-    
+    $this->forward404Unless($this->dojang instanceof School, 'No dojang with this name.');
+
     $this->gMap = new GMap();
 
     $address = sprintf('%s, %s', $this->dojang->getAddr1(), $this->dojang->getAddr2());
