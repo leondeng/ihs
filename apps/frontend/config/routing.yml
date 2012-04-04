@@ -57,11 +57,47 @@ homepage:
     module: static
     action: index
 
+sf_guard_signin:
+  url:   /login.:sf_format
+  param:
+    module: sfGuardAuth
+    action: signin
+    sf_format: html
+
+sf_guard_signout:
+  url:   /logout.:sf_format
+  param:
+    module: sfGuardAuth
+    action: signout
+    sf_format: html
+
+sf_guard_password:
+  url:   /request_password.:sf_format
+  param:
+    module: sfGuardAuth
+    action: password
+    sf_format: html
+
+#sf_guard_secure:
+#  url:   /restricted.:sf_format
+#  param:
+#    module: sfGuardAuth
+#    action: secure
+#    sf_format: html
+#
+#change_password:
+#  url: /change_password.:sf_format
+#  param:
+#    module: sfGuardAuth
+#    action: changePassword
+#    application: dashboard
+#    sf_format: html
+
 # generic rules
 # please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+#default_index:
+#  url:   /:module
+#  param: { action: index }
 
 default:
   url:   /:module/:action/*

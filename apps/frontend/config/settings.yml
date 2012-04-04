@@ -24,6 +24,15 @@ test:
     etag:                   false
 
 all:
+  .actions:
+#    error_404_module:       mctDefault
+#    error_404_action:       error404
+
+    login_module:           sfGuardAuth
+    login_action:           signin
+
+    secure_module:          sfGuardAuth
+    secure_action:          secure
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            8bc40aaac9aa5e01c216545de38c7fc95b417f68
@@ -37,8 +46,8 @@ all:
 
     enabled_modules:
       - default
-#      - sfGuardAuth
-      - sfGuardGroup
-      - sfGuardUser
-      - sfGuardPermission
+      - sfGuardAuth
+#      - sfGuardGroup
+#      - sfGuardUser
+#      - sfGuardPermission
       - static
