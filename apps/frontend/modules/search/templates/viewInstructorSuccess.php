@@ -1,5 +1,9 @@
 <?php $school = $instructor->getSchool();?>
 <div id="ContentLeft">
+	<div id="Goback">
+		<a href="<?php echo url_for('@instructors_list'); ?>">GO BACK TO
+			SEARCH RESULTS</a>
+	</div>
 	<div id="Portrait">
 		<img src="../uploads/<?php echo $instructor->getImageName(); ?>" />
 	</div>

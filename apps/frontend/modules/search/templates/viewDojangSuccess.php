@@ -1,6 +1,10 @@
 <?php use_helper(/* 'Javascript', */'GMap') ?>
 <?php $instructorSlug = Doctrine_Inflector::urlize($dojang->getLeadingInstructor());?>
 <div id="ContentLeft">
+	<div id="Goback">
+		<a href="<?php echo url_for('@dojang_list'); ?>">GO BACK TO
+			SEARCH RESULTS</a>
+	</div>
 	<div id="DojangTitle">
 		<h2>
 			<?php echo $dojang->getCountry(); ?>
@@ -41,7 +45,7 @@
 			src="http://maps.googleapis.com/maps/api/staticmap?center=20+Forest+Road,Hurstville&zoom=15&size=512x512&maptype=roadmap
 &sensor=false"
 			width="320" height="320" /> -->
-        <?php include_map($gMap, array('width'=>'320px','height'=>'320px')); ?>
+		<?php include_map($gMap, array('width'=>'320px','height'=>'320px')); ?>
 	</div>
 </div>
 <?php use_stylesheet('dojang'); ?>
