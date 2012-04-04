@@ -72,3 +72,37 @@
 .table table tbody td.leftborder {
 	border-left: 1px solid #00217E;
 }
+
+.table td.pagination {
+	border: 0;
+	text-align: center;
+	font-size: 12px;
+}
+
+#Pagination {
+	padding: 10px 5px 0;
+	float: right;
+}
+
+#Pagination div {
+	float: left;
+}
+
+#Pagination div a {
+	text-decoration: underline;
+}
+
+#Pagination div.first {
+	margin-right: 10px;
+	width: 20px;
+}
+
+#Pagination div.last {
+	margin-left: 10px;
+	width: 20px;
+}
+
+#Pagination div.number {
+	width: 12px;
+	//margin-left: 3px;
+}
