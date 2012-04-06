@@ -1,3 +1,4 @@
+/* form generic */
 form .box {
 	background-attachment: scroll;
 	background-clip: border-box;
@@ -12,21 +13,10 @@ form .box {
 	background-repeat: repeat;
 	background-size: auto auto;
 	border: 1px solid #142652;
-	border-radius: 35px 35px 35px 35px;
+	border-radius: 25px 25px 25px 25px;
 	float: left;
-	margin: 40px 0 0 100px;
 	opacity: 0.8;
 	padding: 5px;
-	width: 80%;
-	height: 300px;
-	z-index: -100;
-}
-
-form .dojang {
-	margin-top: 80px !important;
-}
-
-form .box {
 	color: #00217E;
 }
 
@@ -41,29 +31,10 @@ form .box .inner {
 	padding: 20px 0 0 150px;
 }
 
-form .box .title_dojang {
-	padding-left: 50px;
-	margin: -10px -5px 0 -5px;
-	border-bottom: 1px solid #142652;
-	height: 40px;
-}
-
-form .box .inner_dojang {
-	padding: 10px 0 0 50px;
-}
-
-form .box input[type="text"],select {
+form .box input[type="text"],input[type="password"],select {
 	border: 1px solid #142652;
 	width: 200px;
 	height: 22px;
-}
-
-form .box .button_right {
-	margin: 140px 0 0 300px;
-}
-
-form .box .button_left {
-	margin: 160px 0 0 50px;
 }
 
 form .box .button {
@@ -80,13 +51,87 @@ form .box .button {
 	text-align: center;
 }
 
-.row {
-	padding-top: 20px;
+form .error_list {
+	color: red;
+	font-size: 10px;
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin-bottom: 0;
 }
 
-.column {
+form .row {
+	margin-top: 20px;
+}
+
+form .column {
 	width: 47%;
 	float: left;
+}
+
+form .field .control {
+	width: 60%;
+	float: left;
+}
+
+form .field .error_list {
+	float: left;
+	padding-left: 0;
+}
+
+/* form login */
+form .login {
+	width: 37%;
+	height: 250px;
+	margin: 76px 0 0 220px;
+}
+
+form .box .title_login {
+	padding: 5px 0 0 20px;
+	margin: 0 -5px 0 -5px;
+	border-bottom: 1px solid #142652;
+	height: 30px;
+}
+
+form .box .inner_login {
+	padding: 10px 0 0 15px;
+}
+
+/* form .box .inner_login input[type="text"],input[type="password"] {
+	width: 320px;
+} */
+
+form .img_login {
+	width: 244px;
+	height: 320px;
+	position: absolute;
+	margin: 17px 0 0 550px;
+	z-index: -100;
+}
+
+form .img_bottom {
+	width: 213px;
+	height: 320px;
+	position: absolute;
+	margin: 17px 0 0 550px;
+	border-bottom: 1px solid #142652;
+}
+
+form .box .button_login {
+	margin: 15px 0 0 230px;
+}
+
+/* form search */
+form .search {
+	width: 80%;
+	height: 300px;
+	margin: 40px 0 0 100px;
+    z-index: -100;
+}
+
+/* form instructor*/
+form .box .button_right {
+	margin: 140px 0 0 300px;
 }
 
 form .img_left {
@@ -99,8 +144,29 @@ form .img_left {
 	display: block;
 }
 
+/* form dojang*/
+form .dojang {
+	margin-top: 80px !important;
+}
+
+form .box .title_dojang {
+	padding-left: 50px;
+	margin: -10px -5px 0 -5px;
+	border-bottom: 1px solid #142652;
+	height: 40px;
+}
+
+form .box .inner_dojang {
+	padding: 10px 0 0 50px;
+}
+
+form .box .button_left {
+	margin: 160px 0 0 50px;
+}
+
 form .img_right {
-	width: 182px height:      350px;
+	width: 182px;
+	height: 350px;
 	position: absolute;
 	margin: 17px 0 0 750px;
 	display: block;

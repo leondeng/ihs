@@ -1,5 +1,5 @@
 <?php echo $form->renderFormTag(url_for('@dojang_list')); ?>
-<div class="box dojang">
+<div class="box search dojang">
 	<div class="title_dojang">
 		<h2>DOJANG</h2>
 	</div>

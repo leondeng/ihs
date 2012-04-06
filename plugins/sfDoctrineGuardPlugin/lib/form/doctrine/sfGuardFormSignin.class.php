@@ -15,5 +15,8 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
    */
   public function configure()
   {
+    parent::configure();
+    unset($this['remember']);
+    $this->validatorSchema->setPostValidator(new sfGuardValidatorUser(array('throw_global_error' => true)));
   }
 }
