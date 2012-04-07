@@ -1,6 +1,56 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+userAdmin:
+  url: /user_administration.:sf_format
+  param:
+    module: userAdmin
+    action: index
+    sf_format: html
+
+change_password:
+  url: /change_password.:sf_format
+  param:
+    module: userAdmin
+    action: changePassword
+    sf_format: html
+
+change_email:
+  url: /change_email.:sf_format
+  param:
+    module: userAdmin
+    action: changeEmail
+    sf_format: html
+
+edit_profile:
+  url: /edit_profile.:sf_format
+  param:
+    module: userAdmin
+    action: editProfile
+    sf_format: html
+
+edit_school:
+  url: /edit_dojang.:sf_format
+  param:
+    module: userAdmin
+    action: editSchool
+    sf_format: html
+
+#userAdmin:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    type: object
+#    model: sfGuardUser
+#    prefix_path: /userAdmin
+#    column: username
+#    module: userAdmin
+#    with_wildcard_routes: true
+#    object_actions:
+#      change_password: getObject
+#      change_email: getObject
+#      edit_profile: getObject
+#      edit_school: getObject
+
 search_instructor:
   url: /instructors.:sf_format
   param:
@@ -71,12 +121,12 @@ sf_guard_signout:
     action: signout
     sf_format: html
 
-sf_guard_password:
-  url:   /request_password.:sf_format
-  param:
-    module: sfGuardAuth
-    action: password
-    sf_format: html
+#sf_guard_password:
+#  url:   /request_password.:sf_format
+#  param:
+#    module: sfGuardAuth
+#    action: password
+#    sf_format: html
 
 #sf_guard_secure:
 #  url:   /restricted.:sf_format
@@ -84,13 +134,13 @@ sf_guard_password:
 #    module: sfGuardAuth
 #    action: secure
 #    sf_format: html
-#
+
 #change_password:
 #  url: /change_password.:sf_format
 #  param:
 #    module: sfGuardAuth
 #    action: changePassword
-#    application: dashboard
+##    application: dashboard
 #    sf_format: html
 
 # generic rules
@@ -99,5 +149,5 @@ sf_guard_password:
 #  url:   /:module
 #  param: { action: index }
 
-default:
-  url:   /:module/:action/*
+#default:
+#  url:   /:module/:action/*

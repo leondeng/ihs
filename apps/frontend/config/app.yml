@@ -9,6 +9,11 @@ all:
       www.dimitristangl.com: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
       ihs.localhost: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
       default: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+
+  sf_guard_plugin:
+    success_signin_url: @userAdmin
+    success_signout_url: @homepage
+
   menus:
     admin_menu:
       name: Navigation
