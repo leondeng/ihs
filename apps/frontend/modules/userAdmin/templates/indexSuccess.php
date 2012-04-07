@@ -17,10 +17,10 @@
 		</h1>
 	</div>
 	<div>
-		<a href="<?php echo url_for('@change_password'); ?>">Change your password</a><br>
-		<a href="<?php echo url_for('@change_email'); ?>">Change your email address</a><br>
-		<a href="<?php echo url_for('@edit_profile'); ?>">Edit your profile</a><br>
-		<a href="<?php echo url_for('@edit_school'); ?>">Edit school profile</a><br>
+		<a href="<?php echo url_for('@change_password'); ?>">Change password</a><br>
+		<a href="<?php echo url_for('@change_email'); ?>">Change email address</a><br>
+		<a href="<?php echo url_for('@edit_profile'); ?>">Edit personal profile</a><br>
+		<a href="<?php echo url_for('@edit_school'); ?>">Edit dojang profile</a><br>
 		<a href="<?php echo url_for('@sf_guard_signout'); ?>">Logout</a>
 	</div>
 </div>

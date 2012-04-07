@@ -37,6 +37,13 @@ form .box input[type="text"],input[type="password"],select {
 	height: 22px;
 }
 
+form .box textarea {
+    border: 1px solid #142652;
+	width: 320px;
+	height: 400px;
+	font-size: 10px;
+}
+
 form .box .button_cancel {
 	margin: 15px 0 0 100px;
 	float: left;
