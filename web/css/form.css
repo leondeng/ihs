@@ -37,13 +37,6 @@ form .box input[type="text"],input[type="password"],select {
 	height: 22px;
 }
 
-form .box textarea {
-    border: 1px solid #142652;
-	width: 320px;
-	height: 400px;
-	font-size: 10px;
-}
-
 form .box .button_cancel {
 	margin: 15px 0 0 100px;
 	float: left;
@@ -183,3 +176,80 @@ form .img_right {
 	margin: 17px 0 0 750px;
 	display: block;
 }
+
+/* form edit*/
+form .edit {
+	width: 75%;
+	height: 480px;
+	margin: 5px 0 30px 100px;
+    z-index: -100;
+}
+
+form .edit .title {
+	padding: 2px 0 0 45px;
+	margin: 0 -5px 0;
+	border-bottom: 1px solid #142652;
+	height: 25px;
+}
+
+form .edit .row {
+	margin-top: 5px;
+}
+
+form .edit .inner {
+	font-size: 12px;
+	padding: 10px 0 0 40px;
+}
+
+form .edit input[type="text"],select {
+	width: 235px;
+	height: 20px;
+}
+
+form .edit textarea {
+    border: 1px solid #142652;
+	width: 310px;
+	height: 310px;
+	font-size: 10px;
+}
+
+form .edit .column {
+	width: 42%;
+}
+
+form .edit .button_cancel {
+	margin: 18px 0 0 45px;
+	float: left;
+}
+
+form .edit .button_edit {
+	margin: 18px 0 0 40px;
+	float: left;
+}
+
+form .edit .terms {
+	margin: 25px 0 0 25px;
+	font-size: 11px;
+	float: left;
+}
+
+form .edit .terms a {
+	text-decoration: underline;
+}
+
+/* form .edit .button {
+	border-radius: 8px 8px 8px 8px;
+	height: 22px;
+	width: 55px;
+	font-size: 12px;
+} */
+
+form .img_edit {
+	width: 182px;
+	height: 350px;
+	position: absolute;
+	margin: -27px 0 0 710px;
+	display: block;
+}
+
+
