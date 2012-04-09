@@ -77,9 +77,9 @@ class userAdminActions extends sfActions
         return sfView::SUCCESS;
       }
 
-      $user = $this->getUser()->getGuardUser();
-      $user->setProfile($this->form->getValue('profile'));
-      $user->save();
+      $profile = $this->getUser()->getGuardUser()->getProfile();
+      $profile->fromArray($this->form->getValues());
+      $profile->save();
 
       $this->getUser()->setFlash('notice', 'Your personal profile has been updated successfully.');
       $this->redirect('@userAdmin');
@@ -101,7 +101,7 @@ class userAdminActions extends sfActions
       }
 
       $school = $this->getUser()->getGuardUser()->getProfile()->getSchool();
-      $school->fromArray($this->form->getValue('school'));
+      $school->fromArray($this->form->getValues());
       $school->save();
 
       $this->getUser()->setFlash('notice', 'Your dojang profile has been updated successfully.');

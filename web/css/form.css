@@ -31,9 +31,15 @@ form .box .inner {
 	padding: 20px 0 0 150px;
 }
 
-form .box input[type="text"],input[type="password"],select {
+form .box input[type="text"],form .box input[type="password"],form .box select {
 	border: 1px solid #142652;
 	width: 200px;
+	height: 22px;
+}
+
+form .box input[type="file"] {
+	border: 1px solid #142652;
+	width: 320px;
 	height: 22px;
 }
 
@@ -82,6 +88,15 @@ form .field .control {
 form .field .error_list {
 	float: left;
 	padding-left: 0;
+}
+
+form .terms {
+	font-size: 11px;
+	float: left;
+}
+
+form .terms a {
+	text-decoration: underline;
 }
 
 /* form login */
@@ -149,6 +164,10 @@ form .img_left {
 	display: block;
 }
 
+form .img_profile {
+	padding-left: 20px;
+}
+
 /* form dojang*/
 form .dojang {
 	margin-top: 80px !important;
@@ -201,7 +220,7 @@ form .edit .inner {
 	padding: 10px 0 0 40px;
 }
 
-form .edit input[type="text"],select {
+form .edit input[type="text"],form .edit select {
 	width: 235px;
 	height: 20px;
 }
@@ -229,20 +248,7 @@ form .edit .button_edit {
 
 form .edit .terms {
 	margin: 25px 0 0 25px;
-	font-size: 11px;
-	float: left;
 }
-
-form .edit .terms a {
-	text-decoration: underline;
-}
-
-/* form .edit .button {
-	border-radius: 8px 8px 8px 8px;
-	height: 22px;
-	width: 55px;
-	font-size: 12px;
-} */
 
 form .img_edit {
 	width: 182px;
@@ -252,4 +258,77 @@ form .img_edit {
 	display: block;
 }
 
+/* form profile*/
+form .img_profile {
+	padding-left: 40px;
+	margin-top: -40px;
+}
 
+form .profile {
+	width: 80%;
+	//height: 460px;
+	margin: 5px 0 30px 100px;
+	padding-bottom: 30px;
+    z-index: -100;
+}
+
+form .profile .title {
+	padding-top: 5px 0 0 150px;
+	margin: 0;
+	height: 30px;
+}
+
+form .profile .title .row {
+	float: left;
+	margin: 0;
+	height: 25px;
+}
+
+form .profile .title .row .control {
+	width: 100%;
+}
+
+form .profile .title .row ul {
+	margin: 0 0 0 -15px;
+}
+
+form .profile .title .row li {
+	float: left;
+	display: inline;
+	list-style: none outside none;
+	padding-right: 20px;
+}
+
+form .profile .inner {
+	margin: 0;
+	padding-top: 10px;
+}
+
+form .profile .inner .row {
+	margin-top: 10px;
+}
+
+form .profile .inner input[type="text"],form .profile .inner select {
+	width: 210px;
+}
+
+form .profile .inner textarea {
+	border: 1px solid #142652;
+	width: 210px;
+	height: 140px;
+	font-size: 11px;
+}
+
+form .profile .terms {
+	margin: 10px 0 0 5px;
+	font-size: 13px;
+}
+
+form .buttons {
+	padding: 10px 0 0 150px;
+}
+
+form .buttons .button_item {
+	float: left;
+	padding: 5px 25px 5px 0;
+}

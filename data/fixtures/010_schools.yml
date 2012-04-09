@@ -8,7 +8,7 @@ School:
     addr2: hurstville NSW 2220
     phone: (+612) 9824 2999
     email_address: office@hurstvilleiha.com.au
-    website: www.hurstvilleiha.com.au
+    website: http://www.hurstvilleiha.com.au
     leading_instructor: Jimmy Trith
     classtime: |
       TUESDAY
@@ -33,7 +33,7 @@ School:
     addr2: Parramatta NSW 2142
     phone: 0412 366 666
     email_address: dojang@dojang.com.au
-    website: www.dojang.com.au
+    website: http://www.dojang.com.au
     leading_instructor: Jemmery Lin
     classtime: |
       TUESDAY
