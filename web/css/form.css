@@ -43,9 +43,13 @@ form .box input[type="file"] {
 	height: 22px;
 }
 
-form .box .button_cancel {
-	margin: 15px 0 0 100px;
+form .buttons {
+	padding: 20px 0 0 100px;
+}
+
+form .buttons .button_item {
 	float: left;
+	padding: 5px 25px 5px 0;
 }
 
 form .box .button {
@@ -102,7 +106,7 @@ form .terms a {
 /* form login */
 form .login {
 	width: 37%;
-	height: 250px;
+	min-height: 250px;
 	margin: 76px 0 0 220px;
 }
 
@@ -236,18 +240,12 @@ form .edit .column {
 	width: 42%;
 }
 
-form .edit .button_cancel {
-	margin: 18px 0 0 45px;
-	float: left;
-}
-
-form .edit .button_edit {
-	margin: 18px 0 0 40px;
-	float: left;
+form .edit .buttons {
+	padding: 10px 0 0 60px;
 }
 
 form .edit .terms {
-	margin: 25px 0 0 25px;
+	margin: 10px 0 0;
 }
 
 form .img_edit {
@@ -324,11 +322,6 @@ form .profile .terms {
 	font-size: 13px;
 }
 
-form .buttons {
+form .profile .buttons {
 	padding: 10px 0 0 150px;
-}
-
-form .buttons .button_item {
-	float: left;
-	padding: 5px 25px 5px 0;
 }

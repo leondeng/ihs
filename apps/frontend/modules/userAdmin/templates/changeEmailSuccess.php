@@ -5,14 +5,7 @@
 		</div>
 		<div class="inner_login">
 			<?php echo $form; ?>
-			<div class="button_cancel">
-				<a href="<?php echo url_for('@userAdmin'); ?>"><input
-					type="button" name="Submit" value="Cancel" class="button" />
-				</a>
-			</div>
-			<div class="button_login">
-				<input class="button" value="Confirm" type="submit" />
-			</div>
 		</div>
+		<?php include_partial('buttons'); ?>
 	</div>
 </form>

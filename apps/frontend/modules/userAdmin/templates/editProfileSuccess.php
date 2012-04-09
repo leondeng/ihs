@@ -19,20 +19,12 @@
 				<?php echo $form['idSchool']->renderRow(); ?>
 				<?php echo $form['image_name']->renderRow(); ?>
 				<div class="terms">
-					Click <a href="#" id="sample_open">here</a> for image guidelines.
+					Click <a href="javascript:;" id="sample_open">here</a> for image guidelines.
 				</div>
 			</div>
 		</div>
 		<div class="clear"></div>
-		<div class="buttons">
-			<div class="button_item">
-				<a href="<?php echo url_for('@userAdmin'); ?>"><input type="button"
-					name="Submit" value="Cancel" class="button" /> </a>
-			</div>
-			<div class="button_item">
-				<input class="button" value="Submit" type="submit" />
-			</div>
-		</div>
+		<?php include_partial('buttons'); ?>
 		<div class="terms">
 			By submitting you agree to our <a
 				href="<?php echo url_for('@static?content=term_of_use'); ?>">Terms

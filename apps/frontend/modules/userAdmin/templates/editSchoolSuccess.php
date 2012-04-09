@@ -20,13 +20,7 @@
 			</div>
 		</div>
 		<div class="clear"></div>
-		<div class="button_cancel">
-			<a href="<?php echo url_for('@userAdmin'); ?>"><input type="button"
-				name="Submit" value="Cancel" class="button" /> </a>
-		</div>
-		<div class="button_edit">
-			<input class="button" value="Submit" type="submit" />
-		</div>
+		<?php include_partial('buttons'); ?>
 		<div class="terms">
 			By submitting you agree to our <a href="<?php echo url_for('@static?content=term_of_use'); ?>">Terms of Use</a>.<br>The Headquarter will
 			evaluate your details before they appear online.
