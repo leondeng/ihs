@@ -1,0 +1,42 @@
+#SamplePopup {
+	display: none;
+	height: auto;
+	width: 560px;
+	position: absolute;
+	left: 230px;
+	top: 220px;
+	color: #FFF;
+	border-radius: 25px 25px 25px 25px;
+	background-color: #404041;
+	opacity: 0.9;
+	z-index: 1002;
+	font-size: 15px;
+	padding: 30px;
+}
+
+#SamplePopup .sample_image {
+	float: left;
+}
+
+#SamplePopup .sample_guidelines {
+	position: relative;
+	padding-right: 20px;
+	margin-left: 290px;
+}
+
+#SamplePopup .guidelines_title {
+	padding-bottom: 10px;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#SamplePopup li {
+	margin-left: -25px;
+	padding-bottom: 10px;
+}
+
+#SamplePopup .sample_close {
+	position: absolute;
+	top: 15px;
+	left: 568px;
+}
