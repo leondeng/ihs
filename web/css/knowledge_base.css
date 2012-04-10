@@ -1,0 +1,46 @@
+#KnowledgeGrids {
+	margin-right: -100px;
+}
+
+#KnowledgeGrids .grid {
+	color: #00217E;
+	float: left;
+}
+
+#KnowledgeGrids .page_title {
+	padding-top: 50px;
+}
+
+#KnowledgeGrids .icon {
+	border: 1px solid #00217E;
+	width: 122px;
+	height: 118px;
+	margin: 5px 5px 30px 5px;
+	-moz-box-shadow: 3px 3px 4px #404041;
+	-webkit-box-shadow: 3px 3px 4px #404041;
+	box-shadow: 3px 3px 4px #404041;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#404041')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#404041');
+}
+
+#KnowledgeGrids .text {
+	width: 200px;
+	padding: 65px 20px 0 15px;
+}
+
+#KnowledgeGrids .widen {
+	width: 285px;
+}
+
+#KnowledgeGrids .text .title {
+	border: 0;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#KnowledgeGrids .text .summary {
+	font-size: 13px;
+	font-weight: bold;
+}

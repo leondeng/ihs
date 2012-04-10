@@ -54,7 +54,7 @@ all:
 #          requires_no_auth: true
         knowledgebase:
           label: KNOWLEDGE BASE
-          route: @static?content=knowlesgebase
+          route: @static?content=knowledge_base
 #          requires_no_auth: true
         dojang:
           label: DOJANG
