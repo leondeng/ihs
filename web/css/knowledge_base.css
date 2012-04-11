@@ -44,3 +44,19 @@
 	font-size: 13px;
 	font-weight: bold;
 }
+
+#BeltSlides {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #FFF;
+	background-color: #000;
+	opacity: 0.9;
+	z-index: 1002;
+	font-size: 15px;
+	margin-top: 50px;
+	padding: 0 0 30px;
+}
