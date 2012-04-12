@@ -47,7 +47,7 @@ function ImageFlow ()
 		imageCursor:        'default',      /* Cursor type for all images - default is 'default' */
 		ImageFlowID:        'imageflow',    /* Default id of the ImageFlow container */
 		imageFocusM:        1.0,            /* Multiplicator for the focussed image size in percent */
-		imageFocusMax:      4,              /* Max number of images on each side of the focussed one */
+		imageFocusMax:      2,              /* Max number of images on each side of the focussed one */
 		imagePath:          '',             /* Path to the images relative to the reflect_.php script */
 		imageScaling:       true,           /* Toggle image scaling */ 
 		imagesHeight:       0.67,           /* Height of the images div container in percent */
@@ -1458,6 +1458,6 @@ domReadyEvent.init();
 /* Create ImageFlow instances when the DOM structure has been loaded */
 domReady(function()
 {
-	var instanceOne = new ImageFlow();
-	instanceOne.init({ ImageFlowID:'BeltSlides' });
+	/*var instanceOne = new ImageFlow();
+	instanceOne.init({ ImageFlowID:'BeltSlides' });*/
 });

@@ -9,6 +9,8 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div id="Background"></div>
+    <div class="clear"></div>
     <div id="HeaderBand"></div>
     <div id="Wrapper">
       <div id="Header">
