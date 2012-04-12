@@ -91,24 +91,31 @@
 <?php use_javascript('imageflow')?>
 <?php use_javascript('jquery-1.7.2.min.js'); ?>
 <script type="text/javascript">
+var $belt_initialized = false;
 $( "#BeltGrid" ).click(function(){
 	$("#BeltSlides").css('display', 'block');
 	$("#Background").addClass('grey_background');
-	var instanceOne = new ImageFlow();
-	instanceOne.init({ ImageFlowID:'BeltSlides' });
+	if(!$belt_initialized) {
+	  var instanceOne = new ImageFlow();
+	  instanceOne.init({ ImageFlowID:'BeltSlides' });
+	  $belt_initialized = true;
+	}
 });
 
+var $dobok_initialized = false;
 $( "#DobokGrid" ).click(function(){
 	$("#DobokSlides").css('display', 'block');
 	$("#Background").addClass('grey_background');
-	var instanceOne = new ImageFlow();
-	instanceOne.init({ ImageFlowID:'DobokSlides' });
+	if(!$dobok_initialized) {
+	  var instanceOne = new ImageFlow();
+	  instanceOne.init({ ImageFlowID:'DobokSlides' });
+	  $dobok_initialized = true;
+	}
 });
 
 $( ".close_button" ).click(function(){
-	location.reload();
-	//$("#BeltSlides").css('display', 'none');
-	//$("#Background").removeClass('grey_background');
+	$(".imageflow").css('display', 'none');
+	$("#Background").removeClass('grey_background');
 });
 
 </script>
