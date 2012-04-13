@@ -97,7 +97,7 @@ $( "#BeltGrid" ).click(function(){
 	$("#Background").addClass('grey_background');
 	if(!$belt_initialized) {
 	  var instanceOne = new ImageFlow();
-	  instanceOne.init({ ImageFlowID:'BeltSlides' });
+	  instanceOne.init({ ImageFlowID:'BeltSlides', imageFocusM: 1.2 });
 	  $belt_initialized = true;
 	}
 });
@@ -108,7 +108,7 @@ $( "#DobokGrid" ).click(function(){
 	$("#Background").addClass('grey_background');
 	if(!$dobok_initialized) {
 	  var instanceOne = new ImageFlow();
-	  instanceOne.init({ ImageFlowID:'DobokSlides' });
+	  instanceOne.init({ ImageFlowID:'DobokSlides', imageFocusM: 1.8 });
 	  $dobok_initialized = true;
 	}
 });
