@@ -49,17 +49,18 @@ class ProfileForm extends BaseProfileForm
     $this->setValidator('is_instructor', new sfValidatorBoolean(array('required' => true)));
 
     $this->setWidget('image_name', new sfWidgetFormInputFileEditable(array(
-        'label' => 'Upload Image from your computer',
-        'default' => $this->getObject()->getImageName(),
-        'edit_mode' => false,
+        'label' => strlen($this->getObject()->getImageName()) > 0 ? 'Upload Image from your computer' : 'Current Image',
+        'file_src' => basename(sfConfig::get('sf_upload_dir')).'/'.basename(sfConfig::get('sf_thumbnail_dir')).'/'.$this->getObject()->getImageName(),
+        'is_image' => true,
+        'edit_mode' => strlen($this->getObject()->getImageName()) > 0,
         'with_delete' => false,
-        'file_src' => 'uploads/'.$this->getObject()->getImageName()
+        'template'  => strlen($this->getObject()->getImageName()) > 0 ? '<div>%input%</div>' : '<div><div style="padding-top: 2px;">%file%</div>Upload a New Image%input%</div>'
     )));
     $this->setValidator('image_name', new sfValidatorFile(array(
-        'required' => true,
-        'max_size' => 500000,
+        'required' => strlen($this->getObject()->getImageName()) > 0,
+        /* 'max_size' => 500000, */
         'mime_types' => 'web_images',
-        'path' => 'uploads',
+        /* 'path' => basename(sfConfig::get('sf_upload_dir')), */
     )));
 
     $this->setWidget('idSchool', new sfWidgetFormDoctrineChoice(array(
@@ -77,6 +78,46 @@ class ProfileForm extends BaseProfileForm
     $this->validatorSchema->setOption( 'allow_extra_fields', true );
 
     $this->useFields(self::$showFields);
+  }
+
+  protected function doSave ( $con = null ) {
+    $upload = $this->getValue('image_name');
+
+    if ( $upload ) {
+      $filename = sha1($upload->getOriginalName().microtime().rand()).$upload->getExtension($upload->getOriginalExtension());
+      $filepath = sfConfig::get('sf_upload_dir').'/'.$filename;
+      $oldfilepath = sfConfig::get('sf_upload_dir').'/'.$this->getObject()->getImageName();
+
+      if ( file_exists($oldfilepath) ) unlink($oldfilepath);
+
+      $upload->save($filepath);
+
+      $thumbnailpath = sfConfig::get('sf_thumbnail_dir').'/'.$filename;
+      $oldthumbnailpath = sfConfig::get('sf_thumbnail_dir').'/'.$this->getObject()->getImageName();
+
+      if ( file_exists($oldthumbnailpath) ) unlink($oldthumbnailpath);
+
+      $thumbnail = new sfThumbnail(52, 70, true, true, 75, 'sfGDAdapter');
+      $thumbnail->loadFile($filepath);
+      $thumbnail->save($thumbnailpath);
+    }
+
+    /* $delete = $this->getValue('background_image_delete');
+    if ( $delete ) {
+      $filename = $this->getObject()->getImageName();
+      $filepath = sfConfig::get('sf_upload_dir').'/'.$filename;
+      @unlink($filepath);
+      $this->getObject()->setImageName(null);
+    } */
+
+    return parent::doSave($con);
+  }
+
+  public function updateObject($values = null) {
+    $object = parent::updateObject($values);
+    $object->setImageName(str_replace(sfConfig::get('sf_upload_dir').'/', '', $object->getImageName()));
+
+    return $object;
   }
 
   protected function getBeltGrades($combine = true) {

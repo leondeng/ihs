@@ -72,14 +72,16 @@ class userAdminActions extends sfActions
     $this->getResponse()->setTitle($this->username.' - Edit Personal Profile');
 
     if ($request->isMethod('post')) {
-      $this->form->bind($request->getParameter($this->form->getName()));
+      $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
       if (!$this->form->isValid()) {
         return sfView::SUCCESS;
       }
 
-      $profile = $this->getUser()->getGuardUser()->getProfile();
+      $this->form->save();
+
+      /* $profile = $this->getUser()->getGuardUser()->getProfile();
       $profile->fromArray($this->form->getValues());
-      $profile->save();
+      $profile->save(); */
 
       $this->getUser()->setFlash('notice', 'Your personal profile has been updated successfully.');
       $this->redirect('@userAdmin');

@@ -1,4 +1,5 @@
-<form action="<?php echo url_for('@edit_profile') ?>" method="post">
+<!-- <form action="<?php //echo url_for('@edit_profile') ?>" method="post"> -->
+<?php echo form_tag(url_for('@edit_profile'), 'multipart=true'); ?>
 	<?php echo $form->renderHiddenFields() . $form->renderGlobalErrors(); ?>
 	<div class="box profile">
 		<div class="title">

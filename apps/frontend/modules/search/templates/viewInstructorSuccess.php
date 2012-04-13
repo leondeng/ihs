@@ -5,7 +5,7 @@
 			SEARCH RESULTS</a>
 	</div>
 	<div id="Portrait">
-		<img src="../uploads/<?php echo $instructor->getImageName(); ?>" />
+		<img src="../<?php echo basename(sfConfig::get('sf_upload_dir')).'/'.$instructor->getImageName(); ?>" />
 	</div>
 	<div id="Profile">
 		<h3>INSTRUCTOR</h3>

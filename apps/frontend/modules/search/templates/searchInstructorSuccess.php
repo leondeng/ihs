@@ -18,7 +18,7 @@
 				<tr>
 					<td class="norightborder" width="5%"><a
 						href="<?php echo url_for('@instructor?slug='.$instructor->getSlug()); ?>"><img
-							src="uploads/<?php echo $instructor->getImageName(); ?>"
+							src="<?php echo basename(sfConfig::get('sf_upload_dir')).'/'.basename(sfConfig::get('sf_thumbnail_dir')).'/'.$instructor->getImageName(); ?>"
 							width="52" height="70" /> </a></td>
 					<td><a
 						href="<?php echo url_for('@instructor?slug='.$instructor->getSlug()); ?>"><span

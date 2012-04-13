@@ -10,10 +10,12 @@ class ProjectConfiguration extends sfProjectConfiguration
 //     $this->enablePlugins('sfDoctrinePlugin');
 //     $this->enablePlugins('ioMenuPlugin');
     $this->enableAllPluginsExcept(array(
-      'sfPropelPlugin'
+        'sfPropelPlugin'
     ));
-    
+
     sfWidgetFormSchema::setDefaultFormFormatterName('ihs');
+
+    sfConfig::set('sf_thumbnail_dir', sfConfig::get('sf_upload_dir').'/thumbnails');
   }
 
 }

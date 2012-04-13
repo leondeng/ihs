@@ -5,6 +5,8 @@
 }
 
 #Portrait {
+	width: 430px;
+	height: 580px;
 	margin-left: -60px;
 	float: left;
 }
