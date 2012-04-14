@@ -2,7 +2,7 @@
 	<div id="KnowledgeGrids" class="content_all">
 		<h1 class="page_title">Knowledge Base</h1>
 		<div class="grid icon">
-			<a href="javascript:;" id="DobokGrid" title="Click to learn"><img src="images/Dobok_Folding.png" /> </a>
+			<a href="javascript:;" id="DobokGrid" title="Click to learn"><img src="images/Dobok_Folding.png" /></a>
 		</div>
 		<div class="grid text">
 			<div class="title">Dobok Folding</div>
@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="grid icon">
-			<img src="images/Korean_Terminology.png" />
+			<a href="javascript:;" id="Korean" title="Coming soon..."><img src="images/Korean_Terminology.png" /></a>
 		</div>
 		<div class="grid text widen">
 			<div class="title">Korean Terminology</div>
@@ -22,8 +22,7 @@
 		<div class="clear"></div>
 
 		<div class="grid icon">
-			<a href="javascript:;" id="BeltGrid" title="Click to learn"><img src="images/Belt_Tying.png" />
-			</a>
+			<a href="javascript:;" id="BeltGrid" title="Click to learn"><img src="images/Belt_Tying.png" /></a>
 		</div>
 		<div class="grid text">
 			<div class="title">Belt Tying</div>
@@ -33,7 +32,7 @@
 
 
 		<div class="grid icon">
-			<img src="images/The_Path_to_Black_Belt.png" />
+			<a href="javascript:;" id="Path" title="Coming soon..."><img src="images/The_Path_to_Black_Belt.png" /></a>
 		</div>
 		<div class="grid text widen">
 			<div class="title">The Path to Black Belt</div>
@@ -59,7 +58,7 @@
 	<img src="images/Belt_Images/Belt_Tying_12.jpg" longdesc="javascript:;" width="600" height="485" alt="12. If done correctly both ends should be the same length." />
 	<img src="images/Belt_Images/Belt_Tying_13.jpg" longdesc="javascript:;" width="600" height="485" alt="13. The finished knot." />
 	<div class="slides_close">
-			<a href="javascript:;"><img src="images/slides_close.png" id="BeltGrid_close" class="close_button" title="Close"/></a>
+			<a href="javascript:;"><img src="images/sample_close.png" id="BeltGrid_close" class="close_button" title="Close"/></a>
 	</div>
 </div>
 
@@ -81,7 +80,7 @@
 	<img src="images/Dobok_Images/Dobok_14.jpg" longdesc="javascript:;" width="781" height="401" alt="14. Loop the belt back around the Dobok and tighten." />
 	<img src="images/Dobok_Images/Dobok_15.jpg" longdesc="javascript:;" width="781" height="401" alt="15. Place the Belt back through the second loop and tighten, Viola!" />
 	<div class="slides_close">
-			<a href="javascript:;"><img src="images/slides_close.png" id="BeltGrid_close" class="close_button" title="Close"/></a>
+			<a href="javascript:;"><img src="images/sample_close.png" id="BeltGrid_close" class="close_button" title="Close"/></a>
 	</div>
 </div>
 	
