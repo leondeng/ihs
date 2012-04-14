@@ -10,6 +10,9 @@
  */
 class ProfileForm extends BaseProfileForm
 {
+  const IMAGE_WIDTH = 430;
+  const IMAGE_HEIGHT = 580;
+
   protected static $showFields = array(
       'title',
       'first_name',
@@ -49,15 +52,15 @@ class ProfileForm extends BaseProfileForm
     $this->setValidator('is_instructor', new sfValidatorBoolean(array('required' => true)));
 
     $this->setWidget('image_name', new sfWidgetFormInputFileEditable(array(
-        'label' => strlen($this->getObject()->getImageName()) > 0 ? 'Upload Image from your computer' : 'Current Image',
+        'label' => strlen($this->getObject()->getImageName()) > 0 ? 'Current Image' : 'Upload Image from your computer',
         'file_src' => basename(sfConfig::get('sf_upload_dir')).'/'.basename(sfConfig::get('sf_thumbnail_dir')).'/'.$this->getObject()->getImageName(),
         'is_image' => true,
         'edit_mode' => strlen($this->getObject()->getImageName()) > 0,
         'with_delete' => false,
-        'template'  => strlen($this->getObject()->getImageName()) > 0 ? '<div>%input%</div>' : '<div><div style="padding-top: 2px;">%file%</div>Upload a New Image%input%</div>'
+        'template'  => strlen($this->getObject()->getImageName()) > 0 ? '<div><div style="padding: 2px 0 2px;">%file%</div>Upload a New Image%input%</div>' : '<div>%input%</div>',
     )));
     $this->setValidator('image_name', new sfValidatorFile(array(
-        'required' => strlen($this->getObject()->getImageName()) > 0,
+        'required' => !(strlen($this->getObject()->getImageName()) > 0),
         /* 'max_size' => 500000, */
         'mime_types' => 'web_images',
         /* 'path' => basename(sfConfig::get('sf_upload_dir')), */
@@ -76,6 +79,8 @@ class ProfileForm extends BaseProfileForm
     )));
 
     $this->validatorSchema->setOption( 'allow_extra_fields', true );
+
+    $this->mergePostValidator(new sfValidatorCallback(array('callback' => array($this, 'validateImageDimension'))));
 
     $this->useFields(self::$showFields);
   }
@@ -127,4 +132,17 @@ class ProfileForm extends BaseProfileForm
 
     return $combine ? array_combine($grades, $grades) : $grades;
   }
+
+  public function validateImageDimension($validator, $values) {//die(print_r($values, true));
+    if($values['image_name']) {
+      list($width, $height, $type, $attr) = getimagesize($values['image_name']->getTempName());
+      if($width > self::IMAGE_WIDTH || $height > self::IMAGE_HEIGHT) {
+        $error =  new sfValidatorError($validator, sprintf('Image dimension exceeds %dx%d.', self::IMAGE_WIDTH, self::IMAGE_HEIGHT));
+        throw new sfValidatorErrorSchema($validator, array('image_name' => $error));
+      }
+    }
+
+    return $values;
+  }
+
 }

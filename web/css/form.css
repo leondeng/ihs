@@ -38,8 +38,8 @@ form .box input[type="text"],form .box input[type="password"],form .box select {
 }
 
 form .box input[type="file"] {
-	border: 1px solid #142652;
-	width: 320px;
+	/* border: 1px solid #142652; */
+	width: 220px;
 	height: 22px;
 }
 
