@@ -69,13 +69,11 @@ class ProfileForm extends BaseProfileForm
     $this->setWidget('idSchool', new sfWidgetFormDoctrineChoice(array(
         'label' => 'Home Dojang',
         'model' => $this->getRelatedModelName('School'),
-        'add_empty' => true,
-        'default' => $this->getObject()->getIdSchool()
+        'add_empty' => '--Dojang not listed yet--',
     )));
     $this->setValidator('idSchool', new sfValidatorDoctrineChoice(array(
         'model' => $this->getRelatedModelName('School'),
         'required' => false,
-        'empty_value' => true
     )));
 
     $this->validatorSchema->setOption( 'allow_extra_fields', true );
