@@ -19,7 +19,9 @@ class searchActions extends sfActions
 
     $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
 
-    $params = $request->getParameter('search_instructor', array());
+    $params = $request->getParameter('search_instructor', $this->getUser()->getAttribute('searchKeys', array(), 'SearchInstructor'));
+
+    $this->getUser()->setAttribute('searchKeys', $params, 'SearchInstructor');
 
     if(!empty($params['byName'])) {
       $names = explode(' ', $params['byName']);
@@ -57,7 +59,10 @@ class searchActions extends sfActions
     $this->pager = new sfDoctrinePager('School', '20');
 
     $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_activated = 1');
-    $params = $request->getParameter('search_dojang', array());
+
+    $params = $request->getParameter('search_dojang', $this->getUser()->getAttribute('searchKeys', array(), 'SearchDojang'));
+
+    $this->getUser()->setAttribute('searchKeys', $params, 'SearchDojang');
 
     if(!empty($params['byName'])) $query->andWhere('sh.name = ?', $params['byName']);
     if(!empty($params['byInstructor'])) $query->andWhere('sh.leading_instructor = ?', $params['byInstructor']);
