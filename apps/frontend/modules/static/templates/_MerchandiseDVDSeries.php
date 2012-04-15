@@ -29,26 +29,28 @@
 			Handling)
 		</p>
 		<p></p>
-		<form method="post"	action="https://www.paypal.com/cgi-bin/webscr">
-		<table width="85px" border="0">
-			<tr>
-				<td class="tc">
-			        <input type="hidden" value="_s-xclick" name="cmd">
-			        <input type="hidden" value="10314842" name="hosted_button_id">
-			        <input type="image" border="0" alt="PayPal - The safer, easier way to pay online." name="submit"
-						src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"><br>
-					<img width="1" height="1" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" alt="">
-				</td>
-				<td rowspan="2">
-				    <a id="linkMoviePopup" class="menustyle">
-				        <img src="images/watchtrailer.png" alt="Trailer" width="259" height="107" />
-				    </a>
-				</td>
-			</tr>
-			<tr>
-			    <td><input type="image" border="0" src="images/paypalCC.png"></td>
-			</tr>
-		</table>
+		<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+			<table width="85px" border="0">
+				<tbody>
+					<tr>
+						<td class="tc"><input type="hidden" value="_s-xclick" name="cmd">
+							<input type="hidden" value="10314842" name="hosted_button_id"> <input
+							type="image" border="0"
+							alt="PayPal - The safer, easier way to pay online." name="submit"
+							src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"><br> <img
+							width="1" height="1" border="0"
+							src="https://www.paypal.com/en_AU/i/scr/pixel.gif" alt=""></td>
+						<td rowspan="2"><a id="linkMoviePopup" class="menustyle"> <img
+								src="images/watchtrailer.png" alt="Trailer" width="259"
+								height="107" />
+						</a></td>
+					</tr>
+					<tr>
+						<td><input type="image" border="0" src="images/paypalCC.png">
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</form>
 	</div>
 
@@ -56,14 +58,15 @@
 <?php include_partial('KoreanWord'); ?>
 <div id="VideoBox">
 	<div>
-	  <object width="425" height="344">
-		<param value="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1" name="movie">
-		<param value="true" name="allowFullScreen">
-		<param value="always" name="allowscriptaccess">
-		<embed width="425" height="344" allowfullscreen="true"
-			allowscriptaccess="always" type="application/x-shockwave-flash"
-			src="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1">
-	  </object>
+		<object width="425" height="344">
+			<param value="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1"
+				name="movie">
+			<param value="true" name="allowFullScreen">
+			<param value="always" name="allowscriptaccess">
+			<embed width="425" height="344" allowfullscreen="true"
+				allowscriptaccess="always" type="application/x-shockwave-flash"
+				src="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1">
+		</object>
 	</div>
 	<div class="box_close">
 		<a href="javascript:;" id="box_close" title="Close"><img
