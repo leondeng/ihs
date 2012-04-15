@@ -49,6 +49,7 @@ class searchActions extends sfActions
   public function executeViewInstructor(sfWebRequest $request) {
     $this->instructor = ProfileTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->instructor instanceof Profile, 'No blackbelt/instructor with this name.');
+    $this->currentUrl = $request->getUri();
   }
 
   public function executeDojang(sfWebRequest $request) {
@@ -77,6 +78,7 @@ class searchActions extends sfActions
   public function executeViewDojang(sfWebRequest $request) {
     $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->dojang instanceof School, 'No dojang with this name.');
+    $this->currentUrl = $request->getUri();
 
     $this->gMap = new GMap();
 
