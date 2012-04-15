@@ -93,13 +93,6 @@ dojang:
     action: viewDojang
     sf_format: html
 
-static:
-  url: /:content.:sf_format
-  param:
-    module: static
-    action: index
-    sf_format: html
-
 # default rules
 homepage:
   url:   /
@@ -119,6 +112,20 @@ sf_guard_signout:
   param:
     module: sfGuardAuth
     action: signout
+    sf_format: html
+
+sf_guard_register:
+  url:   /register.:sf_format
+  param:
+    module: register
+    action: register
+    sf_format: html
+
+static:
+  url: /:content.:sf_format
+  param:
+    module: static
+    action: index
     sf_format: html
 
 #sf_guard_password:

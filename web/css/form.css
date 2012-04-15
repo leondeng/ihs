@@ -145,6 +145,22 @@ form .box .button_login {
 	margin: 15px 0 0 230px;
 }
 
+form .links_login {
+	padding: 10px 0 0 250px;
+}
+
+/* form register*/
+form .register {
+	width: 37%;
+	min-height: 250px;
+	margin: 0 0 30px 220px;
+	padding-bottom: 10px;
+}
+
+form .register a {
+	text-decoration: underline;
+}
+
 /* form search */
 form .search {
 	width: 80%;

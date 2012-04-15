@@ -51,3 +51,6 @@ all:
 #      - sfGuardUser
 #      - sfGuardPermission
       - static
+      - search
+      - register
+      - userAdmin
