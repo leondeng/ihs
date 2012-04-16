@@ -2,7 +2,7 @@
 <?php $instructorSlug = Doctrine_Inflector::urlize($dojang->getLeadingInstructor());?>
 <div id="ContentLeft">
 	<div id="Goback">
-		<a href="<?php echo url_for('@dojang_list'); ?>">GO BACK TO
+		<a href="<?php echo sprintf('%s%s', $urlPrefix, url_for('@dojang_list')); ?>">GO BACK TO
 			SEARCH RESULTS</a>
 	</div>
 	<div id="DojangTitle">
