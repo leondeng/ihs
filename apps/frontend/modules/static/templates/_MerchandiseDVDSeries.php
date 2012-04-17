@@ -58,12 +58,12 @@
 <?php include_partial('KoreanWord'); ?>
 <div id="VideoBox">
 	<div>
-		<object width="425" height="344">
+		<object width="640" height="390">
 			<param value="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1"
 				name="movie">
 			<param value="true" name="allowFullScreen">
 			<param value="always" name="allowscriptaccess">
-			<embed width="425" height="344" allowfullscreen="true"
+			<embed width="640" height="390" allowfullscreen="true"
 				allowscriptaccess="always" type="application/x-shockwave-flash"
 				src="http://www.youtube.com/v/CXtBJUrXcMU&hl=en&fs=1">
 		</object>

@@ -11,10 +11,12 @@
 class searchActions extends sfActions
 {
   public function executeInstructor(sfWebRequest $request) {
+    $this->getResponse()->setTitle('Search Instructors/Black Belts');
     $this->form = new SearchInstructorForm();
   }
 
   public function executeSearchInstructor(sfWebRequest $request) {
+    $this->getResponse()->setTitle('Instructors/Black Belts - Search Result');
     $this->pager = new sfDoctrinePager('Profile', '20');
 
     $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
@@ -49,14 +51,17 @@ class searchActions extends sfActions
   public function executeViewInstructor(sfWebRequest $request) {
     $this->instructor = ProfileTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->instructor instanceof Profile, 'No blackbelt/instructor with this name.');
+    $this->getResponse()->setTitle(sprintf('%s - %s ', $this->instructor->getIsInstructor()?'Instructor':'Black Belt', $this->instructor->getFullName()));
     $this->currentUrl = $request->getUri();
   }
 
   public function executeDojang(sfWebRequest $request) {
+    $this->getResponse()->setTitle('Search Dojang');
     $this->form = new SearchDojangForm();
   }
 
   public function executeSearchDojang(sfWebRequest $request) {
+    $this->getResponse()->setTitle('Dojang - Search Result');
     $this->pager = new sfDoctrinePager('School', '20');
 
     $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_activated = 1');
@@ -78,6 +83,7 @@ class searchActions extends sfActions
   public function executeViewDojang(sfWebRequest $request) {
     $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->dojang instanceof School, 'No dojang with this name.');
+    $this->getResponse()->setTitle(sprintf('Dojang - %s - %s', $this->dojang->getCity(), $this->dojang->getName()));
     $this->currentUrl = $request->getUri();
 
     $this->gMap = new GMap();

@@ -6,9 +6,12 @@
 all:
   google_maps_api:
     keys:
-      www.dimitristangl.com: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
-      ihs.localhost: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
-      default: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+#      www.dimitristangl.com: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+#      ihs.localhost: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+#      default: AIzaSyACogY5GQp1FYxtYj9xk4ERdsvsvPhaEcw
+      www.dimitristangl.com: AIzaSyAjSxV_0H-Zx3u8cuZJ-4n-GVYoTmF5288
+      ihs.localhost: AIzaSyAjSxV_0H-Zx3u8cuZJ-4n-GVYoTmF5288
+      default: AIzaSyAjSxV_0H-Zx3u8cuZJ-4n-GVYoTmF5288
 
   sf_guard_plugin:
     success_signin_url: @userAdmin

@@ -19,6 +19,8 @@ class staticActions extends sfActions
   {
     $this->content = $this->getRequestParameter("content", "index");
 
+    $this->getResponse()->setTitle(sfInflector::humanize($this->getRequestParameter("content", "Home")));
+
     $context = $this->getContext();
 
     $this->forward404Unless($this->partialExists($context, $this->content));
