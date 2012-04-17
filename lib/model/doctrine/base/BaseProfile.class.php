@@ -10,44 +10,47 @@
  * @property text $title
  * @property text $philosophy
  * @property date $dob
- * @property date $year_started
+ * @property integer $year_started
  * @property enum $belt_grade
  * @property boolean $is_instructor
  * @property integer $idUser
  * @property integer $idSchool
  * @property text $image_name
- * @property boolean $is_activated
+ * @property boolean $is_publishable
+ * @property string $token
  * @property sfGuardUser $User
  * @property School $School
  * 
- * @method string      getFirstName()     Returns the current record's "first_name" value
- * @method string      getLastName()      Returns the current record's "last_name" value
- * @method text        getTitle()         Returns the current record's "title" value
- * @method text        getPhilosophy()    Returns the current record's "philosophy" value
- * @method date        getDob()           Returns the current record's "dob" value
- * @method date        getYearStarted()   Returns the current record's "year_started" value
- * @method enum        getBeltGrade()     Returns the current record's "belt_grade" value
- * @method boolean     getIsInstructor()  Returns the current record's "is_instructor" value
- * @method integer     getIdUser()        Returns the current record's "idUser" value
- * @method integer     getIdSchool()      Returns the current record's "idSchool" value
- * @method text        getImageName()     Returns the current record's "image_name" value
- * @method boolean     getIsActivated()   Returns the current record's "is_activated" value
- * @method sfGuardUser getUser()          Returns the current record's "User" value
- * @method School      getSchool()        Returns the current record's "School" value
- * @method Profile     setFirstName()     Sets the current record's "first_name" value
- * @method Profile     setLastName()      Sets the current record's "last_name" value
- * @method Profile     setTitle()         Sets the current record's "title" value
- * @method Profile     setPhilosophy()    Sets the current record's "philosophy" value
- * @method Profile     setDob()           Sets the current record's "dob" value
- * @method Profile     setYearStarted()   Sets the current record's "year_started" value
- * @method Profile     setBeltGrade()     Sets the current record's "belt_grade" value
- * @method Profile     setIsInstructor()  Sets the current record's "is_instructor" value
- * @method Profile     setIdUser()        Sets the current record's "idUser" value
- * @method Profile     setIdSchool()      Sets the current record's "idSchool" value
- * @method Profile     setImageName()     Sets the current record's "image_name" value
- * @method Profile     setIsActivated()   Sets the current record's "is_activated" value
- * @method Profile     setUser()          Sets the current record's "User" value
- * @method Profile     setSchool()        Sets the current record's "School" value
+ * @method string      getFirstName()      Returns the current record's "first_name" value
+ * @method string      getLastName()       Returns the current record's "last_name" value
+ * @method text        getTitle()          Returns the current record's "title" value
+ * @method text        getPhilosophy()     Returns the current record's "philosophy" value
+ * @method date        getDob()            Returns the current record's "dob" value
+ * @method integer     getYearStarted()    Returns the current record's "year_started" value
+ * @method enum        getBeltGrade()      Returns the current record's "belt_grade" value
+ * @method boolean     getIsInstructor()   Returns the current record's "is_instructor" value
+ * @method integer     getIdUser()         Returns the current record's "idUser" value
+ * @method integer     getIdSchool()       Returns the current record's "idSchool" value
+ * @method text        getImageName()      Returns the current record's "image_name" value
+ * @method boolean     getIsPublishable()  Returns the current record's "is_publishable" value
+ * @method string      getToken()          Returns the current record's "token" value
+ * @method sfGuardUser getUser()           Returns the current record's "User" value
+ * @method School      getSchool()         Returns the current record's "School" value
+ * @method Profile     setFirstName()      Sets the current record's "first_name" value
+ * @method Profile     setLastName()       Sets the current record's "last_name" value
+ * @method Profile     setTitle()          Sets the current record's "title" value
+ * @method Profile     setPhilosophy()     Sets the current record's "philosophy" value
+ * @method Profile     setDob()            Sets the current record's "dob" value
+ * @method Profile     setYearStarted()    Sets the current record's "year_started" value
+ * @method Profile     setBeltGrade()      Sets the current record's "belt_grade" value
+ * @method Profile     setIsInstructor()   Sets the current record's "is_instructor" value
+ * @method Profile     setIdUser()         Sets the current record's "idUser" value
+ * @method Profile     setIdSchool()       Sets the current record's "idSchool" value
+ * @method Profile     setImageName()      Sets the current record's "image_name" value
+ * @method Profile     setIsPublishable()  Sets the current record's "is_publishable" value
+ * @method Profile     setToken()          Sets the current record's "token" value
+ * @method Profile     setUser()           Sets the current record's "User" value
+ * @method Profile     setSchool()         Sets the current record's "School" value
  * 
  * @package    ihs
  * @subpackage model
@@ -76,8 +79,9 @@ abstract class BaseProfile extends sfDoctrineRecord
         $this->hasColumn('dob', 'date', null, array(
              'type' => 'date',
              ));
-        $this->hasColumn('year_started', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('year_started', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => 4,
              ));
         $this->hasColumn('belt_grade', 'enum', null, array(
              'type' => 'enum',
@@ -107,9 +111,13 @@ abstract class BaseProfile extends sfDoctrineRecord
         $this->hasColumn('image_name', 'text', null, array(
              'type' => 'text',
              ));
-        $this->hasColumn('is_activated', 'boolean', null, array(
+        $this->hasColumn('is_publishable', 'boolean', null, array(
              'type' => 'boolean',
              'default' => false,
+             ));
+        $this->hasColumn('token', 'string', 32, array(
+             'type' => 'string',
+             'length' => 32,
              ));
     }
 

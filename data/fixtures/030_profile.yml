@@ -5,13 +5,14 @@ Profile:
     title: Master
     philosophy: Yi Tui Wei Jin
     dob: '1995-04-01'
-    year_started: '2001-01-22'
+    year_started: 2001
     belt_grade: Kup9
     is_instructor: true
     idUser: 1
     idSchool: 2
     image_name: linshuhao.jpg
-    is_activated: true
+    is_publishable: true
+    token: ''
     slug: jemmery-lin
   jimmytrith:
     first_name: Jimmy
@@ -23,12 +24,13 @@ Profile:
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
       ut aliquip ex ea commodo consequat.
     dob: '1977-04-14'
-    year_started: '1998-01-01'
+    year_started: 1998
     belt_grade: Kup4
     is_instructor: true
     idUser: 2
     idSchool: 1
     image_name: jimmytrith.png
-    is_activated: true
+    is_publishable: true
+    token: ''
     slug: jimmy-trith
     

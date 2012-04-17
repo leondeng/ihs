@@ -15,7 +15,7 @@ Profile:
     title: text
     philosophy: text
     dob: date
-    year_started: date
+    year_started: integer(4)
     belt_grade:
       type: enum
       values: [Kup1, Kup2, Kup3, Kup4, Kup5, Kup6, Kup7, Kup8, Kup9]
@@ -25,9 +25,10 @@ Profile:
     idUser: integer
     idSchool: integer
     image_name: text
-    is_activated:
+    is_publishable:
       type: boolean
       default: false
+    token: string(32)
   relations:
     User:
       class: sfGuardUser
@@ -59,6 +60,7 @@ School:
     website: text
     leading_instructor: text
     classtime: text
-    is_activated:
+    is_publishable:
       type: boolean
       default: false
+#    token: string(32)

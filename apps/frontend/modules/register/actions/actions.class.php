@@ -27,7 +27,7 @@ class registerActions extends sfActions
         $user = $this->form->getObject();
 
         // get the normal user group
-        $normal_user_group = sfConfig::get('app_config_normal_user');
+        //$normal_user_group = sfConfig::get('app_config_normal_user');
 
         // deactivate the account, till the user verifies the account
         $user->setIsActive(false);

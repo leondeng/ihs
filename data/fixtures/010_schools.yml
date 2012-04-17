@@ -22,7 +22,7 @@ School:
       SATURDAY
       9:00am - 10:00am Mixed Kids Class
       10:00am - 11:00am Mixed Adults Class
-    is_activated: true
+    is_publishable: true
     slug: sydney-hurstville-iha
   Parramatta:
     name: Parramatta
@@ -47,5 +47,5 @@ School:
       SATURDAY
       9:00am - 10:00am Mixed Kids Class
       10:00am - 11:00am Mixed Adults Class
-    is_activated: true
+    is_publishable: true
     slug: sydney-parramatta

@@ -16,7 +16,7 @@
  * @property text $website
  * @property text $leading_instructor
  * @property text $classtime
- * @property boolean $is_activated
+ * @property boolean $is_publishable
  * @property Doctrine_Collection $Members
  * 
  * @method text                getName()               Returns the current record's "name" value
@@ -30,7 +30,7 @@
  * @method text                getWebsite()            Returns the current record's "website" value
  * @method text                getLeadingInstructor()  Returns the current record's "leading_instructor" value
  * @method text                getClasstime()          Returns the current record's "classtime" value
- * @method boolean             getIsActivated()        Returns the current record's "is_activated" value
+ * @method boolean             getIsPublishable()      Returns the current record's "is_publishable" value
  * @method Doctrine_Collection getMembers()            Returns the current record's "Members" collection
  * @method School              setName()               Sets the current record's "name" value
  * @method School              setCountry()            Sets the current record's "country" value
@@ -43,7 +43,7 @@
  * @method School              setWebsite()            Sets the current record's "website" value
  * @method School              setLeadingInstructor()  Sets the current record's "leading_instructor" value
  * @method School              setClasstime()          Sets the current record's "classtime" value
- * @method School              setIsActivated()        Sets the current record's "is_activated" value
+ * @method School              setIsPublishable()      Sets the current record's "is_publishable" value
  * @method School              setMembers()            Sets the current record's "Members" collection
  * 
  * @package    ihs
@@ -97,7 +97,7 @@ abstract class BaseSchool extends sfDoctrineRecord
         $this->hasColumn('classtime', 'text', null, array(
              'type' => 'text',
              ));
-        $this->hasColumn('is_activated', 'boolean', null, array(
+        $this->hasColumn('is_publishable', 'boolean', null, array(
              'type' => 'boolean',
              'default' => false,
              ));

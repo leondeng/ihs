@@ -19,7 +19,7 @@ class searchActions extends sfActions
     $this->getResponse()->setTitle('Instructors/Black Belts - Search Result');
     $this->pager = new sfDoctrinePager('Profile', '20');
 
-    $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_activated = 1');
+    $query = ProfileTable::getInstance()->createQuery('p')->where('p.is_publishable = 1');
 
     $params = $request->getParameter('search_instructor', $this->getUser()->getAttribute('searchKeys', array(), 'SearchInstructor'));
 
@@ -64,7 +64,7 @@ class searchActions extends sfActions
     $this->getResponse()->setTitle('Dojang - Search Result');
     $this->pager = new sfDoctrinePager('School', '20');
 
-    $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_activated = 1');
+    $query = SchoolTable::getInstance()->createQuery('sh')->where('sh.is_publishable = 1');
 
     $params = $request->getParameter('search_dojang', $this->getUser()->getAttribute('searchKeys', array(), 'SearchDojang'));
 

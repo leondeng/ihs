@@ -43,7 +43,7 @@ class ProfileForm extends BaseProfileForm
     $this->setValidator('dob', new sfValidatorDate(array('required' => false)));
 
     $this->setWidget('year_started', new sfWidgetFormInputText(array('label' => 'Year Started Hapkido', 'default' => $this->getObject()->getYearStarted())));
-    $this->setValidator('year_started', new sfValidatorDate(array('required' => true)));
+    $this->setValidator('year_started', new sfValidatorInteger(array('required' => true, 'min' => 1900, 'max' => date('Y'))));
 
     $this->setWidget('belt_grade', new sfWidgetFormSelect(array('label' => 'Belt Grade', 'choices' => $this->getBeltGrades(), 'default' => $this->getObject()->getBeltGrade())));
     $this->setValidator('belt_grade', new sfValidatorChoice(array('choices' => $this->getBeltGrades(false))));
