@@ -30,9 +30,16 @@
 			</span>
 		</div>
 		<div class="">
-			<span class="label">INSTRUCTOR AT:</span><br> <span class="value"><a
-				href="<?php echo url_for('@dojang?slug='.$school->getSlug()); ?>"> <?php echo sprintf('%s / %s / %s', $school->getSuburb(), $school->getCity(), $school->getCountry()); ?>
-			</a> </span><br> <span class="label">CLICK DOJANG TO GO TO LINK</span>
+			<span class="label">INSTRUCTOR AT:</span><br> 
+			<span class="value">
+			<?php if (is_null($school) : ?>
+			  N/A
+			<?php else : ?>
+        <a href="<?php echo url_for('@dojang?slug='.$school->getSlug()); ?>">
+          <?php echo sprintf('%s / %s / %s', $school->getSuburb(), $school->getCity(), $school->getCountry()); ?>
+        </a>
+			<?php endif; ?>
+			</span><br> <span class="label">CLICK DOJANG TO GO TO LINK</span>
 		</div>
 		<?php include_partial('likeit', array('currentUrl' => $currentUrl)); ?>
 	</div>
