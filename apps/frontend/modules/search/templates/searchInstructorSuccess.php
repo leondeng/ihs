@@ -25,19 +25,19 @@
 							class="label">NAME</span><br> <span class="value"><?php echo $instructor->getFullName(); ?>
 						</span> </a></td>
 					<td width="30%"><span class="label">COUNTRY</span><br> <span
-						class="value"><?php echo is_null($instructor->getSchool())?'N/A':$instructor->getSchool()->getCountry(); ?>
+						class="value"><?php echo $instructor->hasSchool()?$instructor->getSchool()->getCountry():'N/A'; ?>
 					</span>
 					</td>
 					<td width="30%">
-					  <?php if (is_null($instructor->getSchool())): ?>
-              <span	class="label">DOJANG</span><br>
-              <span class="value">N/A</span>
+					  <?php if ($instructor->hasSchool()): ?>
+                        <a href="<?php echo url_for('@dojang?slug='.$instructor->getSchool()->getSlug()); ?>">
+                          <span	class="label">DOJANG</span><br>
+                          <span class="value"><?php echo $instructor->getSchool(); ?></span>
+                        </a>
 					  <?php else : ?>
-              <a href="<?php echo url_for('@dojang?slug='.$instructor->getSchool()->getSlug()); ?>">
-                <span	class="label">DOJANG</span><br>
-                <span class="value"><?php echo $instructor->getSchool(); ?></span>
-              </a>
-						<?php endif; ?>
+                        <span	class="label">DOJANG</span><br>
+                        <span class="value">N/A</span>
+					  <?php endif; ?>
 					</td>
 				</tr>
 				<?php endforeach;?>

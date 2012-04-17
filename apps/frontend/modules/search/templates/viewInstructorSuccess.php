@@ -1,4 +1,4 @@
-<?php $school = $instructor->getSchool();?>
+<?php $school = $instructor->getSchool(); ?>
 <div id="ContentLeft">
 	<div id="Goback">
 		<a href="<?php echo url_for('@instructors_list'); ?>">GO BACK TO
@@ -32,12 +32,12 @@
 		<div class="">
 			<span class="label">INSTRUCTOR AT:</span><br> 
 			<span class="value">
-			<?php if (is_null($school) : ?>
-			  N/A
+			<?php if ($instructor->hasSchool()) : ?>
+              <a href="<?php echo url_for('@dojang?slug='.$school->getSlug()); ?>">
+                <?php echo sprintf('%s / %s / %s', $school->getSuburb(), $school->getCity(), $school->getCountry()); ?>
+              </a>
 			<?php else : ?>
-        <a href="<?php echo url_for('@dojang?slug='.$school->getSlug()); ?>">
-          <?php echo sprintf('%s / %s / %s', $school->getSuburb(), $school->getCity(), $school->getCountry()); ?>
-        </a>
+			  N/A
 			<?php endif; ?>
 			</span><br> <span class="label">CLICK DOJANG TO GO TO LINK</span>
 		</div>

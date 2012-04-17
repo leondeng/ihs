@@ -16,4 +16,8 @@ class Profile extends BaseProfile
     return sprintf('%s %s %s', $this->getTitle(), $this->getFirstName(), $this->getLastName());
   }
 
+  public function hasSchool() {
+    return $this->getIdSchool() > 0;
+  }
+
 }
