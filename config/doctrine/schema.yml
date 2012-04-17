@@ -34,6 +34,7 @@ Profile:
       class: sfGuardUser
       local: idUser
       foreignType: one
+      onDelete: CASCADE
     School:
       class: School
       local: idSchool

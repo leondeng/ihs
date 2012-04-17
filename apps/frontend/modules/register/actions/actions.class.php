@@ -36,12 +36,13 @@ class registerActions extends sfActions
         $profile = new Profile();
 
         // set the activation token
-        $profile->setToken(md5(time()))->save();
+        $profile->setToken(md5(time()));
 
         $user->setProfile($profile);
 
         // notify the user about the signup
-//         $this->notifySignup($user, $profile);
+        $this->notifySignup($request, $user, $profile);
+        $profile->save();
         $user->save(); // save the record in the database
 
         $this->getUser()->setFlash('notice', 'Register success. Please check your email to activate your account.');
@@ -52,16 +53,17 @@ class registerActions extends sfActions
     }
   }
 
-  private function notifySignup($user, $profile) {
-    $activationUrl = "http://www.event.com/index.php..." . $user->getId() . "&activation=" . $profile->getToken();
-    $message = $this->getMailer()->compose(
-        'info@megasale.am',
-        'info@megasale.am'/* $mailerarraystuff[0] */,
-        '' . $user->getEmailAddress() . '', 'Shnorhakalutyun grancman hamar
-        Grancumn aktivacnelu hamar ayceleq hetvevyal hasceov: '
-        . $activationUrl . ' //Megasale');
-    $message->setBcc($singleUserMail[0]['email_address']);
-    //$this->getMailer()->send($message);
+  private function notifySignup(sfWebRequest $request, $user, $profile) {
+    $activationUrl = $this->generateUrl('sf_guard_activate', array('userid' => $user->getId(), 'activation' => $profile->getToken()), true);
+
+    $message = Swift_Message::newInstance()
+      ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+      ->setTo($user->getEmailAddress())
+      ->setSubject('International Hapkido Alliance Register Verification')
+      ->setBody($this->getPartial('register/activeAccountMail', array('site' => $request->getHost(), 'user' => $user, 'activationUrl' => $activationUrl)))
+      ->setContentType('text/html');
+
+    $this->getMailer()->send($message);
   }
 
   public function executeActivation(sfWebRequest $request) {

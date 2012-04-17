@@ -121,6 +121,13 @@ sf_guard_register:
     action: register
     sf_format: html
 
+sf_guard_activate:
+  url:   /active/:userid/:activation.:sf_format
+  param:
+    module: register
+    action: activate
+    sf_format: html
+
 static:
   url: /:content.:sf_format
   param:

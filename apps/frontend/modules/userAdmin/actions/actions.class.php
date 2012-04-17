@@ -35,7 +35,7 @@ class userAdminActions extends sfActions
       $user->setPassword($this->form->getValue('password'));
       $user->save();
 
-      $this->getUser()->setFlash('notice', 'Your password has been changed successfully.');
+      $this->getUser()->setFlash('notice', 'Your password has been updated successfully.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
