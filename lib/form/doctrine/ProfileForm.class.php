@@ -48,7 +48,7 @@ class ProfileForm extends BaseProfileForm
     $this->setWidget('belt_grade', new sfWidgetFormSelect(array('label' => 'Belt Grade', 'choices' => $this->getBeltGrades(), 'default' => $this->getObject()->getBeltGrade())));
     $this->setValidator('belt_grade', new sfValidatorChoice(array('choices' => $this->getBeltGrades(false))));
 
-    $this->setWidget('is_instructor', new sfWidgetFormChoice(array('label' => false, 'expanded' => true, 'choices' => array('1' => 'Instructor', '0' => 'Black Belt'), 'default' => $this->getObject()->getIsActivated())));
+    $this->setWidget('is_instructor', new sfWidgetFormChoice(array('label' => false, 'expanded' => true, 'choices' => array('1' => 'Instructor', '0' => 'Black Belt'), 'default' => $this->getObject()->getIsInstructor())));
     $this->setValidator('is_instructor', new sfValidatorBoolean(array('required' => true)));
 
     $this->setWidget('image_name', new sfWidgetFormInputFileEditable(array(

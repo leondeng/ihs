@@ -22,7 +22,7 @@
 			</span>
 		</div>
 		<div class="">
-			<span class="label">STARTED HAPKIDO:</span><br> <span class="value"><?php echo $instructor->getDateTimeObject('year_started')->format('Y'); ?>
+			<span class="label">STARTED HAPKIDO:</span><br> <span class="value"><?php echo $instructor->getYearStarted(); ?>
 			</span>
 		</div>
 		<div class="">
