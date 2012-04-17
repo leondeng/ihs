@@ -431,6 +431,11 @@ a:active {
 	color: #0099FF;
 }
 
+#FlashMessages {
+	width: 820px;
+	padding: 0 0 0 80px;
+}
+
 .flash_notice {
 	margin: 3px 0;
 	padding: 5px 0 2px 36px;

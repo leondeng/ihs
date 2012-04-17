@@ -17,6 +17,9 @@
         <?php include_partial('global/navigation'); ?>
       </div>
       <div class="clear"></div>
+      <div id="FlashMessages">
+        <?php include_partial('global/flashMessages'); ?>
+      </div>
       <div id="PageContent">
         <?php echo $sf_content ?>
       </div>

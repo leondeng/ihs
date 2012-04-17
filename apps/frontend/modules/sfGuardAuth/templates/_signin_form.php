@@ -4,7 +4,7 @@
 	method="post">
 	<div class="box login">
 		<div class="title_login">
-			Please login to create or update your profile.
+			Please login to update your configurations.
 		</div>
 		<div class="inner_login"><?php echo $form; ?>
 			<!-- <div class="column">

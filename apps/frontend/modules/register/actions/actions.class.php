@@ -32,16 +32,20 @@ class registerActions extends sfActions
         // deactivate the account, till the user verifies the account
         $user->setIsActive(false);
 
+        // create profile for the user
+        $profile = new Profile();
+
         // set the activation token
-        $profile = $user->getProfile();
-        $profile->setToken(md5(time()));
+        $profile->setToken(md5(time()))->save();
+
+        $user->setProfile($profile);
 
         // notify the user about the signup
-        $this->notifySignup($user, $profile);
+//         $this->notifySignup($user, $profile);
         $user->save(); // save the record in the database
 
-        $this->getUser()->setFlash('register_confirm', true);
-
+        $this->getUser()->setFlash('notice', 'Register success. Please check your email to activate your account.');
+        $this->redirect('@sf_guard_signin');
         //         $this->getUser()->signIn($this->form->getObject());
         //         $this->redirect('@homepage');
       }

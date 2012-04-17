@@ -16,6 +16,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     sfWidgetFormSchema::setDefaultFormFormatterName('ihs');
 
     sfConfig::set('sf_thumbnail_dir', sfConfig::get('sf_upload_dir').'/thumbnails');
+    sfConfig::set('app_sf_guard_plugin_allow_login_with_email', false);
   }
 
 }
