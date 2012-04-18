@@ -80,7 +80,7 @@ class registerActions extends sfActions
       }
 
       if ($user->getIsActive()) {
-        $this->getUser()->setFlash('error', 'Oops! This account has already been activated.');
+        $this->getUser()->setFlash('error', sprintf('Oops! Account %s has already been activated.', $user->getUsername()));
         // $this->redirect('@sf_guard_signin');
         return sfView::ERROR;
       }
@@ -96,7 +96,7 @@ class registerActions extends sfActions
       $profile->setToken(null)->save();
       $user->setIsActive(true)->save();
 
-      $this->getUser()->setFlash('notice', 'Activate success, thank you. Please login.');
+      $this->getUser()->setFlash('notice', 'Account activated. Please login.');
       $this->redirect('@sf_guard_signin');
 
       /* $q2s = Doctrine_Query::create()->select('p.id ')
