@@ -66,30 +66,57 @@ class registerActions extends sfActions
     $this->getMailer()->send($message);
   }
 
-  public function executeActivation(sfWebRequest $request) {
+  public function executeActivate(sfWebRequest $request) {
     if ($request->isMethod('get')) {
-      $this->memberId = $request->getParameter('member');
+      $this->userId = $request->getParameter('userid');
       $this->activationId = $request->getParameter('activation');
 
-      $q2s = Doctrine_Query::create()->select('p.id ')
-      ->from('sfGuardUserProfile p')
+      $user = sfGuardUserTable::getInstance()->findOneById($this->userId);
+
+      if (!($user instanceof sfGuardUser)) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid user.');
+        // $this->redirect('@sf_guard_signin');
+        return sfView::ERROR;
+      }
+
+      if ($user->getIsActive()) {
+        $this->getUser()->setFlash('error', 'Oops! This account has already been activated.');
+        // $this->redirect('@sf_guard_signin');
+        return sfView::ERROR;
+      }
+
+      $profile = $user->getProfile();
+
+      if ($this->activationId !== $profile->getToken()) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid activation token.');
+        // $this->redirect('@sf_guard_signin');
+        return sfView::ERROR;
+      }
+
+      $profile->setToken(null)->save();
+      $user->setIsActive(true)->save();
+
+      $this->getUser()->setFlash('notice', 'Activate success, thank you. Please login.');
+      $this->redirect('@sf_guard_signin');
+
+      /* $q2s = Doctrine_Query::create()->select('p.id ')
+       ->from('sfGuardUserProfile p')
       ->where('p.token = ?', $this->activationId );
 
       $getUserId = $q2s->fetchArray();
       $this->activated = 0;
       if (sizeof($getUserId[0][id])) {
 
-        Doctrine_Query::create ()
-        ->update('sfGuardUser u')
-        ->set('u.is_active', 1)
-        ->where('u.id = ?', $getUserId[0][id])->execute();
-        $this->activated = 1;
-      }
+      Doctrine_Query::create ()
+      ->update('sfGuardUser u')
+      ->set('u.is_active', 1)
+      ->where('u.id = ?', $getUserId[0][id])->execute();
+      $this->activated = 1;
+      } */
     }
-
   }
 
-  public function executeActivationgo(sfWebRequest $request) {
+  /* public function executeActivationgo(sfWebRequest $request) {
 
-  }
+  } */
 }
