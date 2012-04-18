@@ -126,7 +126,8 @@ abstract class BaseProfile extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('sfGuardUser as User', array(
              'local' => 'idUser',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $this->hasOne('School', array(
              'local' => 'idSchool',
