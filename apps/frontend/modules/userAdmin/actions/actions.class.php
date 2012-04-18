@@ -80,14 +80,34 @@ class userAdminActions extends sfActions
       $this->form->save();
 
       /* $profile = $this->getUser()->getGuardUser()->getProfile();
-      $profile->fromArray($this->form->getValues());
+       $profile->fromArray($this->form->getValues());
       $profile->save(); */
 
-      $this->getUser()->setFlash('notice', 'Your personal profile has been updated successfully.');
+      $profile = $this->form->getObject();
+
+      // notify the admin about the profile update
+      $this->notifyProfileUpdate($request, $profile);
+
+      $profile->setIsPublishable(false)->save();
+
+      $this->getUser()->setFlash('notice', 'Personal profile updated. Please wait for our verification.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
     }
+  }
+
+  private function notifyProfileUpdate(sfWebRequest $request, $profile) {
+    $verificationUrl = $this->generateUrl('profile_verificate', array('profileId' => $profile->getId()), true);
+
+    $message = Swift_Message::newInstance()
+      ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+      ->setTo(sfConfig::get('app_sf_guard_plugin_default_from_email', 'iha.admin@gmail.com'))
+      ->setSubject('International Hapkido Alliance Profile Update Verification')
+      ->setBody($this->getPartial('userAdmin/verificateProfileMail', array('profile' => $profile)))
+      ->setContentType('text/html');
+
+    $this->getMailer()->send($message);
   }
 
   public function executeEditSchool(sfWebRequest $request) {
@@ -104,9 +124,9 @@ class userAdminActions extends sfActions
 
       $school = $this->getUser()->getGuardUser()->getProfile()->getSchool();
       $school->fromArray($this->form->getValues());
-      $school->save();
+      $school->setIsPublishable(false)->save();
 
-      $this->getUser()->setFlash('notice', 'Your dojang profile has been updated successfully.');
+      $this->getUser()->setFlash('notice', 'Dojang profile updated. Please wait for our verification.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
