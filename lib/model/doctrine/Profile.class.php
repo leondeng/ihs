@@ -20,4 +20,8 @@ class Profile extends BaseProfile
     return $this->getIdSchool() > 0;
   }
 
+  public function getUniqueSlug() {
+    return ProfileTable::getInstance()->getNextSlug($this->getFirstName(), $this->getLastName());
+  }
+
 }

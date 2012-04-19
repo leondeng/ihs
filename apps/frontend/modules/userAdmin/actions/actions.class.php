@@ -86,11 +86,11 @@ class userAdminActions extends sfActions
       $profile = $this->form->getObject();
 
       // notify the admin about the profile update
-      $this->notifyProfileUpdate($request, $profile);
+//       $this->notifyProfileUpdate($request, $profile);
 
-      $profile->setIsPublishable(false)->save();
+      $profile->setSlug($profile->getUniqueSlug())->setIsPublishable(false)->save();
 
-      $this->getUser()->setFlash('notice', 'Personal profile updated. Please wait for our verification.');
+      $this->getUser()->setFlash('notice', 'Personal profile updated. It\'s under verification now and not open to the public.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
@@ -126,7 +126,7 @@ class userAdminActions extends sfActions
       $school->fromArray($this->form->getValues());
       $school->setIsPublishable(false)->save();
 
-      $this->getUser()->setFlash('notice', 'Dojang profile updated. Please wait for our verification.');
+      $this->getUser()->setFlash('notice', 'Dojang profile updated. It\'s under verification now and not open to the public.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
