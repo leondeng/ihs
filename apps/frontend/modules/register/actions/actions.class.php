@@ -56,14 +56,23 @@ class registerActions extends sfActions
   private function notifySignup(sfWebRequest $request, $user, $profile) {
     $activationUrl = $this->generateUrl('sf_guard_activate', array('userid' => $user->getId(), 'activation' => $profile->getToken()), true);
 
-    $message = Swift_Message::newInstance()
-      ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
-      ->setTo($user->getEmailAddress())
-      ->setSubject('International Hapkido Alliance Register Verification')
+    $message = Swift_Message::newInstance('International Hapkido Alliance Register Verification')
+//       ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+      ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
+      ->setTo(array($user->getEmailAddress() => $user->getUserName()))
       ->setBody($this->getPartial('register/activeAccountMail', array('site' => $request->getHost(), 'user' => $user, 'activationUrl' => $activationUrl)))
       ->setContentType('text/html');
 
-    $this->getMailer()->send($message);
+      $transport = Swift_SmtpTransport::newInstance('host269.hostmonster.com', 465, 'ssl')
+        ->setUsername("iha.register@dimitristangl.com")
+        ->setpassword("iha@123");
+
+      $mailer = Swift_Mailer::newInstance($transport);
+
+      if (!$mailer->send($message, $failures)) {
+        $this->getUser()->setFlash('error', 'Register failed. '.$failures);
+        $this->redirect('@sf_guard_signin');
+      }
   }
 
   public function executeActivate(sfWebRequest $request) {
@@ -80,7 +89,7 @@ class registerActions extends sfActions
       }
 
       if ($user->getIsActive()) {
-        $this->getUser()->setFlash('error', 'Oops! This account has already been activated.');
+        $this->getUser()->setFlash('error', sprintf('Oops! Account %s has already been activated.', $user->getUsername()));
         // $this->redirect('@sf_guard_signin');
         return sfView::ERROR;
       }
@@ -96,7 +105,7 @@ class registerActions extends sfActions
       $profile->setToken(null)->save();
       $user->setIsActive(true)->save();
 
-      $this->getUser()->setFlash('notice', 'Activate success, thank you. Please login.');
+      $this->getUser()->setFlash('notice', 'Account activated. Please login.');
       $this->redirect('@sf_guard_signin');
 
       /* $q2s = Doctrine_Query::create()->select('p.id ')

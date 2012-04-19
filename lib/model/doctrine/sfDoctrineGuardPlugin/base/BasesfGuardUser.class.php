@@ -90,7 +90,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
-             'default' => 1,
+             'default' => false,
              ));
         $this->hasColumn('is_super_admin', 'boolean', null, array(
              'type' => 'boolean',
