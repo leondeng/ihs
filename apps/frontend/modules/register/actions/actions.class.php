@@ -56,34 +56,23 @@ class registerActions extends sfActions
   private function notifySignup(sfWebRequest $request, $user, $profile) {
     $activationUrl = $this->generateUrl('sf_guard_activate', array('userid' => $user->getId(), 'activation' => $profile->getToken()), true);
 
-    $message = Swift_Message::newInstance()
+    $message = Swift_Message::newInstance('International Hapkido Alliance Register Verification')
 //       ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
-      ->setFrom('iha.register@dimitristangl.com')
-      ->setTo($user->getEmailAddress())
-      ->setSubject('International Hapkido Alliance Register Verification')
+      ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
+      ->setTo(array($user->getEmailAddress() => $user->getUserName()))
       ->setBody($this->getPartial('register/activeAccountMail', array('site' => $request->getHost(), 'user' => $user, 'activationUrl' => $activationUrl)))
       ->setContentType('text/html');
 
-    if (sfConfig::get('app_mailer_smtpserver_inside_hostmonster', true) && sfConfig::get('sf_environment') === 'prod') {
-      // inside hostmonster have to use localhost
-      $smtp = Swift_SmtpTransport::newInstance()
-        ->setHost('localhost')
-        ->setPort(465)
-        ->setEncryption('ssl')
+      $transport = Swift_SmtpTransport::newInstance('host269.hostmonster.com', 465, 'ssl')
         ->setUsername("iha.register@dimitristangl.com")
-        ->setpassword("iha@123")
-        ->setTimeout(120);
+        ->setpassword("iha@123");
 
-      // $swift = new Swift($smtp);
-      // $message =& new Swift_Message("My subject", "My body");
+      $mailer = Swift_Mailer::newInstance($transport);
 
-      if (!$smtp->send($message/* , "recep@gmail.com", "sender@gmail.com" */)) {
-        $this->getUser()->setFlash('error', 'Register failed. Unable to send activation email.');
+      if (!$mailer->send($message, $failures)) {
+        $this->getUser()->setFlash('error', 'Register failed. '.$failures);
         $this->redirect('@sf_guard_signin');
       }
-    } else {
-      $this->getMailer()->send($message);
-    }
   }
 
   public function executeActivate(sfWebRequest $request) {
