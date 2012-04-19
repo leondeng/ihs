@@ -52,8 +52,13 @@ all:
       transport:
         class: Swift_SmtpTransport
         param:
-          host:       smtp.gmail.com
+#          host:       smtp.gmail.com
+#          port:       465
+#          encryption: ssl
+#          username: iha.register@gmail.com
+#          password: iha12345
+          host:       host269.hostmonster.com
           port:       465
           encryption: ssl
-          username: iha.register@gmail.com
-          password: iha12345
+          username:   iha.register@dimitristangl.com
+          password:   iha@123
