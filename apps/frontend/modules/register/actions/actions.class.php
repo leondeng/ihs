@@ -63,7 +63,26 @@ class registerActions extends sfActions
       ->setBody($this->getPartial('register/activeAccountMail', array('site' => $request->getHost(), 'user' => $user, 'activationUrl' => $activationUrl)))
       ->setContentType('text/html');
 
-    $this->getMailer()->send($message);
+    if (sfConfig::get('app_mailer_smtpserver_inside_hostmonster', true) && sfConfig::get('sf_environment') === 'prod') {
+      // inside hostmonster have to use localhost
+      $smtp = & new Swift_Connection_SMTP("localhost"
+          , Swift_Connection_SMTP::PORT_SECURE, Swift_Connection_SMTP::ENC_SSL);
+
+      $smtp->setUsername("iha.register@dimitristangl.com");
+      $smtp->setpassword("iha@123");
+
+      $smtp->setTimeout(120);
+
+      $swift = new Swift($smtp);
+      // $message =& new Swift_Message("My subject", "My body");
+
+      if (!$swift->send($message/* , "recep@gmail.com", "sender@gmail.com" */)) {
+        $this->getUser()->setFlash('error', 'Register failed. Unable to send activation email.');
+        $this->redirect('@sf_guard_signin');
+      }
+    } else {
+      $this->getMailer()->send($message);
+    }
   }
 
   public function executeActivate(sfWebRequest $request) {

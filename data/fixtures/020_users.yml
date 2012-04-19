@@ -5,12 +5,12 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: true
-    last_login: '2012-03-28 22:48:00'
+#    last_login: '2012-03-28 22:48:00'
   jimmytrith:
     email_address: jimmytrith@hurstvilleiha.com.au
     username: jimmytrith
     password: 12345
     is_active: true
     is_super_admin: false
-    last_login: '2012-03-30 22:48:00'
+#    last_login: '2012-03-30 22:48:00'
   
