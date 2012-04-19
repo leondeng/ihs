@@ -57,7 +57,8 @@ class registerActions extends sfActions
     $activationUrl = $this->generateUrl('sf_guard_activate', array('userid' => $user->getId(), 'activation' => $profile->getToken()), true);
 
     $message = Swift_Message::newInstance()
-      ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+//       ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+      ->setFrom('iha.register@dimitristangl.com')
       ->setTo($user->getEmailAddress())
       ->setSubject('International Hapkido Alliance Register Verification')
       ->setBody($this->getPartial('register/activeAccountMail', array('site' => $request->getHost(), 'user' => $user, 'activationUrl' => $activationUrl)))
