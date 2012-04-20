@@ -17,6 +17,8 @@ class userAdminActions extends sfActions
   public function executeIndex(sfWebRequest $request) {
     //$this->forward('default', 'module');
     $this->getResponse()->setTitle($this->username.' - User Administration');
+    $this->profile = $this->getUser()->getGuardUser()->getProfile();
+    $this->school = $this->profile->getSchool();
   }
 
   public function executeChangePassword(sfWebRequest $request) {
