@@ -45,7 +45,7 @@ class registerActions extends sfActions
         $profile->save();
         $user->save(); // save the record in the database
 
-        $this->getUser()->setFlash('notice', 'Register success. Please check your email to activate your account.');
+        $this->getUser()->setFlash('success', 'Register success. Please check your email to activate your account.');
         $this->redirect('@sf_guard_signin');
         //         $this->getUser()->signIn($this->form->getObject());
         //         $this->redirect('@homepage');
@@ -105,7 +105,7 @@ class registerActions extends sfActions
       $profile->setToken(null)->save();
       $user->setIsActive(true)->save();
 
-      $this->getUser()->setFlash('notice', 'Account activated. Please login.');
+      $this->getUser()->setFlash('success', 'Account activated. Please login.');
       $this->redirect('@sf_guard_signin');
 
       /* $q2s = Doctrine_Query::create()->select('p.id ')

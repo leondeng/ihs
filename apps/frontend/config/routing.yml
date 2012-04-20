@@ -128,6 +128,13 @@ sf_guard_activate:
     action: activate
     sf_format: html
 
+profile_verificate:
+  url: /profile/:profileid/:verification.:sf_format
+  param:
+    module: userAdmin
+    action: profileVerificate
+    sf_format: html
+
 static:
   url: /:content.:sf_format
   param:

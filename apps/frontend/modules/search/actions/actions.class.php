@@ -51,6 +51,7 @@ class searchActions extends sfActions
   public function executeViewInstructor(sfWebRequest $request) {
     $this->instructor = ProfileTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->instructor instanceof Profile, 'No blackbelt/instructor with this name.');
+    $this->forward404Unless($this->instructor->getIsPublishable(), 'Profile is in verification.');
     $this->getResponse()->setTitle(sprintf('%s - %s ', $this->instructor->getIsInstructor()?'Instructor':'Black Belt', $this->instructor->getFullName()));
     $this->currentUrl = $request->getUri();
   }
@@ -83,6 +84,7 @@ class searchActions extends sfActions
   public function executeViewDojang(sfWebRequest $request) {
     $this->dojang = SchoolTable::getInstance()->findOneBySlug($request->getParameter('slug'));
     $this->forward404Unless($this->dojang instanceof School, 'No dojang with this name.');
+    $this->forward404Unless($this->dojang->getIsPublishable(), 'Dojang is in verification.');
     $this->getResponse()->setTitle(sprintf('Dojang - %s - %s', $this->dojang->getCity(), $this->dojang->getName()));
     $this->currentUrl = $request->getUri();
 

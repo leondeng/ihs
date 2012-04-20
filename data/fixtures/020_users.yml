@@ -1,6 +1,6 @@
 sfGuardUser:
   administrator:
-    email_address: admin@hurstvilleiha.com.au
+    email_address: iha.register@dimitristangl.com
     username: admin
     password: admin
     is_active: true

@@ -6,14 +6,15 @@
 		</h1>
 	</div>
 	<div>
-		Password <a href="<?php echo url_for('@change_password'); ?>">change</a><br>
-		Email Address <a href="<?php echo url_for('@change_email'); ?>">change</a><br>
-		Personal Profile
-		<?php echo $profile->getIsPublishable() ? '' : '(under verification)'; ?>
-		<a href="<?php echo url_for('@edit_profile'); ?>">edit</a><br> Dojang
-		Profile
-		<?php echo $school->getIsPublishable() ? '' : '(under verification)'; ?>
-		<a href="<?php echo url_for('@edit_school'); ?>">edit</a><br> <a
-			href="<?php echo url_for('@sf_guard_signout'); ?>">Logout</a>
+		<a href="<?php echo url_for('@change_password'); ?>">Change Password</a><br>
+		<a href="<?php echo url_for('@change_email'); ?>">Change Email Address</a><br>
+		
+		
+		<a href="<?php echo url_for('@edit_profile'); ?>">Update Profile</a>
+		<?php echo sprintf(' - %s', $profileStatus); ?><br>
+		
+		<a href="<?php echo url_for('@edit_school'); ?>">Update Dojang</a>
+		<?php echo sprintf(' - %s', $schoolStatus); ?><br> 
+		<a href="<?php echo url_for('@sf_guard_signout'); ?>">Logout</a>
 	</div>
 </div>

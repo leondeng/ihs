@@ -1,19 +1,19 @@
 Profile:
   administrator:
-    first_name: Jemmery
-    last_name: Lin
-    title: Master
-    philosophy: Yi Tui Wei Jin
-    dob: '1995-04-01'
-    year_started: 2001
+    first_name: Admin
+    last_name: Iha
+    title: Administrator
+    philosophy: Administration
+    dob: '2012-04-20'
+    year_started: 2012
     belt_grade: Kup9
     is_instructor: true
     idUser: 1
     idSchool: 2
     image_name: linshuhao.jpg
-    is_publishable: true
+    is_publishable: false
     token: ''
-    slug: jemmery-lin
+    slug: admin-iha
   jimmytrith:
     first_name: Jimmy
     last_name: Trith

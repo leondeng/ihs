@@ -12,13 +12,23 @@ class userAdminActions extends sfActions
 {
   public function preExecute() {
     $this->username = $this->getUser()->getUserName();
+    $this->profile = $this->getUser()->getGuardUser()->getProfile();
+    $this->school = $this->profile->getSchool();
+    $this->school = empty($this->school) ? new School() : $this->school;
   }
 
   public function executeIndex(sfWebRequest $request) {
-    //$this->forward('default', 'module');
     $this->getResponse()->setTitle($this->username.' - User Administration');
-    $this->profile = $this->getUser()->getGuardUser()->getProfile();
-    $this->school = $this->profile->getSchool();
+    
+    $fname = $this->profile->getFirstName();
+    $profile_pub = $this->profile->getIsPublishable();
+    $this->profileStatus = empty($fname) ? 'Your profile is empty, please update it ASAP.'
+    : ($profile_pub ? 'ok' : 'in verification, please be patient.');
+    
+    $school_name = $this->school->getName();
+    $school_pub = $this->school->getIsPublishable();
+    $this->schoolStatus = empty($school_name) ? 'Your school info is empty. You can select an existing one in profile, or edit a new one.'
+    : ($school_pub ? 'ok' : 'in verification, please be patient.');
   }
 
   public function executeChangePassword(sfWebRequest $request) {
@@ -37,7 +47,7 @@ class userAdminActions extends sfActions
       $user->setPassword($this->form->getValue('password'));
       $user->save();
 
-      $this->getUser()->setFlash('notice', 'Your password has been updated successfully.');
+      $this->getUser()->setFlash('success', 'Your password has been updated successfully.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
@@ -60,7 +70,7 @@ class userAdminActions extends sfActions
       $user->setEmailAddress($this->form->getValue('email_address'));
       $user->save();
 
-      $this->getUser()->setFlash('notice', 'Your email address has been changed successfully.');
+      $this->getUser()->setFlash('success', 'Your email address has been changed successfully.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
@@ -68,10 +78,10 @@ class userAdminActions extends sfActions
   }
 
   public function executeEditProfile(sfWebRequest $request) {
-    $this->form = new ProfileForm($this->getUser()->getGuardUser()->getProfile());
+    $this->form = new ProfileForm($this->profile);
     $request->setRequestFormat('html');
 
-    $this->getResponse()->setTitle($this->username.' - Edit Personal Profile');
+    $this->getResponse()->setTitle($this->username.' - Edit Profile');
 
     if ($request->isMethod('post')) {
       $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
@@ -85,38 +95,77 @@ class userAdminActions extends sfActions
        $profile->fromArray($this->form->getValues());
       $profile->save(); */
 
+      $user = $this->getUser()->getGuardUser();
       $profile = $this->form->getObject();
+      
+      // set the verification token
+      $profile->setToken(md5(time()));
 
       // notify the admin about the profile update
-//       $this->notifyProfileUpdate($request, $profile);
+      $this->notifyProfileUpdate($request, $user, $profile);
 
       $profile->setSlug($profile->getUniqueSlug())->setIsPublishable(false)->save();
 
-      $this->getUser()->setFlash('notice', 'Personal profile updated. It\'s under verification now and not open to the public.');
+      $this->getUser()->setFlash('success', 'Your profile has been updated successfully. It will be public after verification.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
     }
   }
 
-  private function notifyProfileUpdate(sfWebRequest $request, $profile) {
-    $verificationUrl = $this->generateUrl('profile_verificate', array('profileId' => $profile->getId()), true);
+  private function notifyProfileUpdate(sfWebRequest $request, $user, $profile) {
+    $verificationUrl = $this->generateUrl('profile_verificate', array('profileid' => $profile->getId(), 'verification' => $profile->getToken()), true);
 
-    $message = Swift_Message::newInstance()
-      ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
-      ->setTo(sfConfig::get('app_sf_guard_plugin_default_from_email', 'iha.admin@gmail.com'))
-      ->setSubject('International Hapkido Alliance Profile Update Verification')
-      ->setBody($this->getPartial('userAdmin/verificateProfileMail', array('profile' => $profile)))
+    $admin = sfGuardUserTable::getInstance()->findOneByIsSuperAdmin(true);
+    $message = Swift_Message::newInstance('User Profile Update Verification')
+      ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
+      ->setTo(array($admin->getEmailAddress() => $admin->getUserName()))
+      ->setBody($this->getPartial('userAdmin/verificateProfileMail', array('user' => $user, 'profile' => $profile, 'verificationUrl' => $verificationUrl)))
       ->setContentType('text/html');
 
-    $this->getMailer()->send($message);
+    $transport = Swift_SmtpTransport::newInstance('host269.hostmonster.com', 465, 'ssl')
+      ->setUsername("iha.register@dimitristangl.com")
+      ->setpassword("iha@123");
+
+    $mailer = Swift_Mailer::newInstance($transport);
+
+    if (!$mailer->send($message, $failures)) {
+      $this->getUser()->setFlash('error', 'Update profile failed. '.$failures);
+      $this->redirect('@userAdmin');
+    }
   }
 
+  public function executeProfileVerificate(sfWebRequest $request) {
+    if ($request->isMethod('get')) {
+      $this->profileId = $request->getParameter('profileid');
+      $this->verificationId = $request->getParameter('verification');
+
+      $profile = ProfileTable::getInstance()->findOneById($this->profileId);
+
+      if (!($profile instanceof Profile)) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid profile.');
+      }
+
+      if ($profile->getIsPublishable()) {
+        $this->getUser()->setFlash('error', sprintf('Oops! Profile of %s has already been verified.', $profile->getFullName()));
+      }
+
+      if ($this->verificationId !== $profile->getToken()) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid verification token.(pleaase check mail, seems the user update again?)');
+      }
+
+      $profile->setIsPublishable(true)->setToken(null)->save();
+
+      $this->getUser()->setFlash('success', 'Profile verified.');
+      $this->redirect('@userAdmin');
+    }
+  }
+  
   public function executeEditSchool(sfWebRequest $request) {
-    $this->form = new SchoolForm($this->getUser()->getGuardUser()->getProfile()->getSchool());
+    $this->form = new SchoolForm($this->school);
     $request->setRequestFormat('html');
 
-    $this->getResponse()->setTitle($this->username.' - Edit Dojang Profile');
+    $this->getResponse()->setTitle($this->username.' - Edit Dojang');
 
     if ($request->isMethod('post')) {
       $this->form->bind($request->getParameter($this->form->getName()));
@@ -124,11 +173,13 @@ class userAdminActions extends sfActions
         return sfView::SUCCESS;
       }
 
-      $school = $this->getUser()->getGuardUser()->getProfile()->getSchool();
+      $school = $this->school;
       $school->fromArray($this->form->getValues());
-      $school->setIsPublishable(false)->save();
+      $school->setSlug($school->getUniqueSlug())->setIsPublishable(false)->save();
+      
+      $this->profile->setSchool($school)->save();
 
-      $this->getUser()->setFlash('notice', 'Dojang profile updated. It\'s under verification now and not open to the public.');
+      $this->getUser()->setFlash('success', 'Your dojang has been updated successfully. It will be public after verification.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;

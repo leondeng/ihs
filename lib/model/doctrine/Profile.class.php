@@ -17,7 +17,7 @@ class Profile extends BaseProfile
   }
 
   public function hasSchool() {
-    return $this->getIdSchool() > 0;
+    return ($this->getIdSchool() > 0 && $this->getSchool()->getIsPublishable());
   }
 
   public function getUniqueSlug() {

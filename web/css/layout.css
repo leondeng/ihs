@@ -436,7 +436,7 @@ a:active {
 	padding: 0 0 0 80px;
 }
 
-.flash_notice {
+.flash_success {
 	margin: 3px 0;
 	padding: 5px 0 2px 36px;
 	background-color: #F0FFF0;
@@ -445,6 +445,19 @@ a:active {
 	color: green;
 	border: 2px solid #00FF00;
 	background-image: url("../images/s_success.png");
+	background-position: 10px 50%;
+	background-repeat: no-repeat;
+}
+
+.flash_notice {
+	margin: 3px 0;
+	padding: 5px 0 2px 36px;
+	background-color: #FFFFDD;
+	font-size: 10px;
+	font-weight: bold;
+	color: orange;
+	border: 2px solid #FFD700;
+	background-image: url("../images/s_notice.png");
 	background-position: 10px 50%;
 	background-repeat: no-repeat;
 }
