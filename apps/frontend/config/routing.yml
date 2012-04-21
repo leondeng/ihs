@@ -2,7 +2,7 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 userAdmin:
-  url: /user_administration.:sf_format
+  url: /account_management.:sf_format
   param:
     module: userAdmin
     action: index
@@ -129,7 +129,7 @@ sf_guard_activate:
     sf_format: html
 
 profile_verificate:
-  url: /profile/:profileid/:verification.:sf_format
+  url: /profile_verification.:sf_format
   param:
     module: userAdmin
     action: profileVerificate

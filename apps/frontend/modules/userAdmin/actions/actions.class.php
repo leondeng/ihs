@@ -13,22 +13,43 @@ class userAdminActions extends sfActions
   public function preExecute() {
     $this->username = $this->getUser()->getUserName();
     $this->profile = $this->getUser()->getGuardUser()->getProfile();
-    $this->school = $this->profile->getSchool();
-    $this->school = empty($this->school) ? new School() : $this->school;
   }
 
   public function executeIndex(sfWebRequest $request) {
-    $this->getResponse()->setTitle($this->username.' - User Administration');
+    $this->getResponse()->setTitle($this->username.' - Accoount Management');
+
+    $this->profileIsEmpty = $this->profileIsInVerification = $this->schoolIsEmpty = false;
     
+    if ($this->getUser()->getGuardUser()->getIsSuperAdmin()) return sfView::SUCCESS;
+
     $fname = $this->profile->getFirstName();
-    $profile_pub = $this->profile->getIsPublishable();
-    $this->profileStatus = empty($fname) ? 'Your profile is empty, please update it ASAP.'
-    : ($profile_pub ? 'ok' : 'in verification, please be patient.');
-    
-    $school_name = $this->school->getName();
-    $school_pub = $this->school->getIsPublishable();
-    $this->schoolStatus = empty($school_name) ? 'Your school info is empty. You can select an existing one in profile, or edit a new one.'
-    : ($school_pub ? 'ok' : 'in verification, please be patient.');
+    if (empty($fname)) {
+      $this->profileIsEmpty = true;
+      $this->getUser()->setFlash('notice', 'Please create your profile.');
+
+      return sfView::SUCCESS;
+    }
+
+    if (!$this->profile->getIsPublishable()) {
+      $this->profileIsInVerification = true;
+      $this->getUser()->setFlash('notice', 'Your profile is still in our verification, please wait.');
+
+      return sfView::SUCCESS;
+    }
+
+    $school_name = $this->profile->getSchool()->getName();
+    if (empty($school_name)) {
+      $this->schoolIsEmpty = true;
+      $this->getUser()->setFlash('notice', 'Please select a dojang in your profile, or create a new one.');
+
+      return sfView::SUCCESS;
+    }
+
+    if (!$this->profile->getSchool()->getIsPublishable()) {
+      $this->getUser()->setFlash('notice', 'Your dojang is still in our verification, please wait.');
+
+      return sfView::SUCCESS;
+    }
   }
 
   public function executeChangePassword(sfWebRequest $request) {
@@ -89,14 +110,9 @@ class userAdminActions extends sfActions
         return sfView::SUCCESS;
       }
 
-      $this->form->save();
-
-      /* $profile = $this->getUser()->getGuardUser()->getProfile();
-       $profile->fromArray($this->form->getValues());
-      $profile->save(); */
+      $profile = $this->form->save();
 
       $user = $this->getUser()->getGuardUser();
-      $profile = $this->form->getObject();
       
       // set the verification token
       $profile->setToken(md5(time()));
@@ -120,7 +136,12 @@ class userAdminActions extends sfActions
     $message = Swift_Message::newInstance('User Profile Update Verification')
       ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
       ->setTo(array($admin->getEmailAddress() => $admin->getUserName()))
-      ->setBody($this->getPartial('userAdmin/verificateProfileMail', array('user' => $user, 'profile' => $profile, 'verificationUrl' => $verificationUrl)))
+      ->setBody($this->getPartial('userAdmin/verificateProfileMail', array(
+          'img_path' => $request->getUriPrefix().'/'.basename(sfConfig::get('sf_upload_dir')),
+          'user' => $user,
+          'profile' => $profile,
+          'verificationUrl' => $verificationUrl
+      )))
       ->setContentType('text/html');
 
     $transport = Swift_SmtpTransport::newInstance('host269.hostmonster.com', 465, 'ssl')
@@ -151,17 +172,18 @@ class userAdminActions extends sfActions
       }
 
       if ($this->verificationId !== $profile->getToken()) {
-        $this->getUser()->setFlash('error', 'Oops! Invalid verification token.(pleaase check mail, seems the user update again?)');
+        $this->getUser()->setFlash('error', 'Oops! Invalid verification token.(probably caused by repeated updating, pleaase check email.)');
       }
 
       $profile->setIsPublishable(true)->setToken(null)->save();
 
-      $this->getUser()->setFlash('success', 'Profile verified.');
+      $this->getUser()->setFlash('success', sprintf('User %s profile verified.', $profile->getFullName()));
       $this->redirect('@userAdmin');
     }
   }
   
   public function executeEditSchool(sfWebRequest $request) {
+    $this->school = $this->profile->getSchool();
     $this->form = new SchoolForm($this->school);
     $request->setRequestFormat('html');
 
@@ -173,7 +195,7 @@ class userAdminActions extends sfActions
         return sfView::SUCCESS;
       }
 
-      $school = $this->school;
+      $school = empty($this->school) ? new School() : $this->school;
       $school->fromArray($this->form->getValues());
       $school->setSlug($school->getUniqueSlug())->setIsPublishable(false)->save();
       

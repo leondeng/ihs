@@ -4,7 +4,7 @@
 	method="post">
 	<div class="box login">
 		<div class="title_login">
-			Please login to update your configurations.
+			Please login to manage your account.
 		</div>
 		<div class="inner_login"><?php echo $form; ?>
 			<!-- <div class="column">
@@ -22,15 +22,15 @@
 	<div class="img_bottom">
 	</div>
     <div class="clear"></div>
-	<div class="links_login">
+	<div class="links_login terms">
 		<?php $routes = $sf_context->getRouting()->getRoutes() ?>
 		<?php if (isset($routes['sf_guard_forgot_password'])): ?>
 		<a href="<?php echo url_for('@sf_guard_forgot_password') ?>"><?php echo __('Forgot your password?', null, 'sf_guard') ?>
 		</a>
 		<?php endif; ?>
 
-		<?php if (isset($routes['sf_guard_register'])): ?>
-		&nbsp; <a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __('Register', null, 'sf_guard') ?>
+		<?php if (isset($routes['sf_guard_register'])): ?>Need an account? Please
+		<a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __('Register', null, 'sf_guard') ?>.
 		</a>
 		<?php endif; ?>
 	</div>
