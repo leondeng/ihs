@@ -17,7 +17,8 @@ class SchoolTable extends Doctrine_Table
   }
 
   public function getNextSlug() {
-    $slug = Doctrine_Inflector::urlize(implode(' ', func_get_args()));
+    $func_args = func_get_args();
+    $slug = Doctrine_Inflector::urlize(implode(' ', $func_args));
     $results = $this->createQuery('s')
       ->select('COUNT(s.slug) as max')
       ->addWhere('s.slug LIKE ?', trim($slug).'%')
