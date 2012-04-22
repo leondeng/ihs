@@ -20,4 +20,9 @@ require_once(sfConfig::get('sf_plugins_dir').'/sfDoctrineGuardPlugin/modules/sfG
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
+  public function executeSignin($request) {
+    $this->getResponse()->setTitle('Login');
+
+    parent::executeSignin($request);
+  }
 }

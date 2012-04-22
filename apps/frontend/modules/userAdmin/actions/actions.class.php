@@ -25,14 +25,14 @@ class userAdminActions extends sfActions
     $fname = $this->profile->getFirstName();
     if (empty($fname)) {
       $this->profileIsEmpty = true;
-      $this->getUser()->setFlash('notice', 'Please create your profile.');
+      $this->getUser()->setFlash('notice', 'Please create your profile.', false);
 
       return sfView::SUCCESS;
     }
 
     if (!$this->profile->getIsPublishable()) {
       $this->profileIsInVerification = true;
-      $this->getUser()->setFlash('notice', 'Your profile is still in our verification, please wait.');
+      $this->getUser()->setFlash('notice', 'Your profile is still in our verification, please wait.', false);
 
       return sfView::SUCCESS;
     }
@@ -40,13 +40,13 @@ class userAdminActions extends sfActions
     $school_name = $this->profile->getSchool()->getName();
     if (empty($school_name)) {
       $this->schoolIsEmpty = true;
-      $this->getUser()->setFlash('notice', 'Please select a dojang in your profile, or create a new one.');
+      $this->getUser()->setFlash('notice', 'Please select a dojang in your profile, or create a new one.', false);
 
       return sfView::SUCCESS;
     }
 
     if (!$this->profile->getSchool()->getIsPublishable()) {
-      $this->getUser()->setFlash('notice', 'Your dojang is still in our verification, please wait.');
+      $this->getUser()->setFlash('notice', 'Your dojang is still in our verification, please wait.', false);
 
       return sfView::SUCCESS;
     }
@@ -132,7 +132,7 @@ class userAdminActions extends sfActions
   private function notifyProfileUpdate(sfWebRequest $request, $user, $profile) {
     $verificationUrl = $this->generateUrl('profile_verificate', array('profileid' => $profile->getId(), 'verification' => $profile->getToken()), true);
 
-    $admin = sfGuardUserTable::getInstance()->findOneByIsSuperAdmin(true);
+    $admin = sfGuardUserTable::getInstance()->findOneByUserName('admin');
     $message = Swift_Message::newInstance('User Profile Update Verification')
       ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
       ->setTo(array($admin->getEmailAddress() => $admin->getUserName()))
@@ -157,6 +157,8 @@ class userAdminActions extends sfActions
   }
 
   public function executeProfileVerificate(sfWebRequest $request) {
+    $this->checkIfSuperAdmin();
+
     if ($request->isMethod('get')) {
       $this->profileId = $request->getParameter('profileid');
       $this->verificationId = $request->getParameter('verification');
@@ -172,7 +174,7 @@ class userAdminActions extends sfActions
       }
 
       if ($this->verificationId !== $profile->getToken()) {
-        $this->getUser()->setFlash('error', 'Oops! Invalid verification token.(probably caused by repeated updating, pleaase check email.)');
+        $this->getUser()->setFlash('error', 'Oops! Invalid verification link, possibly caused by repeated updating, pleaase check email.)');
       }
 
       $profile->setIsPublishable(true)->setToken(null)->save();
@@ -197,14 +199,84 @@ class userAdminActions extends sfActions
 
       $school = empty($this->school) ? new School() : $this->school;
       $school->fromArray($this->form->getValues());
+
+      $user = $this->getUser()->getGuardUser();
+
+      // set the verification token
+      $school->setToken(md5(time()));
+
       $school->setSlug($school->getUniqueSlug())->setIsPublishable(false)->save();
-      
+
+      // notify the admin about the school update
+      $this->notifySchoolUpdate($request, $user, $school);
+
       $this->profile->setSchool($school)->save();
 
       $this->getUser()->setFlash('success', 'Your dojang has been updated successfully. It will be public after verification.');
       $this->redirect('@userAdmin');
 
       return sfView::SUCCESS;
+    }
+  }
+
+  private function notifySchoolUpdate(sfWebRequest $request, $user, $school) {
+    $verificationUrl = $this->generateUrl('school_verificate', array('schoolid' => $school->getId(), 'verification' => $school->getToken()), true);
+
+    $admin = sfGuardUserTable::getInstance()->findOneByUserName('admin');
+    $message = Swift_Message::newInstance('School Update Verification')
+      ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
+      ->setTo(array($admin->getEmailAddress() => $admin->getUserName()))
+      ->setBody($this->getPartial('userAdmin/verificateSchoolMail', array(
+          'user' => $user,
+          'school' => $school,
+          'verificationUrl' => $verificationUrl
+    )))
+    ->setContentType('text/html');
+
+    $transport = Swift_SmtpTransport::newInstance('host269.hostmonster.com', 465, 'ssl')
+    ->setUsername("iha.register@dimitristangl.com")
+    ->setpassword("iha@123");
+
+    $mailer = Swift_Mailer::newInstance($transport);
+
+    if (!$mailer->send($message, $failures)) {
+      $this->getUser()->setFlash('error', 'Update school failed. '.$failures);
+      $this->redirect('@userAdmin');
+    }
+  }
+
+  public function executeSchoolVerificate(sfWebRequest $request) {
+    $this->checkIfSuperAdmin();
+
+    if ($request->isMethod('get')) {
+      $this->schoolId = $request->getParameter('schoolid');
+      $this->verificationId = $request->getParameter('verification');
+
+      $school = SchoolTable::getInstance()->findOneById($this->schoolId);
+
+      if (!($school instanceof School)) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid school.');
+      }
+
+      if ($school->getIsPublishable()) {
+        $this->getUser()->setFlash('error', sprintf('Oops! School %s has already been verified.', $school->getName()));
+      }
+
+      if ($this->verificationId !== $school->getToken()) {
+        $this->getUser()->setFlash('error', 'Oops! Invalid verification link, possibly caused by repeated updating, pleaase check email.)');
+      }
+
+      $school->setIsPublishable(true)->setToken(null)->save();
+
+      $this->getUser()->setFlash('success', sprintf('School %s verified.', $school->getName()));
+      $this->redirect('@userAdmin');
+    }
+  }
+
+  protected function checkIfSuperAdmin() {
+    if (!$this->getUser()->getGuardUser()->getIsSuperAdmin()) {
+      $this->getUser()->setFlash('error', 'Access denied, please logout and login as administrator.');
+      $this->redirect('@userAdmin');
     }
   }
 

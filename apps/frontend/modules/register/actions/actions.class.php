@@ -16,6 +16,8 @@ class registerActions extends sfActions
    * @param sfRequest $request A request object
    */
   public function executeRegister(sfWebRequest $request) {
+    $this->getResponse()->setTitle('Register');
+
     $this->form = new RegisterForm();
     $this->form->getWidget('toc')->setLabel(sprintf('I agree to the <a href="%s/%s">Term of Use</a>.', $request->getUriPrefix(), 'term_of_use.html'));
     if ($request->isMethod('post')) {

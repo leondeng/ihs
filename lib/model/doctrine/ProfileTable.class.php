@@ -21,7 +21,6 @@ class ProfileTable extends Doctrine_Table
     $results = $this->createQuery('p')
       ->select('COUNT(p.slug) as max')
       ->addWhere('p.slug LIKE ?', trim($slug).'%')
-//       ->addWhere('p.type IS NOT NULL')
       ->execute(array(), Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     if($results > 0) {
       $slug .= '-' . $results;

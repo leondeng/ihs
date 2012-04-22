@@ -28,6 +28,7 @@ abstract class BaseSchoolForm extends BaseFormDoctrine
       'leading_instructor' => new sfWidgetFormInputText(),
       'classtime'          => new sfWidgetFormInputText(),
       'is_publishable'     => new sfWidgetFormInputCheckbox(),
+      'token'              => new sfWidgetFormInputText(),
       'slug'               => new sfWidgetFormInputText(),
     ));
 
@@ -45,6 +46,7 @@ abstract class BaseSchoolForm extends BaseFormDoctrine
       'leading_instructor' => new sfValidatorPass(array('required' => false)),
       'classtime'          => new sfValidatorPass(array('required' => false)),
       'is_publishable'     => new sfValidatorBoolean(array('required' => false)),
+      'token'              => new sfValidatorString(array('max_length' => 32, 'required' => false)),
       'slug'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 

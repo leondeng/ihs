@@ -64,4 +64,4 @@ School:
     is_publishable:
       type: boolean
       default: false
-#    token: string(32)
+    token: string(32)

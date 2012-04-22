@@ -24,4 +24,8 @@ class School extends BaseSchool
     return false;
   } */
 
+  public function getUniqueSlug() {
+    return SchoolTable::getInstance()->getNextSlug($this->getCity(), $this->getName());
+  }
+
 }

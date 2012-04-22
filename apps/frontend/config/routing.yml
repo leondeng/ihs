@@ -135,6 +135,13 @@ profile_verificate:
     action: profileVerificate
     sf_format: html
 
+school_verificate:
+  url: /dojang_verification.:sf_format
+  param:
+    module: userAdmin
+    action: schoolVerificate
+    sf_format: html
+
 static:
   url: /:content.:sf_format
   param:

@@ -17,6 +17,7 @@
  * @property text $leading_instructor
  * @property text $classtime
  * @property boolean $is_publishable
+ * @property string $token
  * @property Doctrine_Collection $Members
  * 
  * @method text                getName()               Returns the current record's "name" value
@@ -31,6 +32,7 @@
  * @method text                getLeadingInstructor()  Returns the current record's "leading_instructor" value
  * @method text                getClasstime()          Returns the current record's "classtime" value
  * @method boolean             getIsPublishable()      Returns the current record's "is_publishable" value
+ * @method string              getToken()              Returns the current record's "token" value
  * @method Doctrine_Collection getMembers()            Returns the current record's "Members" collection
  * @method School              setName()               Sets the current record's "name" value
  * @method School              setCountry()            Sets the current record's "country" value
@@ -44,6 +46,7 @@
  * @method School              setLeadingInstructor()  Sets the current record's "leading_instructor" value
  * @method School              setClasstime()          Sets the current record's "classtime" value
  * @method School              setIsPublishable()      Sets the current record's "is_publishable" value
+ * @method School              setToken()              Sets the current record's "token" value
  * @method School              setMembers()            Sets the current record's "Members" collection
  * 
  * @package    ihs
@@ -100,6 +103,10 @@ abstract class BaseSchool extends sfDoctrineRecord
         $this->hasColumn('is_publishable', 'boolean', null, array(
              'type' => 'boolean',
              'default' => false,
+             ));
+        $this->hasColumn('token', 'string', 32, array(
+             'type' => 'string',
+             'length' => 32,
              ));
     }
 

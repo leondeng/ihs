@@ -25,6 +25,7 @@ abstract class BaseSchoolFormFilter extends BaseFormFilterDoctrine
       'leading_instructor' => new sfWidgetFormFilterInput(),
       'classtime'          => new sfWidgetFormFilterInput(),
       'is_publishable'     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'token'              => new sfWidgetFormFilterInput(),
       'slug'               => new sfWidgetFormFilterInput(),
     ));
 
@@ -41,6 +42,7 @@ abstract class BaseSchoolFormFilter extends BaseFormFilterDoctrine
       'leading_instructor' => new sfValidatorPass(array('required' => false)),
       'classtime'          => new sfValidatorPass(array('required' => false)),
       'is_publishable'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'token'              => new sfValidatorPass(array('required' => false)),
       'slug'               => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -74,6 +76,7 @@ abstract class BaseSchoolFormFilter extends BaseFormFilterDoctrine
       'leading_instructor' => 'Text',
       'classtime'          => 'Text',
       'is_publishable'     => 'Boolean',
+      'token'              => 'Text',
       'slug'               => 'Text',
     );
   }

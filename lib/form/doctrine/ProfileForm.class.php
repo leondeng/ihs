@@ -131,7 +131,7 @@ class ProfileForm extends BaseProfileForm
     return $combine ? array_combine($grades, $grades) : $grades;
   }
 
-  public function validateImageDimension($validator, $values) {//die(print_r($values, true));
+  public function validateImageDimension($validator, $values) {
     if($values['image_name']) {
       list($width, $height, $type, $attr) = getimagesize($values['image_name']->getTempName());
       if($width > self::IMAGE_WIDTH || $height > self::IMAGE_HEIGHT) {
