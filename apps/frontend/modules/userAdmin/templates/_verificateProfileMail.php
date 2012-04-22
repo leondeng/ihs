@@ -19,7 +19,7 @@
 	<br>Is Instructor:
 	<?php echo $profile->getIsInstructor()?'Yes':'No'; ?>
 	<br>Dojang:
-	<?php echo $profile->hasSchool()? $profile->getDojang()->getName() : 'N/A'; ?>
+	<?php echo $profile->hasSchool()? $profile->getSchool()->getName() : 'N/A'; ?>
 	<br>Image:<br>
 	<img src="<?php echo $img_path.'/'.$profile->getImageName(); ?>" />
 	</p>

@@ -48,7 +48,7 @@ all:
               route: @static?content=MerchandiseTShirts
 #              requires_no_auth: true
         instructors:
-          label: INSTRUCTORS
+          label: INSTRUCTORS/BLACK BELT
           route: @search_instructor
 #          requires_no_auth: true
         forum:

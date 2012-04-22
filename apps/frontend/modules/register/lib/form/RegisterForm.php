@@ -36,11 +36,11 @@ class RegisterForm extends sfGuardUserForm
             'invalid'  => 'Invalid email address'
         )
     );
-    $this->validatorSchema['toc']       = new sfValidatorBoolean(
+    $this->validatorSchema['toc'] = new sfValidatorBoolean(
         array('required' => true),
         array(
             'required' =>
-            'You need to accept the terms and conditions to proceed')
+            'You need to accept the terms of use to proceed')
     );
     $this->widgetSchema->moveField('password_confirmation', 'after', 'password');
 

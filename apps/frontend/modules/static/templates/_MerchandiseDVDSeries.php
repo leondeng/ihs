@@ -78,11 +78,11 @@
 <script type="text/javascript">
 $( "#linkMoviePopup" ).click(function(){
 	$("#VideoBox").css('display', 'block');
-	$("#Background").addClass('grey_background');
+	$("#Background").addClass('grey_background').css('height', $(document).height());
 });
 
 $( "#box_close" ).click(function(){
 	$("#VideoBox").css('display', 'none');
-	$("#Background").removeClass('grey_background');
+	$("#Background").removeClass('grey_background').css('height', 0);
 });
 </script>

@@ -10,7 +10,9 @@
 			<li><span>|</span></li>
 			<li><a href="<?php echo url_for('@static?content=contact_us'); ?>">CONTACT US</a></li>
 			<li><span>|</span></li>
-			<li><span>&copy; 2012</span></li>
+			<li><span><a href="http://www.dimitristangl.com/">&copy; 2012 DESIGN DIMITRI STANGL</a></span></li>
+			<li><span>|</span></li>
+			<li><span><a href="" class="boldblue">SUBSCRIBE TO OUR NEWSLETTER</a></span></li>
 		</ul>
 	</div>
 </div>

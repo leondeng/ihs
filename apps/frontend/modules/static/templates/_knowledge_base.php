@@ -93,7 +93,7 @@
 var $belt_initialized = false;
 $( "#BeltGrid" ).click(function(){
 	$("#BeltSlides").css('display', 'block');
-	$("#Background").addClass('grey_background');
+	$("#Background").addClass('grey_background').css('height', $(document).height());
 	if(!$belt_initialized) {
 	  var instanceOne = new ImageFlow();
 	  instanceOne.init({ ImageFlowID:'BeltSlides', imageFocusM: 1.2 });
@@ -104,7 +104,7 @@ $( "#BeltGrid" ).click(function(){
 var $dobok_initialized = false;
 $( "#DobokGrid" ).click(function(){
 	$("#DobokSlides").css('display', 'block');
-	$("#Background").addClass('grey_background');
+	$("#Background").addClass('grey_background').css('height', $(document).height());
 	if(!$dobok_initialized) {
 	  var instanceOne = new ImageFlow();
 	  instanceOne.init({ ImageFlowID:'DobokSlides', imageFocusM: 1.8 });
@@ -114,7 +114,7 @@ $( "#DobokGrid" ).click(function(){
 
 $( ".close_button" ).click(function(){
 	$(".imageflow").css('display', 'none');
-	$("#Background").removeClass('grey_background');
+	$("#Background").removeClass('grey_background').css('height', 0);
 });
 
 </script>

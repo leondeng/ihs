@@ -41,7 +41,7 @@ div#Wrapper {
 }
 
 #Header .Navigation {
-	height: 72px;
+	height: 75px;
 	overflow: hidden;
 	float: left;
 	padding: 6px 0 0;
@@ -76,7 +76,7 @@ div#Wrapper {
 	display: block;
 	height: 33px;
 	line-height: 33px;
-	padding: 0 5px;
+	/* padding: 0 5px; */
 	color: #666666;
 	font-size: 14px;
 }
@@ -135,13 +135,13 @@ div#Wrapper {
 #PageContent #ContentLeft {
 	min-height: 520px;
 	width: 820px;
-	padding: 0 0 20px 80px;
+	padding: 0 0 20px 60px;
 	float: left;
 	text-align: left;
 }
 
 #Goback {
-	margin: -40px 0 0 -60px;
+	margin: -40px 0 0 -45px;
 	float: left;
 	font: 12px bolder;
 	height: 10px;
@@ -189,6 +189,11 @@ div#Wrapper {
 
 #Footer a {
 	color: #77766F;
+}
+
+#Footer .boldblue {
+	color: #142652;
+	font-weight: bolder;
 }
 
 .clear {
@@ -433,7 +438,7 @@ a:active {
 
 #FlashMessages {
 	width: 820px;
-	padding: 0 0 0 80px;
+	padding: 0 0 0 60px;
 }
 
 .flash_success {

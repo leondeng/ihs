@@ -48,7 +48,7 @@
 }
 
 .table table tbody td {
-	align: left;
+	text-align: left;
 	border-right: 1px solid #00217E;
 	border-bottom: 1px solid #00217E;
 	padding: 3px 0 3px 20px;
@@ -105,5 +105,5 @@
 
 #Pagination div.number {
 	width: 12px;
-	//margin-left: 3px;
+	/* margin-left: 3px; */
 }
