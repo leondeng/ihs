@@ -46,7 +46,7 @@
 	font-weight: bold;
 }
 
-#BeltSlides, #DobokSlides {
+#BeltSlides, #DobokSlides, #PathSlides {
 	display: none;
 	height: 100%;
 	width: 100%;

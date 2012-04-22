@@ -45,6 +45,7 @@
 		position:relative; 
 		text-align:center;
 		z-index:10001;
+		white-space:pre;
 	}
 	.imageflow .scrollbar {
 		border-bottom:1px solid #b3b3b3;

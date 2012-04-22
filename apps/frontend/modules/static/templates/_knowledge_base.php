@@ -30,9 +30,8 @@
 				keep it on.</div>
 		</div>
 
-
 		<div class="grid icon">
-			<a href="javascript:;" id="Path" title="Coming soon..."><img src="images/The_Path_to_Black_Belt.png" /></a>
+			<a href="javascript:;" id="PathGrid" title="Click to learn"><img src="images/The_Path_to_Black_Belt.png" /></a>
 		</div>
 		<div class="grid text widen">
 			<div class="title">The Path to Black Belt</div>
@@ -44,7 +43,8 @@
 </div>
 <?php include_partial('DobokFolding'); ?>
 <?php include_partial('BeltTying'); ?>
-	
+<?php include_partial('ThePathtoBlackBelt'); ?>
+
 <?php include_partial('KoreanWord'); ?>
 <?php use_stylesheet('knowledge_base'); ?>
 <?php use_stylesheet('imageflow'); ?>

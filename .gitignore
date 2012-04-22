@@ -4,3 +4,5 @@ config/databases.yml
 web/uploads/*
 web/images/Belt_Images/refl_*.jpg
 web/images/Dobok_Images/refl_*.jpg
+web/images/Path_Images/refl_*.jpg
+
