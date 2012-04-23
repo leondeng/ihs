@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="grid icon">
-			<a href="javascript:;" id="Korean" title="Coming soon..."><img src="images/Korean_Terminology.png" /></a>
+			<a href="<?php echo url_for('@static?content=KoreanTerminology'); ?>" id="Korean" title="Click to learn"><img src="images/Korean_Terminology.png" /></a>
 		</div>
 		<div class="grid text widen">
 			<div class="title">Korean Terminology</div>
