@@ -137,7 +137,7 @@ class userAdminActions extends sfActions
       ->setFrom(array('iha.register@dimitristangl.com' => 'IHA Register'))
       ->setTo(array($admin->getEmailAddress() => $admin->getUserName()))
       ->setBody($this->getPartial('userAdmin/verificateProfileMail', array(
-          'img_path' => $request->getUriPrefix().'/'.basename(sfConfig::get('sf_upload_dir')),
+          'img_path' => str_replace($request->getPathInfo(), '', $request->getUri()).'/'.basename(sfConfig::get('sf_upload_dir')),
           'user' => $user,
           'profile' => $profile,
           'verificationUrl' => $verificationUrl
