@@ -1,0 +1,59 @@
+all:
+  KoreanTerms:
+    sections:
+      basicterms:
+        label: 'Basic Terms'
+        column: 5
+        terms:
+          'Breathing': 'Tan Jun'
+          'School': 'Dojang'
+          'Attention': 'Cha Ryuht'
+          'Bow': 'Kyung Neh'
+          'Ready Stance': 'Jhoon Bee'
+          'Uniform': 'Dobok'
+          'Start': 'Shi Jak'
+          'Stop': 'Koman'
+          'Short Stick': 'Dan Bong'
+          'Spirit Yell': 'Kiyap'
+      counting:
+        label: 'Counting'
+        column: 5
+        terms:
+          'One': 'Ha Nah'
+          'Two': 'Tul'
+          'Three': 'Set'
+          'Four': 'Net'
+          'Five': 'Tah Suht'
+          'Six': 'Yah Suht'
+          'Seven': 'Il Gohp'
+          'Eight': 'Yuh Duhl'
+          'Nine': 'Ah Hohp'
+          'Ten': 'Yol'
+      blackbelttitles:
+        label: 'Black Belt Titles'
+        column: 5
+        terms:
+          '1st Degree': 'Cho Gyo Nim'
+          '2nd Degree': 'Kyo Sah Nim'
+          '3rd Degree': 'Bu Sah Bu Nim'
+          '4th Degree': 'Sah Bu Nim'
+          '5th - 7th Degree': 'Kwan Jung Nim'
+      basicphrases:
+        label: 'Basic Phrases'
+        column: 3
+        terms:
+          'Hello How are you?<br>(More Formal)': 'Ahn Young<br>Hah Shi Nee Kah'
+          'Hello How are you?<br>(Less Formal)': 'Ahn Young<br>Hah Say Yoh'
+          'Goodbye / Go Safely': 'Hee Kah<br>Ship See Yo'
+          'You are Welcome': 'Chuhn Mahn Eh Yo'
+          'Thank You': 'Cum Sah Hahm Nee Dah'
+      dojangphrases:
+        label: 'Dojang Phrases'
+        column: 'dojang'
+        terms:
+          'Attention to the<br>1st Degree & Bow': 'Cho Gyo Nim Ke<br>Cha Ryuht<br>Kyung Neh'
+          'Attention to the<br>2nd Degree & Bow': 'Kyo Sah Nim Ke<br>Cha Ryuht<br>Kyung Neh'
+          'Attention to the<br>3rd Degree & Bow': 'Bu Sah Bum Nim Ke<br>Cha Ryuht<br>Kyung Neh'
+          'Attention to the<br>4th Degree & Bow': 'Sah Bum Nim Ke<br>Cha Ryuht<br>Kyung Neh'
+          'Attention to the<br>5th Degree & Bow': 'Kwang Jun Nim Ke<br>Cha Ryuht<br>Kyung Neh'
+          'Attention to the<br>Black Belts & Bow': 'Yu Dahn Ja<br>Cha Ryuht<br>Kyung Neh'
