@@ -22,8 +22,8 @@
 							class="label">NAME</span><br> <span class="value"><?php echo $dojang->getName(); ?>
 						</span> </a>
 					</td>
-					<td width="25%"><a href=""><span class="label">CITY</span><br> <span
-							class="value"><?php echo $dojang->getCity(); ?> </span> </a></td>
+					<td width="25%"><span class="label">CITY</span><br> <span
+							class="value"><?php echo $dojang->getCity(); ?> </span></td>
 					<td width="25%"><span class="label">COUNTRY</span><br> <span
 						class="value"><?php echo $dojang->getCountry(); ?> </span></td>
 					<td width="25%"><a
