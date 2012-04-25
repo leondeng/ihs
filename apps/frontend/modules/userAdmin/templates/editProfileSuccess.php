@@ -62,6 +62,8 @@
 <div class="clear"></div>
 <?php use_stylesheet('sample_image'); ?>
 <?php use_javascript('jquery-1.7.2.min.js'); ?>
+<?php use_javascript('jquery-ui-1.8.19.custom.min.js'); ?>
+<?php use_stylesheet('ui-lightness/jquery-ui-1.8.19.custom.css')?>
 <?php use_javascript('auto-hint'); ?>
 <script type="text/javascript">
 $( "#sample_close" ).click(function(){
@@ -70,5 +72,15 @@ $( "#sample_close" ).click(function(){
 
 $( "#sample_open" ).click(function(){
 	$("#SamplePopup").css('display', 'block');
+});
+
+$(function() {
+	$( "#profile_dob" ).datepicker({
+		firstDay: 1,
+		dateFormat: "yy-mm-dd",
+		changeYear: true,
+		changeMonth: true,
+		yearRange: "c-80:c"
+	});
 });
 </script>
