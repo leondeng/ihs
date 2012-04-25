@@ -140,6 +140,37 @@ div#Wrapper {
 	text-align: left;
 }
 
+#ContentLeft .page_title {
+	margin: 65px 0 0 60px;;
+}
+
+#PageContent .img_404 {
+	background: url("../images/404.png") no-repeat scroll right bottom
+		transparent;
+	font-family: san-serif, helvetica, verdana, arial;
+	margin: -70px 0 40px -60px;
+}
+
+#PageContent .term_404 {
+	position: relative;
+	top: 260px;
+	padding-left: 60px;
+	width: 320px;
+	font-weight: bold;
+	font-size: 20px;
+	color: #00217E;
+}
+
+#PageContent #ContentRight {
+	padding: 0 3px 0 12px;
+	position: relative;
+	margin: 0 -40px 0 840px;
+	min-height: 520px;
+	text-align: right;
+	background: url("../images/KoreanWord.png") no-repeat scroll right top
+		transparent;
+}
+
 #Goback {
 	margin: -40px 0 0 -45px;
 	float: left;
