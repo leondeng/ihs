@@ -102,6 +102,10 @@ form .terms a {
 	border-bottom: 1px dotted;
 }
 
+form .auto-hint {
+	color: #AAAAAA;
+}
+
 /* form login */
 form .login {
 	width: 37%;

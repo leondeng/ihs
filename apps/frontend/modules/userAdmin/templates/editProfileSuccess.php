@@ -62,6 +62,7 @@
 <div class="clear"></div>
 <?php use_stylesheet('sample_image'); ?>
 <?php use_javascript('jquery-1.7.2.min.js'); ?>
+<?php use_javascript('auto-hint'); ?>
 <script type="text/javascript">
 $( "#sample_close" ).click(function(){
 	$("#SamplePopup").css('display', 'none');

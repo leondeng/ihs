@@ -32,3 +32,5 @@
 	
 </form>
 <div class="clear"></div>
+<?php use_javascript('jquery-1.7.2.min.js'); ?>
+<?php use_javascript('auto-hint'); ?>

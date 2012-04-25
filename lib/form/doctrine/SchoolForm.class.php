@@ -25,7 +25,7 @@ class SchoolForm extends BaseSchoolForm
   );
 
   public function configure() {
-    $this->setWidget('name', new sfWidgetFormInputText(array('label' => 'Dojang Name', 'default' => $this->getObject()->getName())));
+    $this->setWidget('name', new sfWidgetFormInputText(array('label' => 'Dojang Name', 'default' => $this->getObject()->getName()), array('class' => 'auto-focus')));
     $this->setValidator('name', new sfValidatorString(array('required' => true)));
 
     $this->setWidget('country', new sfWidgetFormSelect(array('label' => 'Country', 'choices' => $this->getCountries(), 'default' => $this->getObject()->getCity())));
@@ -49,13 +49,28 @@ class SchoolForm extends BaseSchoolForm
     $this->setWidget('email_address', new sfWidgetFormInputText(array('label' => 'Email', 'default' => $this->getObject()->getEmailAddress())));
     $this->setValidator('email_address', new sfValidatorEmail(array('required' => true)));
 
-    $this->setWidget('website', new sfWidgetFormInputText(array('label' => 'Website', 'default' => $this->getObject()->getWebsite())));
+    $this->setWidget('website', new sfWidgetFormInputText(array('label' => 'Website', 'default' => $this->getObject()->getWebsite()), array('class' => 'auto-hint', 'hint' => 'i.e. http://www.example.com/')));
     $this->setValidator('website', new sfValidatorUrl(array('required' => true)));
 
     $this->setWidget('leading_instructor', new sfWidgetFormInputText(array('label' => 'Leading Instructor', 'default' => $this->getObject()->getLeadingInstructor())));
     $this->setValidator('leading_instructor', new sfValidatorString(array('required' => true)));
 
-    $this->setWidget('class_time', new sfWidgetFormTextarea(array('label' => 'Class Time', 'default' => $this->getObject()->getClasstime())));
+    $this->setWidget('class_time', new sfWidgetFormTextarea(array('label' => 'Class Time', 'default' => $this->getObject()->getClasstime()), array('class' => 'auto-hint', 'hint' => 'Please use this format:
+
+TUESDAY
+6:15pm - 7:00pm Mixed Kids Class (4 - 8 year olds)
+7:00pm - 7:45pm Mixed Kids Class (9 - 12 year olds)
+7:45pm - 9:00pm Mixed Adults Class (13+)
+
+THURSDAY
+6:15pm - 7:00pm Mixed Kids Class (4 - 8 year olds)
+7:00pm - 7:45pm Mixed Kids Class (9 - 12 year olds)
+7:45pm - 9:00pm Mixed Adults Class
+
+SATURDAY
+9:00am - 10:00am Mixed Kids Class
+10:00am - 11:00am Mixed Adults Class'
+    )));
     $this->setValidator('class_time', new sfValidatorPass(array('required' => true)));
 
     $this->validatorSchema->setOption( 'allow_extra_fields', true );

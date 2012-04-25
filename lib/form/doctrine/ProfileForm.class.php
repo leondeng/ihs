@@ -27,7 +27,7 @@ class ProfileForm extends BaseProfileForm
   );
 
   public function configure() {
-    $this->setWidget('title', new sfWidgetFormInputText(array('label' => 'Title', 'default' => $this->getObject()->getTitle())));
+    $this->setWidget('title', new sfWidgetFormInputText(array('label' => 'Title', 'default' => $this->getObject()->getTitle()), array('class' => 'auto-focus')));
     $this->setValidator('title', new sfValidatorString(array('required' => true)));
 
     $this->setWidget('first_name', new sfWidgetFormInputText(array('label' => 'First Name', 'default' => $this->getObject()->getFirstName())));
