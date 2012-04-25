@@ -161,6 +161,13 @@ div#Wrapper {
 	color: #00217E;
 }
 
+#PageContent .img_500 {
+	background: url("../images/500.png") no-repeat scroll right bottom
+		transparent;
+	font-family: san-serif, helvetica, verdana, arial;
+	margin: -70px 0 40px -60px;
+}
+
 #PageContent #ContentRight {
 	padding: 0 3px 0 12px;
 	position: relative;
