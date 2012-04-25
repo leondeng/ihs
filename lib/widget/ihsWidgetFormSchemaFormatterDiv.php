@@ -35,6 +35,10 @@ class sfWidgetFormSchemaFormatterIhs extends sfWidgetFormSchemaFormatter
       $type = isset($matches[1]) ? $matches[1] : 'unknown';
       $id = isset($matches[2]) ? str_replace('-', '_', Doctrine_Inflector::urlize($matches[2])) : 'unknown';
       $class = str_replace('sfWidgetForm', '', get_class($widget));
+      if ($class === 'InputCheckbox') {
+        $field .= ' '.$label;
+        $label = '';
+      }
   	}
   	
   	$rowClasses = $widget->getOption('row_classes');

@@ -85,7 +85,6 @@ form .column {
 }
 
 form .field .control {
-	width: 60%;
 	float: left;
 }
 
@@ -154,7 +153,7 @@ form .register {
 	width: 37%;
 	min-height: 250px;
 	margin: 20px 0 30px 220px;
-	padding-bottom: 10px;
+	padding-bottom: 28px;
 }
 
 form .register a {
