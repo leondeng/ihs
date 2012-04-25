@@ -9,9 +9,17 @@ class ihsChangeUserEmailForm extends BaseFormDoctrine {
 
     $this->mergePostValidator(new sfValidatorSchemaCompare('email_address', sfValidatorSchemaCompare::EQUAL, 'email_address_again', array(), array('invalid' => 'The two email addresses must be the same.')));
     $this->getWidgetSchema()->setNameFormat('email[%s]');
+
+    $this->mergePostValidator(new sfValidatorDoctrineUnique(array(
+        'model' => 'sfGuardUser',
+        'column' => array('email_address')
+    ), array(
+        'invalid' => 'Another user already uses this email address.'
+    )));
   }
 
   public function getModelName() {
     return 'sfGuardUser';
   }
+
 }

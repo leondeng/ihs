@@ -7,19 +7,27 @@
 		</h1>
 	</div>
 	<div>
-		<a href="<?php echo url_for('@change_email'); ?>">Change Email Address</a><br>
-		<a href="<?php echo url_for('@change_password'); ?>">Change Password</a><br>
-
-		<a href="<?php echo url_for('@edit_profile'); ?>"> <?php echo $profileIsEmpty ? 'Create' : 'Edit'; ?>
-			Profile
-		</a><br>
-
+		<p>
+			<a href="<?php echo url_for('@change_email'); ?>">Change Email
+				Address</a>
+		</p>
+		<p>
+			<a href="<?php echo url_for('@change_password'); ?>">Change Password</a>
+		</p>
+		<p>
+			<a href="<?php echo url_for('@edit_profile'); ?>"> <?php echo $profileIsEmpty ? 'Create' : 'Edit'; ?>
+				Profile
+			</a>
+		</p>
 		<?php if (!$profileIsEmpty && !$profileIsInVerification) { ?>
-		<a href="<?php echo url_for('@edit_school'); ?>"> <?php echo $schoolIsEmpty ? 'Create a new' : 'Edit'; ?>
-			Dojang
-		</a><br>
+		<p>
+			<a href="<?php echo url_for('@edit_school'); ?>"> <?php echo $schoolIsEmpty ? 'Create a new' : 'Edit'; ?>
+				Dojang
+			</a>
+		</p>
 		<?php } ?>
-
-		<a href="<?php echo url_for('@sf_guard_signout'); ?>">Logout</a>
+		<p>
+			<a href="<?php echo url_for('@sf_guard_signout'); ?>">Logout</a>
+		</p>
 	</div>
 </div>
