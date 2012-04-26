@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="grid icon">
-			<a href="<?php echo url_for('@static?content=KoreanTerminology'); ?>" id="Korean" title="Click to learn"><img src="images/Korean_Terminology.png" /></a>
+			<a href="javascript:;" id="KoreanGrid" title="Click to learn"><img src="images/Korean_Terminology.png" /></a>
 		</div>
 		<div class="grid text widen">
 			<div class="title">Korean Terminology</div>
@@ -44,6 +44,7 @@
 <?php include_partial('DobokFolding'); ?>
 <?php include_partial('BeltTying'); ?>
 <?php include_partial('ThePathtoBlackBelt'); ?>
+<?php include_partial('KoreanTerminology'); ?>
 
 <?php include_partial('KoreanWord'); ?>
 <?php use_stylesheet('knowledge_base'); ?>

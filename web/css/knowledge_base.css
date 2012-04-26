@@ -46,7 +46,7 @@
 	font-weight: bold;
 }
 
-#BeltSlides, #DobokSlides, #PathSlides {
+#BeltSlides, #DobokSlides, #PathSlides, #KoreanTerms {
 	display: none;
 	height: 100%;
 	width: 100%;
@@ -61,10 +61,74 @@
 	padding: 0 0 30px;
 }
 
+.black_background {
+	background-color: black;
+}
+
+#KoreanTerms .terms_close {
+	float: left;
+	padding: 10px 0 0 90px;
+}
+
+#KoreanTerms .page_title {
+	padding: 5px 0 5px 70px;
+	font-size: 30px;
+	font-weight: lighter;
+	width: 80%;
+	float: left;
+}
+
+#KoreanTerms .page_title a {
+	color: #FFF;
+	font-size: 16px;
+	font-weight: lighter;
+}
+
 .imageflow .slides_title {
 	text-align: center;
 	font-size: 32px;
 	font-weight: bolder;
 	padding: 5px 0 0;
 	letter-spacing: 2px;
+}
+
+.section_title {
+	padding: 10px 0 0;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bolder;
+	color: red;
+}
+
+div.column {
+	float: left;
+	display: inline;
+	font-size: 16px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.column5 .column {
+	width: 20%;
+	height: 70px;
+}
+
+.column3 .column {
+	width: 33.3%;
+	height: 105px;
+}
+
+.columndojang .column {
+	width: 33.3%;
+	height: 135px;
+}
+
+div.column dl dt {
+	display: inline;
+	width: 100px;
+	color: grey;
+}
+
+div.column dl dd {
+	margin: 0;
 }
