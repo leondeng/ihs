@@ -6,8 +6,9 @@
 	?>
 </div>
 <div class="Navigation NavigationRight">
-	<ul class="menu">
-		<li class="first last"><a href="wikikido/index.php" target="_blank">WIKIKIDO</a>
-		</li>
-	</ul>
+	<?php
+	$menu = new ioMenu();
+	$menu->addChild('WIKIKIDO', '@static?content=wikikido');
+	echo $menu->render();
+	?>
 </div>
